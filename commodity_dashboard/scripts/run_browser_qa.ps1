@@ -35,14 +35,25 @@ function Invoke-Headless([string[]]$BrowserArgs) {
   return (cmd /c ('"' + $browser + '" ' + $quoted + ' 2>nul'))
 }
 
-# ---- 1. QA-mode DOM dump ----
+# ---- 1. QA-mode DOM dump (retry/poll) ----
+# The in-page ?qa=1 self-report (#qa-results + a "QA:" <title>) is populated only after the
+# canvases draw on rAF + a settle timeout; headless --dump-dom on a cold/heavier runner can
+# capture before it fires (flaky in CI — observed on the EIA-fresh run). Poll: re-dump up to
+# 5x with a large virtual-time budget until the report actually has content, then parse it.
 $domFile = Join-Path $shotDir ("qa_dom_{0}.html" -f $stamp)
-Invoke-Headless @('--headless', '--disable-gpu', '--no-first-run', '--virtual-time-budget=10000', '--dump-dom', ($fileUrl + '?qa=1')) | Set-Content -Path $domFile -Encoding UTF8
-$dom = Get-Content $domFile -Raw -Encoding UTF8
-if ([string]::IsNullOrWhiteSpace($dom)) { Write-Host 'FAIL: headless DOM dump empty'; exit 1 }
-$titleM = [regex]::Match($dom, '<title>(QA:[A-Z]+)</title>')
-$reportM = [regex]::Match($dom, '(?s)<pre id="qa-results">(.*?)</pre>')
-if (-not $titleM.Success -or -not $reportM.Success) { $fails.Add('QA report not present in rendered DOM') }
+$titleM = $null; $reportM = $null; $got = $false
+for ($attempt = 1; $attempt -le 5; $attempt++) {
+  Invoke-Headless @('--headless', '--disable-gpu', '--no-first-run', '--virtual-time-budget=30000', '--dump-dom', ($fileUrl + '?qa=1')) | Set-Content -Path $domFile -Encoding UTF8
+  $dom = Get-Content $domFile -Raw -Encoding UTF8
+  if (-not [string]::IsNullOrWhiteSpace($dom)) {
+    $tm = [regex]::Match($dom, '<title>(QA:[A-Z]+)</title>')
+    $rm = [regex]::Match($dom, '(?s)<pre id="qa-results">(.+?)</pre>')
+    if ($tm.Success -and $rm.Success -and $rm.Groups[1].Value.Trim().Length -gt 2) { $titleM = $tm; $reportM = $rm; $got = $true; Write-Host ("QA self-report captured on attempt {0}/5" -f $attempt); break }
+  }
+  Write-Host ("attempt {0}/5: QA self-report not yet in dumped DOM; retrying" -f $attempt)
+  Start-Sleep -Seconds 2
+}
+if (-not $got) { $fails.Add('QA report not present in rendered DOM after 5 attempts') }
 else {
   $verdict = $titleM.Groups[1].Value
   $reportTxt = [System.Net.WebUtility]::HtmlDecode($reportM.Groups[1].Value)
