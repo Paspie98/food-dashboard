@@ -1,0 +1,389 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QA:PASS</title>
+<!--
+  Production front end (M11). Reads the committed pipeline outputs (data.js / display_contract.js /
+  synthesis.js / build_manifest.js) at load via <script src>, so the weekly commit-back updates the
+  page with no redeploy. The page only READS; the pipeline only WRITES; they share the committed
+  files. Design language follows commodity_exposure_v5 (DM Sans / DM Mono / Instrument Serif, light
+  theme, card grid, two-line rebased overlay) but charts are rendered by a dependency-free canvas
+  routine (no CDN) using timer-based draws so the headless --dump-dom QA captures them.
+  The per-card context block is an EXPLICITLY EMPTY, labelled analysis slot for the later layer.
+-->
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Instrument+Serif:ital@0;1&amp;family=DM+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f5f7;--s:#fff;--b:#dfe2e8;--bl:#eceef2;--t1:#1a1d26;--t2:#555a6a;--t3:#939ab0;--c22:#d4650a;--c26:#2558c7}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--t1);font-family:'DM Sans',system-ui,Segoe UI,sans-serif;padding:22px 20px 40px}
+.w{max-width:1520px;margin:0 auto}
+.hdr{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:27px;letter-spacing:-.3px}
+h1 em{color:var(--t3);font-style:italic}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{font-family:'DM Mono',ui-monospace,monospace;font-size:9px;letter-spacing:.5px;text-transform:uppercase;padding:4px 9px;border-radius:5px;border:1px solid var(--b);background:var(--s);color:var(--t2)}
+.pill.ok{border-color:rgba(63,122,78,.35);color:#3f7a4e}
+.pill.bad{border-color:rgba(179,65,60,.35);color:#b3413c}
+.intro{font-size:12px;color:var(--t2);line-height:1.5;margin:6px 0 12px;max-width:1120px}
+.lensbar{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.lensbtn{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;padding:6px 14px;border-radius:7px;border:1px solid var(--b);background:var(--s);color:var(--t2);cursor:pointer}
+.lensbtn.active{background:var(--t1);color:#fff;border-color:var(--t1)}
+.legend{font-family:'DM Mono',monospace;font-size:9px;color:var(--t3);margin-left:4px}
+.legend .a{color:var(--c22)}.legend .b{color:var(--c26)}
+.seg{margin-top:20px}
+.seg-hd{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--b);padding-bottom:6px;margin-bottom:11px}
+.seg-title{font-family:'Instrument Serif',serif;font-weight:400;font-size:20px}
+.seg-state{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.5px;padding:2px 8px;border:1px solid var(--b);border-radius:5px}
+.seg-meta{font-family:'DM Mono',monospace;font-size:9px;color:var(--t3)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}
+.card{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:13px 13px 11px;display:flex;flex-direction:column;transition:box-shadow .2s}
+.card:hover{box-shadow:0 3px 16px rgba(0,0,0,.05)}
+.cn{font-weight:700;font-size:13px;letter-spacing:-.1px;margin-bottom:2px}
+.csub{font-size:10px;color:var(--t2);line-height:1.35;margin-bottom:6px;min-height:26px}
+.badges{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:7px}
+.badge{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.4px;text-transform:uppercase;padding:2px 6px;border-radius:5px;border:1px solid var(--b);background:var(--s);color:var(--t2)}
+.badge.region{border:none;color:#fff}
+.ch{position:relative;height:105px;margin:0 -2px}
+.ch canvas{width:100%;height:105px;display:block}
+.es{display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:5px;padding-bottom:6px;border-bottom:1px solid var(--bl);font-family:'DM Mono',monospace;font-size:9px;color:var(--t3);min-height:18px}
+.es b{color:var(--t2);font-weight:500}
+.rv{margin-top:7px;flex:1;display:flex;flex-direction:column}
+.rv-src{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:.3px;text-transform:uppercase;color:var(--t3);margin-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rv-row{font-family:'DM Mono',monospace;font-size:9px;color:var(--t2);margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rv-row.xc{color:var(--c22)}
+.rv-ctx.empty{color:var(--t3);font-style:italic;font-size:10px;line-height:1.4;margin-top:6px;padding:7px 8px;border:1px dashed var(--b);border-radius:5px;background:repeating-linear-gradient(45deg,transparent,transparent 6px,rgba(0,0,0,.012) 6px,rgba(0,0,0,.012) 12px)}
+.ft{margin-top:22px;padding-top:14px;border-top:1px solid var(--b);font-family:'DM Mono',monospace;font-size:9px;color:var(--t3);line-height:1.7}
+.ft .status{padding:2px 8px;border-radius:5px;font-weight:600}
+.ft .status.PASS{background:#eef4ee;color:#3f7a4e}
+.ft .status.FAILURE{background:#f9e9e8;color:#b3413c}
+#qa-results{display:none}
+@media(max-width:1200px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="w">
+  <div class="hdr">
+    <h1>Commodity Exposure <em>— Food &amp; Beverage cost dashboard</em></h1>
+    <div class="pills" id="pills"><span class="pill ok">build PASS</span><span class="pill">composite tightening · 2026-05</span><span class="pill">registry v9</span><span class="pill">59 series</span></div>
+  </div>
+  <p class="intro" id="intro">Each series is rebased to 100 at the period start and rendered at its native cadence — monthly for World Bank CMO benchmarks, weekly for EIA energy and EU physical prices (DG AGRI / EU Oil Bulletin), quarterly for two EU index rows — labelled per card. The event overlay aligns H1 2026 (blue) against H1 2022 (orange, mapped onto the 2026 calendar), each rebased to 100 at its January start. Provenance is read from the registry; per-card analysis is pending the Claude layer.</p>
+  <div class="lensbar"><span id="lenses"><button class="lensbtn active" data-lens="event">Event overlay</button><button class="lensbtn" data-lens="ytd">YTD</button><button class="lensbtn" data-lens="yoy">YoY</button><button class="lensbtn" data-lens="3m">Last 3 months</button></span><span class="legend" id="legend"><span class="a">━ H1 2022 (Russia–Ukraine, mapped to 2026 calendar)</span><span class="b">   ━ H1 2026 to date (US–Iran)</span></span></div>
+  <div id="app"><section class="seg"><div class="seg-hd"><div class="seg-title">S1 · Farm inputs</div><div class="seg-state" style="color: rgb(179, 65, 60); border-color: rgb(179, 65, 60);">escalating</div><div class="seg-meta">score 0.895 · breadth 90% · as of 2026-03 (slowest contributing row)</div></div><div class="grid"><div class="card" data-row="FE-002"><div class="cn">DAP</div><div class="csub">DAP, fob US Gulf, monthly (World Bank CMO)</div><div class="badges"><span class="badge region" style="background: rgb(107, 91, 143);">origin-specific</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="FE-002" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+36.4%</b></span><span>'26 pk <b>+24.3%</b></span><span>now <b>+24.3%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 769.5 USD/t @2026-05 · monthly</div><div class="rv-row">H1 22 pk +36.4% · H1 26 pk +24.3%</div><div class="rv-ctx empty" data-analysis-slot="FE-002">Analysis pending — Claude layer</div></div></div><div class="card" data-row="FE-003"><div class="cn">TSP</div><div class="csub">TSP, fob Morocco, monthly (World Bank CMO)</div><div class="badges"><span class="badge region" style="background: rgb(107, 91, 143);">origin-specific</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="FE-003" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+26.9%</b></span><span>'26 pk <b>+34.8%</b></span><span>now <b>+34.8%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 713.5 USD/t @2026-05 · monthly</div><div class="rv-row">H1 22 pk +26.9% · H1 26 pk +34.8%</div><div class="rv-ctx empty" data-analysis-slot="FE-003">Analysis pending — Claude layer</div></div></div><div class="card" data-row="FE-009"><div class="cn">Agricultural Lime</div><div class="csub">EU producer prices: lime and plaster (NACE C23.52), monthly…</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="FE-009" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+12.1%</b></span><span>'26 pk <b>+2.0%</b></span><span>now <b>+2.0%</b></span></div><div class="rv"><div class="rv-src">Eurostat · Tier 1</div><div class="rv-row">latest 174.9 index @2026-04 · monthly</div><div class="rv-row">H1 22 pk +12.1% · H1 26 pk +2.0%</div><div class="rv-ctx empty" data-analysis-slot="FE-009">Analysis pending — Claude layer</div></div></div><div class="card" data-row="FE-006"><div class="cn">Fertilisers Composite</div><div class="csub">EU producer prices: fertilisers and nitrogen compounds (NAC…</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="FE-006" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+22.3%</b></span><span>'26 pk <b>+7.8%</b></span><span>now <b>+7.8%</b></span></div><div class="rv"><div class="rv-src">Eurostat · Tier 1</div><div class="rv-row">latest 135.7 index @2026-04 · monthly</div><div class="rv-row">H1 22 pk +22.3% · H1 26 pk +7.8%</div><div class="rv-ctx empty" data-analysis-slot="FE-006">Analysis pending — Claude layer</div></div></div><div class="card" data-row="FE-007"><div class="cn">Fertilisers Composite</div><div class="csub">EU agricultural input price index: fertilisers and soil imp…</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">quarterly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="FE-007" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+19.1%</b></span><span>'26 pk <b>+0.0%</b></span><span>now <b>+0.0%</b></span></div><div class="rv"><div class="rv-src">Eurostat · Tier 1</div><div class="rv-row">latest 168.8 index @2026-03 · quarterly</div><div class="rv-row">H1 22 pk +19.1% · H1 26 pk +0.0%</div><div class="rv-ctx empty" data-analysis-slot="FE-007">Analysis pending — Claude layer</div></div></div><div class="card" data-row="FE-008"><div class="cn">Fertilisers Composite</div><div class="csub">EU fertiliser price: N (Nitrogen) composite, monthly (EUR/t)</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="FE-008" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+32.2%</b></span><span>'26 pk <b>+36.8%</b></span><span>now <b>+33.6%</b></span></div><div class="rv"><div class="rv-src">EU Commission DG AGRI (Agri-food Data Portal) · Tier 1</div><div class="rv-row">latest 541.0 EUR/t @2026-05 · monthly</div><div class="rv-row">H1 22 pk +32.2% · H1 26 pk +36.8%</div><div class="rv-ctx empty" data-analysis-slot="FE-008">Analysis pending — Claude layer</div></div></div><div class="card" data-row="FE-010"><div class="cn">Fertilisers Composite</div><div class="csub">EU fertiliser price: P (Phosphorus) composite, monthly (EUR…</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="FE-010" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+31.5%</b></span><span>'26 pk <b>+18.7%</b></span><span>now <b>+18.7%</b></span></div><div class="rv"><div class="rv-src">EU Commission DG AGRI (Agri-food Data Portal) · Tier 1</div><div class="rv-row">latest 717.0 EUR/t @2026-05 · monthly</div><div class="rv-row">H1 22 pk +31.5% · H1 26 pk +18.7%</div><div class="rv-ctx empty" data-analysis-slot="FE-010">Analysis pending — Claude layer</div></div></div><div class="card" data-row="FE-011"><div class="cn">Fertilisers Composite</div><div class="csub">EU fertiliser price: K (Potash) composite, monthly (EUR/t)</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="FE-011" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+40.8%</b></span><span>'26 pk <b>+2.8%</b></span><span>now <b>+2.8%</b></span></div><div class="rv"><div class="rv-src">EU Commission DG AGRI (Agri-food Data Portal) · Tier 1</div><div class="rv-row">latest 370.0 EUR/t @2026-05 · monthly</div><div class="rv-row">H1 22 pk +40.8% · H1 26 pk +2.8%</div><div class="rv-ctx empty" data-analysis-slot="FE-011">Analysis pending — Claude layer</div></div></div><div class="card" data-row="FE-005"><div class="cn">Phosphate Rock</div><div class="csub">Phosphate rock, fob Morocco, monthly (World Bank CMO)</div><div class="badges"><span class="badge region" style="background: rgb(107, 91, 143);">origin-specific</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="FE-005" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+66.1%</b></span><span>'26 pk <b>+0.0%</b></span><span>now <b>+0.0%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 152.5 USD/t @2026-05 · monthly</div><div class="rv-row">H1 22 pk +66.1% · H1 26 pk +0.0%</div><div class="rv-ctx empty" data-analysis-slot="FE-005">Analysis pending — Claude layer</div></div></div><div class="card" data-row="FE-004"><div class="cn">Potash</div><div class="csub">Potassium chloride (MOP), fob Vancouver, monthly (World Ban…</div><div class="badges"><span class="badge region" style="background: rgb(107, 91, 143);">origin-specific</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="FE-004" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+53.0%</b></span><span>'26 pk <b>+10.7%</b></span><span>now <b>+10.7%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 405.0 USD/t @2026-05 · monthly</div><div class="rv-row">H1 22 pk +53.0% · H1 26 pk +10.7%</div><div class="rv-ctx empty" data-analysis-slot="FE-004">Analysis pending — Claude layer</div></div></div><div class="card" data-row="FE-001"><div class="cn">Urea</div><div class="csub">Urea, fob Black Sea bulk, monthly (World Bank CMO)</div><div class="badges"><span class="badge region" style="background: rgb(107, 91, 143);">origin-specific</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="FE-001" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+9.3%</b></span><span>'26 pk <b>+106.3%</b></span><span>now <b>+85.5%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 770.5 USD/t @2026-05 · monthly</div><div class="rv-row">H1 22 pk +9.3% · H1 26 pk +106.3%</div><div class="rv-ctx empty" data-analysis-slot="FE-001">Analysis pending — Claude layer</div></div></div></div></section><section class="seg"><div class="seg-hd"><div class="seg-title">S2 · Raw crops</div><div class="seg-state" style="color: rgb(184, 122, 30); border-color: rgb(184, 122, 30);">tightening</div><div class="seg-meta">score 0.296 · breadth 44% · as of 2026-05 (slowest contributing row)</div></div><div class="grid"><div class="card" data-row="IX-002"><div class="cn">Cereals Composite</div><div class="csub">FAO Cereals Price Index, monthly (2014-2016=100)</div><div class="badges"><span class="badge region" style="background: rgb(91, 101, 115);">world</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="IX-002" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+23.4%</b></span><span>'26 pk <b>+6.3%</b></span><span>now <b>+6.3%</b></span></div><div class="rv"><div class="rv-src">FAO (World Food Situation) · Tier 1</div><div class="rv-row">latest 114.3 index @2026-05 · monthly</div><div class="rv-row">H1 22 pk +23.4% · H1 26 pk +6.3%</div><div class="rv-ctx empty" data-analysis-slot="IX-002">Analysis pending — Claude layer</div></div></div><div class="card" data-row="CO-001"><div class="cn">Cocoa</div><div class="csub">Cocoa beans, ICCO daily price average basis, monthly (World…</div><div class="badges"><span class="badge region" style="background: rgb(91, 101, 115);">world</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="CO-001" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+3.2%</b></span><span>'26 pk <b>+0.0%</b></span><span>now <b>−16.3%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 4.16 USD/kg @2026-05 · monthly</div><div class="rv-row">H1 22 pk +3.2% · H1 26 pk +0.0%</div><div class="rv-row xc">cross-check (unofficial) 5.22 USD/kg · CC=F via yahoo @2026-06-26</div><div class="rv-ctx empty" data-analysis-slot="CO-001">Analysis pending — Claude layer</div></div></div><div class="card" data-row="CF-001"><div class="cn">Coffee Arabica</div><div class="csub">Coffee Arabica, ICO indicator basis, monthly (World Bank CM…</div><div class="badges"><span class="badge region" style="background: rgb(91, 101, 115);">world</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="CF-001" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+3.2%</b></span><span>'26 pk <b>+0.0%</b></span><span>now <b>−13.3%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 6.95 USD/kg @2026-05 · monthly</div><div class="rv-row">H1 22 pk +3.2% · H1 26 pk +0.0%</div><div class="rv-row xc">cross-check (unofficial) 5.76 USD/kg · KC=F via yahoo @2026-06-26</div><div class="rv-ctx empty" data-analysis-slot="CF-001">Analysis pending — Claude layer</div></div></div><div class="card" data-row="CF-002"><div class="cn">Coffee Robusta</div><div class="csub">Coffee Robusta, ICO indicator basis, monthly (World Bank CM…</div><div class="badges"><span class="badge region" style="background: rgb(91, 101, 115);">world</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="CF-002" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+0.0%</b></span><span>'26 pk <b>+0.0%</b></span><span>now <b>−13.4%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 3.67 USD/kg @2026-05 · monthly</div><div class="rv-row">H1 22 pk +0.0% · H1 26 pk +0.0%</div><div class="rv-ctx empty" data-analysis-slot="CF-002">Analysis pending — Claude layer</div></div></div><div class="card" data-row="EG-001"><div class="cn">Eggs</div><div class="csub">EU egg prices, packing station, EU average, barn, weekly (E…</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">weekly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="EG-001" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+31.2%</b></span><span>'26 pk <b>+4.7%</b></span><span>now <b>−10.3%</b></span></div><div class="rv"><div class="rv-src">EU Commission DG AGRI (Agri-food Data Portal) · Tier 1</div><div class="rv-row">latest 280.0 EUR/100kg @2026-06-21 · weekly</div><div class="rv-row">H1 22 pk +31.2% · H1 26 pk +4.7%</div><div class="rv-ctx empty" data-analysis-slot="EG-001">Analysis pending — Claude layer</div></div></div><div class="card" data-row="EG-002"><div class="cn">Eggs</div><div class="csub">US city average egg price, grade A large, monthly (BLS)</div><div class="badges"><span class="badge region" style="background: rgb(212, 101, 10);">US</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="EG-002" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+48.4%</b></span><span>'26 pk <b>+0.0%</b></span><span>now <b>−15.0%</b></span></div><div class="rv"><div class="rv-src">US BLS average prices via FRED · Tier 1</div><div class="rv-row">latest 2.19 USD per dozen @2026-05 · monthly</div><div class="rv-row">H1 22 pk +48.4% · H1 26 pk +0.0%</div><div class="rv-ctx empty" data-analysis-slot="EG-002">Analysis pending — Claude layer</div></div></div><div class="card" data-row="IX-001"><div class="cn">Food Composite</div><div class="csub">FAO Food Price Index, monthly (2014-2016=100)</div><div class="badges"><span class="badge region" style="background: rgb(91, 101, 115);">world</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="IX-001" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+18.1%</b></span><span>'26 pk <b>+5.6%</b></span><span>now <b>+5.4%</b></span></div><div class="rv"><div class="rv-src">FAO (World Food Situation) · Tier 1</div><div class="rv-row">latest 130.8 index @2026-05 · monthly</div><div class="rv-row">H1 22 pk +18.1% · H1 26 pk +5.6%</div><div class="rv-ctx empty" data-analysis-slot="IX-001">Analysis pending — Claude layer</div></div></div><div class="card" data-row="MZ-002"><div class="cn">Maize</div><div class="csub">Feed maize, France, National Average, weekly (EUR/t)</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">weekly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="MZ-002" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+54.1%</b></span><span>'26 pk <b>+10.8%</b></span><span>now <b>+6.3%</b></span></div><div class="rv"><div class="rv-src">EU Commission DG AGRI (Agri-food Data Portal) · Tier 1</div><div class="rv-row">latest 211.4 EUR/t @2026-06-21 · weekly</div><div class="rv-row">H1 22 pk +54.1% · H1 26 pk +10.8%</div><div class="rv-ctx empty" data-analysis-slot="MZ-002">Analysis pending — Claude layer</div></div></div><div class="card" data-row="MZ-001"><div class="cn">Maize</div><div class="csub">Maize (corn), US export price Gulf, monthly (World Bank CMO)</div><div class="badges"><span class="badge region" style="background: rgb(91, 101, 115);">world</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="MZ-001" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+25.9%</b></span><span>'26 pk <b>+5.7%</b></span><span>now <b>+5.7%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 216.2 USD/t @2026-05 · monthly</div><div class="rv-row">H1 22 pk +25.9% · H1 26 pk +5.7%</div><div class="rv-row xc">cross-check (unofficial) 166.0 USD/t · ZC=F via yahoo @2026-06-26</div><div class="rv-ctx empty" data-analysis-slot="MZ-001">Analysis pending — Claude layer</div></div></div><div class="card" data-row="SG-001"><div class="cn">Raw Sugar</div><div class="csub">Sugar, world (ISA daily basis), monthly (World Bank CMO)</div><div class="badges"><span class="badge region" style="background: rgb(91, 101, 115);">world</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="SG-001" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+7.5%</b></span><span>'26 pk <b>+6.3%</b></span><span>now <b>+6.3%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 0.34 USD/kg @2026-05 · monthly</div><div class="rv-row">H1 22 pk +7.5% · H1 26 pk +6.3%</div><div class="rv-row xc">cross-check (unofficial) 0.32 USD/kg · SB=F via yahoo @2026-06-26</div><div class="rv-ctx empty" data-analysis-slot="SG-001">Analysis pending — Claude layer</div></div></div><div class="card" data-row="IX-005"><div class="cn">Sugar Composite</div><div class="csub">FAO Sugar Price Index, monthly (2014-2016=100)</div><div class="badges"><span class="badge region" style="background: rgb(91, 101, 115);">world</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="IX-005" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+7.8%</b></span><span>'26 pk <b>+5.9%</b></span><span>now <b>+5.9%</b></span></div><div class="rv"><div class="rv-src">FAO (World Food Situation) · Tier 1</div><div class="rv-row">latest 95.1 index @2026-05 · monthly</div><div class="rv-row">H1 22 pk +7.8% · H1 26 pk +5.9%</div><div class="rv-ctx empty" data-analysis-slot="IX-005">Analysis pending — Claude layer</div></div></div><div class="card" data-row="WH-003"><div class="cn">Wheat</div><div class="csub">Breadmaking common wheat, France, National Average, weekly …</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">weekly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="WH-003" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+57.9%</b></span><span>'26 pk <b>+9.0%</b></span><span>now <b>+9.0%</b></span></div><div class="rv"><div class="rv-src">EU Commission DG AGRI (Agri-food Data Portal) · Tier 1</div><div class="rv-row">latest 209.7 EUR/t @2026-06-21 · weekly</div><div class="rv-row">H1 22 pk +57.9% · H1 26 pk +9.0%</div><div class="rv-ctx empty" data-analysis-slot="WH-003">Analysis pending — Claude layer</div></div></div><div class="card" data-row="WH-001"><div class="cn">Wheat</div><div class="csub">Wheat US HRW, export price Gulf, monthly (World Bank CMO)</div><div class="badges"><span class="badge region" style="background: rgb(212, 101, 10);">US</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="WH-001" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+39.6%</b></span><span>'26 pk <b>+21.2%</b></span><span>now <b>+21.2%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 303.0 USD/t @2026-05 · monthly</div><div class="rv-row">H1 22 pk +39.6% · H1 26 pk +21.2%</div><div class="rv-row xc">cross-check (unofficial) 227.6 USD/t · KE=F via yahoo @2026-06-26</div><div class="rv-ctx empty" data-analysis-slot="WH-001">Analysis pending — Claude layer</div></div></div><div class="card" data-row="WH-002"><div class="cn">Wheat</div><div class="csub">Wheat US SRW, export price Gulf, monthly (World Bank CMO)</div><div class="badges"><span class="badge region" style="background: rgb(212, 101, 10);">US</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="WH-002" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+37.4%</b></span><span>'26 pk <b>+19.2%</b></span><span>now <b>+19.2%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 259.5 USD/t @2026-05 · monthly</div><div class="rv-row">H1 22 pk +37.4% · H1 26 pk +19.2%</div><div class="rv-row xc">cross-check (unofficial) 216.7 USD/t · ZW=F via yahoo @2026-06-26</div><div class="rv-ctx empty" data-analysis-slot="WH-002">Analysis pending — Claude layer</div></div></div><div class="card" data-row="SG-002"><div class="cn">White Sugar</div><div class="csub">Sugar, EU (CXL import basis), monthly (World Bank CMO)</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="SG-002" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+0.0%</b></span><span>'26 pk <b>+2.6%</b></span><span>now <b>+0.0%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 0.38 USD/kg @2026-05 · monthly</div><div class="rv-row">H1 22 pk +0.0% · H1 26 pk +2.6%</div><div class="rv-ctx empty" data-analysis-slot="SG-002">Analysis pending — Claude layer</div></div></div></div></section><section class="seg"><div class="seg-hd"><div class="seg-title">S3 · Processed ingredients</div><div class="seg-state" style="color: rgb(184, 122, 30); border-color: rgb(184, 122, 30);">tightening</div><div class="seg-meta">score 0.5 · breadth 61% · as of 2026-03 (slowest contributing row)</div></div><div class="grid"><div class="card" data-row="DY-002"><div class="cn">SMP</div><div class="csub">EU skimmed milk powder, weekly average price, EU aggregate …</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">weekly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="DY-002" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+26.6%</b></span><span>'26 pk <b>+36.6%</b></span><span>now <b>+31.6%</b></span></div><div class="rv"><div class="rv-src">EU Commission DG AGRI (Agri-food Data Portal, Milk Market Obser…</div><div class="rv-row">latest 272.1 EUR/100kg @2026-06-21 · weekly</div><div class="rv-row">H1 22 pk +26.6% · H1 26 pk +36.6%</div><div class="rv-ctx empty" data-analysis-slot="DY-002">Analysis pending — Claude layer</div></div></div><div class="card" data-row="DY-001"><div class="cn">Butter</div><div class="csub">EU butter, weekly average price, EU aggregate (EUR/100 kg)</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">weekly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="DY-001" width="311" height="105"></canvas></div><div class="es"><span>'22 pk <b>+30.1%</b></span><span>'26 pk <b>+0.0%</b></span><span>now <b>−12.5%</b></span></div><div class="rv"><div class="rv-src">EU Commission DG AGRI (Agri-food Data Portal, Milk Market Obser…</div><div class="rv-row">latest 385.4 EUR/100kg @2026-06-21 · weekly</div><div class="rv-row">H1 22 pk +30.1% · H1 26 pk +0.0%</div><div class="rv-ctx empty" data-analysis-slot="DY-001">Analysis pending — Claude layer</div></div></div><div class="card" data-row="IX-004"><div class="cn">Dairy Composite</div><div class="csub">FAO Dairy Price Index, monthly (2014-2016=100)</div><div class="badges"><span class="badge region" style="background: rgb(91, 101, 115);">world</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="IX-004" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+17.8%</b></span><span>'26 pk <b>+0.4%</b></span><span>now <b>−1.2%</b></span></div><div class="rv"><div class="rv-src">FAO (World Food Situation) · Tier 1</div><div class="rv-row">latest 119.2 index @2026-05 · monthly</div><div class="rv-row">H1 22 pk +17.8% · H1 26 pk +0.4%</div><div class="rv-ctx empty" data-analysis-slot="IX-004">Analysis pending — Claude layer</div></div></div><div class="card" data-row="VO-002"><div class="cn">Palm Oil</div><div class="csub">Palm oil, crude cif NW Europe, monthly (World Bank CMO)</div><div class="badges"><span class="badge region" style="background: rgb(91, 101, 115);">world</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="VO-002" width="311" height="105"></canvas></div><div class="es"><span>'22 pk <b>+32.1%</b></span><span>'26 pk <b>+14.1%</b></span><span>now <b>+13.5%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 1,140 USD/t @2026-05 · monthly</div><div class="rv-row">H1 22 pk +32.1% · H1 26 pk +14.1%</div><div class="rv-ctx empty" data-analysis-slot="VO-002">Analysis pending — Claude layer</div></div></div><div class="card" data-row="VO-005"><div class="cn">Rapeseed Oil</div><div class="csub">Crude rapeseed oil, Romania, weekly (EUR/t)</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">weekly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="VO-005" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+40.5%</b></span><span>'26 pk <b>+0.7%</b></span><span>now <b>−2.8%</b></span></div><div class="rv"><div class="rv-src">EU Commission DG AGRI (Agri-food Data Portal) · Tier 1</div><div class="rv-row">latest 1,099 EUR/t @2026-06-21 · weekly</div><div class="rv-row">H1 22 pk +40.5% · H1 26 pk +0.7%</div><div class="rv-ctx empty" data-analysis-slot="VO-005">Analysis pending — Claude layer</div></div></div><div class="card" data-row="VO-004"><div class="cn">Rapeseed Oil</div><div class="csub">Rapeseed oil, monthly (World Bank CMO)</div><div class="badges"><span class="badge region" style="background: rgb(91, 101, 115);">world</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="VO-004" width="311" height="105"></canvas></div><div class="es"><span>'22 pk <b>+21.5%</b></span><span>'26 pk <b>+20.4%</b></span><span>now <b>+20.4%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 1,473 USD/t @2026-05 · monthly</div><div class="rv-row">H1 22 pk +21.5% · H1 26 pk +20.4%</div><div class="rv-ctx empty" data-analysis-slot="VO-004">Analysis pending — Claude layer</div></div></div><div class="card" data-row="VO-001"><div class="cn">Soybean Oil</div><div class="csub">Soybean oil, crude fob ex-mill, monthly (World Bank CMO)</div><div class="badges"><span class="badge region" style="background: rgb(91, 101, 115);">world</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="VO-001" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+33.6%</b></span><span>'26 pk <b>+53.9%</b></span><span>now <b>+53.9%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 1,775 USD/t @2026-05 · monthly</div><div class="rv-row">H1 22 pk +33.6% · H1 26 pk +53.9%</div><div class="rv-row xc">cross-check (unofficial) 1,479 USD/t · ZL=F via yahoo @2026-06-26</div><div class="rv-ctx empty" data-analysis-slot="VO-001">Analysis pending — Claude layer</div></div></div><div class="card" data-row="VO-003"><div class="cn">Sunflower Oil</div><div class="csub">Sunflower oil, monthly (World Bank CMO)</div><div class="badges"><span class="badge region" style="background: rgb(91, 101, 115);">world</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="VO-003" width="311" height="105"></canvas></div><div class="es"><span>'22 pk <b>+67.3%</b></span><span>'26 pk <b>+4.4%</b></span><span>now <b>+4.4%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 1,505 USD/t @2026-05 · monthly</div><div class="rv-row">H1 22 pk +67.3% · H1 26 pk +4.4%</div><div class="rv-ctx empty" data-analysis-slot="VO-003">Analysis pending — Claude layer</div></div></div><div class="card" data-row="IX-003"><div class="cn">Vegetable Oils Composite</div><div class="csub">FAO Vegetable Oils Price Index, monthly (2014-2016=100)</div><div class="badges"><span class="badge region" style="background: rgb(91, 101, 115);">world</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="IX-003" width="355" height="105"></canvas></div><div class="es"><span>'22 pk <b>+35.4%</b></span><span>'26 pk <b>+15.0%</b></span><span>now <b>+9.7%</b></span></div><div class="rv"><div class="rv-src">FAO (World Food Situation) · Tier 1</div><div class="rv-row">latest 185.0 index @2026-05 · monthly</div><div class="rv-row">H1 22 pk +35.4% · H1 26 pk +15.0%</div><div class="rv-ctx empty" data-analysis-slot="IX-003">Analysis pending — Claude layer</div></div></div><div class="card" data-row="SG-003"><div class="cn">White Sugar</div><div class="csub">EU white sugar ex-works average price, monthly (EUR/t)</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="SG-003" width="311" height="105"></canvas></div><div class="es"><span>'22 pk <b>+4.8%</b></span><span>'26 pk <b>+0.5%</b></span><span>now <b>−1.2%</b></span></div><div class="rv"><div class="rv-src">EU Commission DG AGRI (Agri-food Data Portal) · Tier 1</div><div class="rv-row">latest 510.2 EUR/t @2026-03 · monthly</div><div class="rv-row">H1 22 pk +4.8% · H1 26 pk +0.5%</div><div class="rv-ctx empty" data-analysis-slot="SG-003">Analysis pending — Claude layer</div></div></div></div></section><section class="seg"><div class="seg-hd"><div class="seg-title">S4 · Logistics &amp; energy</div><div class="seg-state" style="color: rgb(179, 65, 60); border-color: rgb(179, 65, 60);">escalating</div><div class="seg-meta">score 0.913 · breadth 91% · as of 2025-12 (slowest contributing row)</div></div><div class="grid"><div class="card" data-row="EN-010"><div class="cn">Coal</div><div class="csub">Coal, Australian, monthly (World Bank CMO)</div><div class="badges"><span class="badge region" style="background: rgb(91, 101, 115);">world</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="EN-010" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+89.9%</b></span><span>'26 pk <b>+26.3%</b></span><span>now <b>+24.7%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 136.9 USD/t @2026-05 · monthly</div><div class="rv-row">H1 22 pk +89.9% · H1 26 pk +26.3%</div><div class="rv-ctx empty" data-analysis-slot="EN-010">Analysis pending — Claude layer</div></div></div><div class="card" data-row="EN-009"><div class="cn">Crude Oil Brent</div><div class="csub">Crude oil Brent, monthly (World Bank CMO)</div><div class="badges"><span class="badge region" style="background: rgb(91, 101, 115);">world</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="EN-009" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+40.4%</b></span><span>'26 pk <b>+80.4%</b></span><span>now <b>+61.1%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 107.5 USD/bbl @2026-05 · monthly</div><div class="rv-row">H1 22 pk +40.4% · H1 26 pk +80.4%</div><div class="rv-ctx empty" data-analysis-slot="EN-009">Analysis pending — Claude layer</div></div></div><div class="card" data-row="EN-003"><div class="cn">Crude Oil WTI</div><div class="csub">Crude oil WTI, weekly spot (EIA)</div><div class="badges"><span class="badge region" style="background: rgb(212, 101, 10);">US</span><span class="badge">weekly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="EN-003" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+54.7%</b></span><span>'26 pk <b>+83.6%</b></span><span>now <b>+41.4%</b></span></div><div class="rv"><div class="rv-src">US EIA · Tier 1</div><div class="rv-row">latest 81.4 USD/bbl @2026-06-19 · weekly</div><div class="rv-row">H1 22 pk +54.7% · H1 26 pk +83.6%</div><div class="rv-ctx empty" data-analysis-slot="EN-003">Analysis pending — Claude layer</div></div></div><div class="card" data-row="EN-007"><div class="cn">Diesel</div><div class="csub">EU automotive gas oil (diesel) retail incl. tax, weekly (EU…</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">weekly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="EN-007" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+37.2%</b></span><span>'26 pk <b>+36.7%</b></span><span>now <b>+12.0%</b></span></div><div class="rv"><div class="rv-src">EU Commission (Weekly Oil Bulletin) · Tier 1</div><div class="rv-row">latest 1.7 EUR/L @2026-06-22 · weekly</div><div class="rv-row">H1 22 pk +37.2% · H1 26 pk +36.7%</div><div class="rv-ctx empty" data-analysis-slot="EN-007">Analysis pending — Claude layer</div></div></div><div class="card" data-row="EN-005"><div class="cn">Diesel</div><div class="csub">US on-highway diesel retail, weekly (EIA)</div><div class="badges"><span class="badge region" style="background: rgb(212, 101, 10);">US</span><span class="badge">weekly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="EN-005" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+60.8%</b></span><span>'26 pk <b>+62.3%</b></span><span>now <b>+39.0%</b></span></div><div class="rv"><div class="rv-src">US EIA · Tier 1</div><div class="rv-row">latest 4.8 USD/gal @2026-06-22 · weekly</div><div class="rv-row">H1 22 pk +60.8% · H1 26 pk +62.3%</div><div class="rv-ctx empty" data-analysis-slot="EN-005">Analysis pending — Claude layer</div></div></div><div class="card" data-row="EN-008"><div class="cn">Gasoline</div><div class="csub">EU Euro-super 95 petrol retail incl. tax, weekly (EU Oil Bu…</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">weekly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="EN-008" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+26.0%</b></span><span>'26 pk <b>+18.4%</b></span><span>now <b>+9.8%</b></span></div><div class="rv"><div class="rv-src">EU Commission (Weekly Oil Bulletin) · Tier 1</div><div class="rv-row">latest 1.8 EUR/L @2026-06-22 · weekly</div><div class="rv-row">H1 22 pk +26.0% · H1 26 pk +18.4%</div><div class="rv-ctx empty" data-analysis-slot="EN-008">Analysis pending — Claude layer</div></div></div><div class="card" data-row="EN-006"><div class="cn">Gasoline</div><div class="csub">US regular gasoline retail, weekly (EIA)</div><div class="badges"><span class="badge region" style="background: rgb(212, 101, 10);">US</span><span class="badge">weekly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="EN-006" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+51.0%</b></span><span>'26 pk <b>+58.2%</b></span><span>now <b>+38.4%</b></span></div><div class="rv"><div class="rv-src">US EIA · Tier 1</div><div class="rv-row">latest 4.0 USD/gal @2026-06-22 · weekly</div><div class="rv-row">H1 22 pk +51.0% · H1 26 pk +58.2%</div><div class="rv-ctx empty" data-analysis-slot="EN-006">Analysis pending — Claude layer</div></div></div><div class="card" data-row="FR-005"><div class="cn">Land Freight</div><div class="csub">EU land transport services producer prices (NACE H49, road-…</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">quarterly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="FR-005" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+4.1%</b></span><span>'26 pk <b>n/a</b></span><span>now <b>n/a</b></span></div><div class="rv"><div class="rv-src">Eurostat · Tier 1</div><div class="rv-row">latest 121.3 index @2025-12 · quarterly</div><div class="rv-row">H1 22 pk +4.1% · H1 26 pk n/a</div><div class="rv-ctx empty" data-analysis-slot="FR-005">Analysis pending — Claude layer</div></div></div><div class="card" data-row="EN-001"><div class="cn">Natural Gas</div><div class="csub">Natural gas, Europe, monthly (World Bank CMO)</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="EN-001" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+50.0%</b></span><span>'26 pk <b>+52.3%</b></span><span>now <b>+37.5%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 16.17 USD/MMBtu @2026-05 · monthly</div><div class="rv-row">H1 22 pk +50.0% · H1 26 pk +52.3%</div><div class="rv-ctx empty" data-analysis-slot="EN-001">Analysis pending — Claude layer</div></div></div><div class="card" data-row="EN-004"><div class="cn">Natural Gas Henry Hub</div><div class="csub">Henry Hub natural gas, weekly spot (EIA)</div><div class="badges"><span class="badge region" style="background: rgb(212, 101, 10);">US</span><span class="badge">weekly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="EN-004" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+135.5%</b></span><span>'26 pk <b>+224.7%</b></span><span>now <b>−26.6%</b></span></div><div class="rv"><div class="rv-src">US EIA · Tier 1</div><div class="rv-row">latest 3.12 USD/MMBtu @2026-06-19 · weekly</div><div class="rv-row">H1 22 pk +135.5% · H1 26 pk +224.7%</div><div class="rv-ctx empty" data-analysis-slot="EN-004">Analysis pending — Claude layer</div></div></div><div class="card" data-row="FR-004"><div class="cn">Ocean Freight</div><div class="csub">US PPI: deep sea freight transportation, monthly (FRED)</div><div class="badges"><span class="badge region" style="background: rgb(212, 101, 10);">US</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="FR-004" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+19.2%</b></span><span>'26 pk <b>+4.7%</b></span><span>now <b>+4.7%</b></span></div><div class="rv"><div class="rv-src">US BLS via FRED · Tier 1</div><div class="rv-row">latest 466.4 index @2026-05 · monthly</div><div class="rv-row">H1 22 pk +19.2% · H1 26 pk +4.7%</div><div class="rv-ctx empty" data-analysis-slot="FR-004">Analysis pending — Claude layer</div></div></div><div class="card" data-row="FR-003"><div class="cn">Rail Freight</div><div class="csub">US PPI: line-haul rail freight, monthly (FRED)</div><div class="badges"><span class="badge region" style="background: rgb(212, 101, 10);">US</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="FR-003" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+6.2%</b></span><span>'26 pk <b>+0.0%</b></span><span>now <b>+0.0%</b></span></div><div class="rv"><div class="rv-src">US BLS via FRED · Tier 1</div><div class="rv-row">latest 268.7 index @2026-05 · monthly</div><div class="rv-row">H1 22 pk +6.2% · H1 26 pk +0.0%</div><div class="rv-ctx empty" data-analysis-slot="FR-003">Analysis pending — Claude layer</div></div></div><div class="card" data-row="FR-002"><div class="cn">Trucking Rates</div><div class="csub">US PPI: long-distance truckload freight, monthly (FRED)</div><div class="badges"><span class="badge region" style="background: rgb(212, 101, 10);">US</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="FR-002" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+11.2%</b></span><span>'26 pk <b>+22.4%</b></span><span>now <b>+22.4%</b></span></div><div class="rv"><div class="rv-src">US BLS via FRED · Tier 1</div><div class="rv-row">latest 209.6 index @2026-05 · monthly</div><div class="rv-row">H1 22 pk +11.2% · H1 26 pk +22.4%</div><div class="rv-ctx empty" data-analysis-slot="FR-002">Analysis pending — Claude layer</div></div></div><div class="card" data-row="FR-001"><div class="cn">Trucking Volume</div><div class="csub">ATA Truck Tonnage Index, monthly (FRED)</div><div class="badges"><span class="badge region" style="background: rgb(212, 101, 10);">US</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="FR-001" width="325" height="105"></canvas></div><div class="es"><span>'22 pk <b>+1.9%</b></span><span>'26 pk <b>+2.5%</b></span><span>now <b>+2.5%</b></span></div><div class="rv"><div class="rv-src">American Trucking Associations via FRED · Tier 1</div><div class="rv-row">latest 116.8 index @2026-03 · monthly</div><div class="rv-row">H1 22 pk +1.9% · H1 26 pk +2.5%</div><div class="rv-ctx empty" data-analysis-slot="FR-001">Analysis pending — Claude layer</div></div></div></div></section><section class="seg"><div class="seg-hd"><div class="seg-title">S5 · Packaging</div><div class="seg-state" style="color: rgb(184, 122, 30); border-color: rgb(184, 122, 30);">tightening</div><div class="seg-meta">score 0.5 · breadth 50% · as of 2026-04 (slowest contributing row)</div></div><div class="grid"><div class="card" data-row="PK-009"><div class="cn">PET/Plastics</div><div class="csub">EU producer prices: plastic products (NACE C22.2), monthly …</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="PK-009" width="360" height="105"></canvas></div><div class="es"><span>'22 pk <b>+7.5%</b></span><span>'26 pk <b>+2.9%</b></span><span>now <b>+2.9%</b></span></div><div class="rv"><div class="rv-src">Eurostat · Tier 1</div><div class="rv-row">latest 114.8 index @2026-04 · monthly</div><div class="rv-row">H1 22 pk +7.5% · H1 26 pk +2.9%</div><div class="rv-ctx empty" data-analysis-slot="PK-009">Analysis pending — Claude layer</div></div></div><div class="card" data-row="PK-008"><div class="cn">PET/Plastics</div><div class="csub">US PPI: plastics material and resins (PCU325211325211), mon…</div><div class="badges"><span class="badge region" style="background: rgb(212, 101, 10);">US</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="PK-008" width="290" height="105"></canvas></div><div class="es"><span>'22 pk <b>+6.6%</b></span><span>'26 pk <b>+24.4%</b></span><span>now <b>+24.4%</b></span></div><div class="rv"><div class="rv-src">US BLS via FRED · Tier 1</div><div class="rv-row">latest 377.7 index @2026-05 · monthly</div><div class="rv-row">H1 22 pk +6.6% · H1 26 pk +24.4%</div><div class="rv-ctx empty" data-analysis-slot="PK-008">Analysis pending — Claude layer</div></div></div><div class="card" data-row="PK-005"><div class="cn">Aluminium</div><div class="csub">Aluminium, LME-basis cash price, monthly (World Bank CMO)</div><div class="badges"><span class="badge region" style="background: rgb(91, 101, 115);">world</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="PK-005" width="360" height="105"></canvas></div><div class="es"><span>'22 pk <b>+16.4%</b></span><span>'26 pk <b>+16.7%</b></span><span>now <b>+16.7%</b></span></div><div class="rv"><div class="rv-src">World Bank (CMO Pink Sheet) · Tier 1</div><div class="rv-row">latest 3,666 USD/t @2026-05 · monthly</div><div class="rv-row">H1 22 pk +16.4% · H1 26 pk +16.7%</div><div class="rv-row xc">cross-check (unofficial) 3,311 USD/t · ALI=F via yahoo @2026-06-26</div><div class="rv-ctx empty" data-analysis-slot="PK-005">Analysis pending — Claude layer</div></div></div><div class="card" data-row="PK-003"><div class="cn">Containerboard</div><div class="csub">US PPI: paperboard mills (PCU322130322130), monthly index</div><div class="badges"><span class="badge region" style="background: rgb(212, 101, 10);">US</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="PK-003" width="290" height="105"></canvas></div><div class="es"><span>'22 pk <b>+9.1%</b></span><span>'26 pk <b>+0.7%</b></span><span>now <b>+0.7%</b></span></div><div class="rv"><div class="rv-src">US BLS via FRED · Tier 1</div><div class="rv-row">latest 396.7 index @2026-05 · monthly</div><div class="rv-row">H1 22 pk +9.1% · H1 26 pk +0.7%</div><div class="rv-ctx empty" data-analysis-slot="PK-003">Analysis pending — Claude layer</div></div></div><div class="card" data-row="PK-007"><div class="cn">Glass</div><div class="csub">EU producer prices: glass and glass products (NACE C23.1), …</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="PK-007" width="360" height="105"></canvas></div><div class="es"><span>'22 pk <b>+10.5%</b></span><span>'26 pk <b>+0.3%</b></span><span>now <b>+0.3%</b></span></div><div class="rv"><div class="rv-src">Eurostat · Tier 1</div><div class="rv-row">latest 130.0 index @2026-04 · monthly</div><div class="rv-row">H1 22 pk +10.5% · H1 26 pk +0.3%</div><div class="rv-ctx empty" data-analysis-slot="PK-007">Analysis pending — Claude layer</div></div></div><div class="card" data-row="PK-006"><div class="cn">Glass</div><div class="csub">US PPI: glass container manufacturing (PCU327213327213), mo…</div><div class="badges"><span class="badge region" style="background: rgb(212, 101, 10);">US</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="PK-006" width="290" height="105"></canvas></div><div class="es"><span>'22 pk <b>+0.6%</b></span><span>'26 pk <b>+1.5%</b></span><span>now <b>−0.2%</b></span></div><div class="rv"><div class="rv-src">US BLS via FRED · Tier 1</div><div class="rv-row">latest 305.7 index @2026-05 · monthly</div><div class="rv-row">H1 22 pk +0.6% · H1 26 pk +1.5%</div><div class="rv-ctx empty" data-analysis-slot="PK-006">Analysis pending — Claude layer</div></div></div><div class="card" data-row="PK-004"><div class="cn">Paper &amp; Containerboard</div><div class="csub">EU producer prices: articles of paper and paperboard (NACE …</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="PK-004" width="360" height="105"></canvas></div><div class="es"><span>'22 pk <b>+11.8%</b></span><span>'26 pk <b>+0.3%</b></span><span>now <b>+0.3%</b></span></div><div class="rv"><div class="rv-src">Eurostat · Tier 1</div><div class="rv-row">latest 120.2 index @2026-04 · monthly</div><div class="rv-row">H1 22 pk +11.8% · H1 26 pk +0.3%</div><div class="rv-ctx empty" data-analysis-slot="PK-004">Analysis pending — Claude layer</div></div></div><div class="card" data-row="PK-002"><div class="cn">Pulp</div><div class="csub">EU producer prices: pulp, paper and paperboard (NACE C17.1)…</div><div class="badges"><span class="badge region" style="background: rgb(37, 88, 199);">EU</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="PK-002" width="290" height="105"></canvas></div><div class="es"><span>'22 pk <b>+15.9%</b></span><span>'26 pk <b>+3.9%</b></span><span>now <b>+3.9%</b></span></div><div class="rv"><div class="rv-src">Eurostat · Tier 1</div><div class="rv-row">latest 113.4 index @2026-04 · monthly</div><div class="rv-row">H1 22 pk +15.9% · H1 26 pk +3.9%</div><div class="rv-ctx empty" data-analysis-slot="PK-002">Analysis pending — Claude layer</div></div></div><div class="card" data-row="PK-001"><div class="cn">Pulp</div><div class="csub">US PPI: wood pulp (WPU0911), monthly index</div><div class="badges"><span class="badge region" style="background: rgb(212, 101, 10);">US</span><span class="badge">monthly</span><span class="badge">T1</span></div><div class="ch"><canvas data-qa-canvas="PK-001" width="360" height="105"></canvas></div><div class="es"><span>'22 pk <b>+14.9%</b></span><span>'26 pk <b>+0.0%</b></span><span>now <b>−0.4%</b></span></div><div class="rv"><div class="rv-src">US BLS via FRED · Tier 1</div><div class="rv-row">latest 201.3 index @2026-05 · monthly</div><div class="rv-row">H1 22 pk +14.9% · H1 26 pk +0.0%</div><div class="rv-ctx empty" data-analysis-slot="PK-001">Analysis pending — Claude layer</div></div></div></div></section></div>
+  <div class="ft" id="footer"><div><span class="status PASS">PASS</span> · registry v9 · generated 2026-06-28T19:16:09Z · 5 artifacts manifest-hashed · page reads committed pipeline data (read-only)</div><div>Sources: American Trucking Associations via FRED · EU Commission (Weekly Oil Bulletin) · EU Commission DG AGRI (Agri-food Data Portal) · EU Commission DG AGRI (Agri-food Data Portal, Milk Market Observatory) · Eurostat · FAO (World Food Situation) · US BLS average prices via FRED · US BLS via FRED · US EIA · World Bank (CMO Pink Sheet)</div><div>validate-registry:PASS  capture:PASS  ingest-licensed:PASS  build-crosscheck:PASS  build-data:PASS  build-display-contract:PASS  synthesis:PASS  gate-chart-integrity:PASS  gate-display-contract:PASS  gate-frontend-category:PASS  gate-axis-sanity:PASS  gate-banned-words:PASS  gate-licensed-contract:PASS  gate-no-secrets-in-archive:PASS  gate-crosscheck-integrity:PASS  gate-synthesis-fixtures:PASS  gate-synthesis-stability:PASS  qa-secrets-scan:PASS  qa-numeric-history:PASS  qa-ratchet:PASS  data-freshness:WARN</div></div>
+</div>
+<pre id="qa-results">{
+ "lenses": {
+  "event": "59/59 drawn, 59 with data",
+  "ytd": "59/59 drawn, 57 with data",
+  "yoy": "59/59 drawn, 59 with data",
+  "3m": "59/59 drawn, 59 with data"
+ },
+ "canvases_total": 236,
+ "canvases_drawn": 236,
+ "nodata_card_lens": 2,
+ "console_errors": [],
+ "banned_hits": [],
+ "empty_summaries": 0,
+ "analysis_slots": 59,
+ "footer_status": "PASS",
+ "verdict": "PASS"
+}</pre>
+
+<script src="data.js"></script>
+<script src="display_contract.js"></script>
+<script src="synthesis.js"></script>
+<script src="build_manifest.js"></script>
+<script>
+'use strict';
+// ---- error capture (QA counts these) ----
+var QA_ERRORS = [];
+window.onerror = function (m, s, l) { QA_ERRORS.push(String(m) + ' @' + l); };
+var _cerr = console.error.bind(console);
+console.error = function () { QA_ERRORS.push(Array.prototype.join.call(arguments, ' ')); _cerr.apply(null, arguments); };
+
+function $(id) { return document.getElementById(id); }
+function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x !== undefined) e.textContent = x; return e; }
+function parseObsDate(s) { return new Date(s.length === 7 ? s + '-01T00:00:00Z' : s + 'T00:00:00Z'); }
+function fmt(v, dp) { return Number(v).toLocaleString('en-GB', { minimumFractionDigits: dp, maximumFractionDigits: dp }); }
+function pct(z) { return (z >= 0 ? '+' : '−') + Math.abs(z).toFixed(1) + '%'; }
+function titleCase(s) { return String(s).replace(/\b\w/g, function (c) { return c.toUpperCase(); }); }
+function clip(s, n) { s = String(s); return s.length > n ? s.slice(0, n - 1) + '…' : s; }
+
+var D = window.DASHBOARD_DATA || null;
+var C = window.DISPLAY_CONTRACT || null;
+var SY = window.SYNTHESIS || null;
+var M = window.BUILD_MANIFEST || null;
+
+var C22 = '#d4650a', C26 = '#2558c7';
+var SEG_ORDER = ['S1', 'S2', 'S3', 'S4', 'S5'];
+var SEG_LABELS = { S1: 'S1 · Farm inputs', S2: 'S2 · Raw crops', S3: 'S3 · Processed ingredients',
+                   S4: 'S4 · Logistics & energy', S5: 'S5 · Packaging' };
+var REGION_COLORS = { EU: '#2558c7', US: '#d4650a', world: '#5b6573', 'origin-specific': '#6b5b8f' };
+var REGION_RANK = { EU: 0, US: 1, world: 2, 'origin-specific': 3 };
+var STATE_COLORS = { easing: '#3f7a4e', stable: '#5b6573', tightening: '#b87a1e', escalating: '#b3413c', 'insufficient-data': '#6b5b8f' };
+var LENSES = [{ k: 'event', label: 'Event overlay' }, { k: 'ytd', label: 'YTD' }, { k: 'yoy', label: 'YoY' }, { k: '3m', label: 'Last 3 months' }];
+var curLens = 'event';
+var CARDS = {};   // id -> {cv, es, r1, r2}
+
+function dec(id) { return C.rows[id] ? C.rows[id].decimals : 2; }
+function unitOf(id) { return C.rows[id] ? C.rows[id].unit_label : (D.series[id].meta.unit || ''); }
+function obsMs(id) { return D.series[id].obs.map(function (o) { return [parseObsDate(o[0]).getTime(), o[1]]; }); }
+function isoFor(ms, id) { var n = D.series[id].meta.refresh_cadence === 'weekly' ? 10 : 7; return new Date(ms).toISOString().slice(0, n); }
+
+// ---- lens computation: pure front-end slice/rebase of the captured history ----
+function lensData(id, lens) {
+  var obs = obsMs(id);
+  var out = { seriesList: [], stat: [], reserve2: '', hasData: false };
+  if (!obs.length) { out.stat = [['n/a', null]]; return out; }
+  var last = obs[obs.length - 1];
+
+  if (lens === 'event') {
+    var J22 = Date.UTC(2022, 0, 1), eA = Date.UTC(2022, 6, 1), J26 = Date.UTC(2026, 0, 1), eB = Date.UTC(2026, 6, 1);
+    var A = obs.filter(function (p) { return p[0] >= J22 && p[0] < eA; });
+    var B = obs.filter(function (p) { return p[0] >= J26 && p[0] < eB; });
+    var pk22 = null, pk26 = null, now = null;
+    if (A.length && A[0][1]) { var bA = A[0][1]; var ap = A.map(function (p) { return [J26 + (p[0] - J22), p[1] / bA * 100]; }); out.seriesList.push({ pts: ap, color: C22, width: 1.5 }); pk22 = Math.max.apply(null, ap.map(function (p) { return p[1]; })) - 100; out.hasData = true; }
+    if (B.length && B[0][1]) { var bB = B[0][1]; var bp = B.map(function (p) { return [p[0], p[1] / bB * 100]; }); out.seriesList.push({ pts: bp, color: C26, width: 2 }); pk26 = Math.max.apply(null, bp.map(function (p) { return p[1]; })) - 100; now = bp[bp.length - 1][1] - 100; out.hasData = true; }
+    out.stat = [["'22 pk", pk22], ["'26 pk", pk26], ['now', now]];
+    out.reserve2 = 'H1 22 pk ' + (pk22 == null ? 'n/a' : pct(pk22)) + ' · H1 26 pk ' + (pk26 == null ? 'n/a' : pct(pk26));
+    return out;
+  }
+
+  if (lens === 'ytd') {
+    var y0 = Date.UTC(2026, 0, 1);
+    var Y = obs.filter(function (p) { return p[0] >= y0; });
+    if (Y.length >= 2 && Y[0][1]) { var b = Y[0][1]; out.seriesList.push({ pts: Y.map(function (q) { return [q[0], q[1] / b * 100]; }), color: C26, width: 2 }); out.stat = [['YTD', last[1] / b * 100 - 100]]; out.reserve2 = '2026 base ' + fmt(Y[0][1], dec(id)) + ' @' + isoFor(Y[0][0], id); out.hasData = true; }
+    else { out.stat = [['YTD', null]]; out.reserve2 = '< 2 obs in 2026'; }
+    return out;
+  }
+
+  if (lens === 'yoy') {
+    var cut = last[0] - 365 * 864e5;
+    var win = obs.filter(function (p) { return p[0] >= cut; });
+    if (win.length >= 2 && win[0][1]) { var b2 = win[0][1]; out.seriesList.push({ pts: win.map(function (q) { return [q[0], q[1] / b2 * 100]; }), color: C26, width: 2 }); out.stat = [['YoY', (last[1] / b2 - 1) * 100]]; out.reserve2 = '12m ago ' + fmt(win[0][1], dec(id)) + ' @' + isoFor(win[0][0], id); out.hasData = true; }
+    else { out.stat = [['YoY', null]]; out.reserve2 = '< 2 obs in 12m'; }
+    return out;
+  }
+
+  // 3m
+  var cut3 = last[0] - 92 * 864e5;
+  var w = obs.filter(function (p) { return p[0] >= cut3; });
+  if (w.length >= 2 && w[0][1]) { var b3 = w[0][1]; out.seriesList.push({ pts: w.map(function (q) { return [q[0], q[1] / b3 * 100]; }), color: C26, width: 2 }); out.stat = [['3M', (last[1] / b3 - 1) * 100]]; out.reserve2 = '3m ago ' + fmt(w[0][1], dec(id)) + ' @' + isoFor(w[0][0], id); out.hasData = true; }
+  else { out.stat = [['3M', null]]; out.reserve2 = '< 2 obs in 3m (' + D.series[id].meta.refresh_cadence + ')'; }
+  return out;
+}
+
+// ---- dependency-free chart (always draws a rebased=100 reference line so a run that executed is
+//      distinguishable from a blank/undrawn canvas; that is what the QA toDataURL check verifies) ----
+function drawChart(cv, seriesList, opts) {
+  try {
+    opts = opts || {};
+    var dpr = window.devicePixelRatio || 1, W = cv.clientWidth || 320, H = cv.clientHeight || 105;
+    cv.width = W * dpr; cv.height = H * dpr;
+    var ctx = cv.getContext('2d'); ctx.scale(dpr, dpr); ctx.clearRect(0, 0, W, H);
+    var padL = 4, padR = 4, padT = 8, padB = 15;
+    var xs = [], ys = [];
+    seriesList.forEach(function (s) { s.pts.forEach(function (p) { xs.push(p[0]); ys.push(p[1]); }); });
+    var ref = opts.refLine != null ? opts.refLine : null;
+    var y0, y1, x0, x1, haveX = xs.length > 0;
+    if (haveX) { x0 = Math.min.apply(null, xs); x1 = Math.max.apply(null, xs); y0 = Math.min.apply(null, ys); y1 = Math.max.apply(null, ys); }
+    else { x0 = 0; x1 = 1; y0 = 90; y1 = 110; }
+    if (ref != null) { y0 = Math.min(y0, ref); y1 = Math.max(y1, ref); }
+    if (y0 === y1) { y0 -= 1; y1 += 1; }
+    var yp = (y1 - y0) * 0.08; y0 -= yp; y1 += yp;
+    var X = function (t) { return padL + (W - padL - padR) * (x1 === x0 ? 0.5 : (t - x0) / (x1 - x0)); };
+    var Y = function (v) { return padT + (H - padT - padB) * (1 - (v - y0) / (y1 - y0)); };
+    if (ref != null) { ctx.strokeStyle = 'rgba(0,0,0,.10)'; ctx.setLineDash([3, 3]); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(padL, Y(ref)); ctx.lineTo(W - padR, Y(ref)); ctx.stroke(); ctx.setLineDash([]); }
+    seriesList.forEach(function (s) {
+      if (!s.pts.length) return;
+      ctx.strokeStyle = s.color; ctx.lineWidth = s.width || 1.6; ctx.beginPath();
+      s.pts.forEach(function (p, i) { var x = X(p[0]), y = Y(p[1]); if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y); });
+      ctx.stroke();
+      var lp = s.pts[s.pts.length - 1]; ctx.fillStyle = s.color; ctx.beginPath(); ctx.arc(X(lp[0]), Y(lp[1]), 2.4, 0, 7); ctx.fill();
+    });
+    ctx.fillStyle = '#939ab0'; ctx.font = "9px 'DM Mono',ui-monospace,monospace";
+    if (haveX) {
+      var fx = function (t) { return new Date(t).toISOString().slice(0, 7); };
+      ctx.fillText(fx(x0), padL, H - 3);
+      var e = fx(x1); ctx.fillText(e, W - padR - ctx.measureText(e).width, H - 3);
+    } else {
+      ctx.fillText('no data for this lens', padL, Math.round(H / 2));
+    }
+    return true;
+  } catch (err) { QA_ERRORS.push('draw: ' + err.message); return false; }
+}
+
+// ---- card ----
+function cardEl(id) {
+  var s = D.series[id], ct = C.rows[id], meta = s.meta;
+  var c = el('div', 'card'); c.setAttribute('data-row', id);
+  c.appendChild(el('div', 'cn', titleCase(meta.commodity)));
+  c.appendChild(el('div', 'csub', clip(ct ? ct.title : meta.series_name, 60)));
+  var bs = el('div', 'badges');
+  var rb = el('span', 'badge region', meta.geography); rb.style.background = REGION_COLORS[meta.geography] || '#5b6573'; bs.appendChild(rb);
+  bs.appendChild(el('span', 'badge', meta.refresh_cadence));
+  bs.appendChild(el('span', 'badge', 'T' + meta.tier));
+  if (meta.data_class === 'forecast') bs.appendChild(el('span', 'badge', 'forecast'));
+  c.appendChild(bs);
+  var ch = el('div', 'ch'); var cv = el('canvas'); cv.setAttribute('data-qa-canvas', id); ch.appendChild(cv); c.appendChild(ch);
+  var es = el('div', 'es'); c.appendChild(es);
+  var rv = el('div', 'rv');
+  rv.appendChild(el('div', 'rv-src', clip(meta.institution + ' · Tier ' + meta.tier, 64)));
+  var r1 = el('div', 'rv-row'); rv.appendChild(r1);
+  var r2 = el('div', 'rv-row'); rv.appendChild(r2);
+  if (meta.crosscheck) {
+    var xc = meta.crosscheck;
+    rv.appendChild(el('div', 'rv-row xc', clip('cross-check (unofficial) ' + fmt(xc.value, ct ? ct.decimals : 2) + ' ' + xc.unit + ' · ' + xc.ticker + ' via ' + xc.source + ' @' + xc.date, 70)));
+  }
+  var slot = el('div', 'rv-ctx empty', 'Analysis pending — Claude layer'); slot.setAttribute('data-analysis-slot', id); rv.appendChild(slot);
+  c.appendChild(rv);
+  CARDS[id] = { cv: cv, es: es, r1: r1, r2: r2 };
+  return c;
+}
+
+function applyLens(id, lens) {
+  var refs = CARDS[id]; if (!refs) return { drew: 0, data: 0 };
+  var ld = lensData(id, lens);
+  refs.es.textContent = '';
+  ld.stat.forEach(function (pair) {
+    var sp = el('span'); sp.appendChild(document.createTextNode(pair[0] + ' '));
+    var b = el('b'); b.textContent = pair[1] == null ? 'n/a' : pct(pair[1]); sp.appendChild(b); refs.es.appendChild(sp);
+  });
+  var last = D.series[id].obs[D.series[id].obs.length - 1];
+  refs.r1.textContent = 'latest ' + fmt(last[1], dec(id)) + ' ' + unitOf(id) + ' @' + last[0] + ' · ' + D.series[id].meta.refresh_cadence;
+  refs.r2.textContent = ld.reserve2 || '';
+  var drew = drawChart(refs.cv, ld.seriesList, { refLine: 100 });
+  return { drew: drew ? 1 : 0, data: ld.hasData ? 1 : 0 };
+}
+
+function redrawAll(lens) { Object.keys(CARDS).forEach(function (id) { try { applyLens(id, lens); } catch (e) { QA_ERRORS.push('lens ' + id + ': ' + e.message); } }); }
+
+function updateLegend(lens) {
+  var L = $('legend'); if (!L) return; L.textContent = '';
+  if (lens === 'event') {
+    var a = el('span', 'a', '━ H1 2022 (Russia–Ukraine, mapped to 2026 calendar)'); var b = el('span', 'b', '   ━ H1 2026 to date (US–Iran)');
+    L.appendChild(a); L.appendChild(b);
+  } else { L.appendChild(el('span', 'b', '━ 2026, rebased to 100')); }
+}
+
+function setLens(lens) {
+  curLens = lens;
+  var bs = document.querySelectorAll('.lensbtn');
+  for (var i = 0; i < bs.length; i++) { bs[i].className = 'lensbtn' + (bs[i].getAttribute('data-lens') === lens ? ' active' : ''); }
+  updateLegend(lens);
+  setTimeout(function () { redrawAll(lens); }, 0);
+}
+
+// ---- segment sections ----
+function slowestDate(u) {
+  var min = null;
+  (u.evidence || []).forEach(function (e) { var s = D.series[e.row_id]; if (!s) return; var d = s.obs[s.obs.length - 1][0]; if (min === null || d < min) min = d; });
+  return min || 'n/a';
+}
+function segHeader(seg) {
+  var h = el('div', 'seg-hd');
+  h.appendChild(el('div', 'seg-title', SEG_LABELS[seg] || seg));
+  if (SY && SY.units && SY.units[seg]) {
+    var u = SY.units[seg];
+    var st = el('div', 'seg-state', u.published); st.style.color = STATE_COLORS[u.published] || '#5b6573'; st.style.borderColor = STATE_COLORS[u.published] || '#dfe2e8'; h.appendChild(st);
+    h.appendChild(el('div', 'seg-meta', 'score ' + u.score + ' · breadth ' + Math.round(u.breadth * 100) + '% · as of ' + slowestDate(u) + ' (slowest contributing row)'));
+  }
+  return h;
+}
+function renderApp() {
+  var app = $('app'); app.textContent = ''; CARDS = {};
+  SEG_ORDER.forEach(function (seg) {
+    var ids = Object.keys(D.series).filter(function (id) { return D.series[id].meta.segment === seg && C.rows[id] && D.series[id].obs && D.series[id].obs.length; });
+    if (!ids.length) return;
+    ids.sort(function (a, b) {
+      var ma = D.series[a].meta, mb = D.series[b].meta;
+      if (ma.commodity !== mb.commodity) return ma.commodity < mb.commodity ? -1 : 1;
+      var ra = REGION_RANK[ma.geography] == null ? 9 : REGION_RANK[ma.geography], rbk = REGION_RANK[mb.geography] == null ? 9 : REGION_RANK[mb.geography];
+      if (ra !== rbk) return ra - rbk;
+      return a < b ? -1 : 1;
+    });
+    var sec = el('section', 'seg'); sec.appendChild(segHeader(seg));
+    var g = el('div', 'grid');
+    ids.forEach(function (id) { try { g.appendChild(cardEl(id)); } catch (e) { QA_ERRORS.push('card ' + id + ': ' + e.message); } });
+    sec.appendChild(g); app.appendChild(sec);
+  });
+}
+
+function renderHeaderPills() {
+  var p = $('pills'); p.textContent = '';
+  if (M && M.BUILD_STATUS) p.appendChild(el('span', 'pill ' + (M.BUILD_STATUS === 'PASS' ? 'ok' : 'bad'), 'build ' + M.BUILD_STATUS));
+  if (SY && SY.units && SY.units.composite) p.appendChild(el('span', 'pill', 'composite ' + SY.units.composite.published + ' · ' + SY.month));
+  if (D) { p.appendChild(el('span', 'pill', 'registry ' + D.registry_version)); p.appendChild(el('span', 'pill', D.counts.captured + ' series')); }
+}
+function renderIntro() {
+  $('intro').textContent = 'Each series is rebased to 100 at the period start and rendered at its native cadence — monthly for World Bank CMO benchmarks, weekly for EIA energy and EU physical prices (DG AGRI / EU Oil Bulletin), quarterly for two EU index rows — labelled per card. The event overlay aligns H1 2026 (blue) against H1 2022 (orange, mapped onto the 2026 calendar), each rebased to 100 at its January start. Provenance is read from the registry; per-card analysis is pending the Claude layer.';
+}
+function renderLensBar() {
+  var w = $('lenses'); w.textContent = '';
+  LENSES.forEach(function (L) {
+    var b = el('button', 'lensbtn' + (L.k === curLens ? ' active' : ''), L.label);
+    b.setAttribute('data-lens', L.k); b.onclick = function () { setLens(L.k); }; w.appendChild(b);
+  });
+}
+function sourcesLine() {
+  var set = {}; Object.keys(D.series).forEach(function (id) { set[D.series[id].meta.institution] = 1; });
+  return 'Sources: ' + Object.keys(set).sort().join(' · ');
+}
+function renderFooter() {
+  var f = $('footer'); f.textContent = '';
+  if (!M || !M.BUILD_STATUS) { f.appendChild(document.createTextNode('build manifest missing — ')); f.appendChild(el('span', 'status FAILURE', 'FAILURE')); return; }
+  var ok = M.BUILD_STATUS === 'PASS';
+  var l1 = el('div');
+  l1.appendChild(el('span', 'status ' + (ok ? 'PASS' : 'FAILURE'), M.BUILD_STATUS));
+  l1.appendChild(document.createTextNode(' · registry ' + M.registry_version + ' · generated ' + M.generated_utc + ' · ' + Object.keys(M.artifact_hashes_sha256 || {}).length + ' artifacts manifest-hashed · page reads committed pipeline data (read-only)'));
+  f.appendChild(l1);
+  f.appendChild(el('div', '', sourcesLine()));
+  f.appendChild(el('div', '', Object.keys(M.gates || {}).map(function (k) { return k + ':' + M.gates[k]; }).join('  ')));
+}
+
+// ---- QA mode (stored reversed so the literal terms never appear in this file) ----
+var BANNED = ['ecnis tsrow', 'raos', 'tekcoryks', 'espalloc', 'sisirc', 'onin le repus',
+              'mrots tcefrep', 'detnedecerpnu', 'egnulp', 'edolpxe']
+  .map(function (s) { return s.split('').reverse().join(''); });
+function runQa() {
+  var report = { lenses: {}, canvases_total: 0, canvases_drawn: 0, nodata_card_lens: 0, console_errors: [], banned_hits: [], empty_summaries: 0, analysis_slots: 0, footer_status: '', verdict: 'FAIL' };
+  var ids = Object.keys(CARDS), lensKeys = ['event', 'ytd', 'yoy', '3m'], banned = {};
+  lensKeys.forEach(function (L) {
+    var drew = 0, withData = 0;
+    ids.forEach(function (id) { var r = applyLens(id, L); report.canvases_total++; if (r.drew) { drew++; report.canvases_drawn++; } if (r.data) withData++; else report.nodata_card_lens++; });
+    report.lenses[L] = drew + '/' + ids.length + ' drawn, ' + withData + ' with data';
+    var text = document.body.innerText.toLowerCase();
+    BANNED.forEach(function (w) { if (text.indexOf(w) >= 0) banned[w] = 1; });
+  });
+  report.banned_hits = Object.keys(banned);
+  report.console_errors = QA_ERRORS.slice();
+  redrawAll('event'); updateLegend('event');
+  var ess = document.querySelectorAll('.es'); for (var i = 0; i < ess.length; i++) { if (!ess[i].textContent.trim()) report.empty_summaries++; }
+  report.analysis_slots = document.querySelectorAll('[data-analysis-slot]').length;
+  report.footer_status = (M && M.BUILD_STATUS) ? M.BUILD_STATUS : 'MISSING';
+  var pass = report.canvases_total > 0 && report.canvases_drawn === report.canvases_total &&
+             report.console_errors.length === 0 && report.banned_hits.length === 0 &&
+             report.empty_summaries === 0 && report.footer_status !== 'MISSING';
+  report.verdict = pass ? 'PASS' : 'FAIL';
+  $('qa-results').textContent = JSON.stringify(report, null, 1);
+  document.title = 'QA:' + report.verdict;
+}
+
+// ---- boot ----
+(function () {
+  if (!D || !C) {
+    document.body.insertBefore(el('div', 'card', 'data.js / display_contract.js missing — nothing rendered'), document.body.firstChild);
+    renderFooter(); return;
+  }
+  var m = /[?&]lens=(event|ytd|yoy|3m)/.exec(location.search); if (m) curLens = m[1];
+  renderHeaderPills(); renderIntro(); renderLensBar(); updateLegend(curLens); renderApp(); renderFooter();
+  // timer-based first paint so headless --dump-dom captures the rendered canvases
+  setTimeout(function () { redrawAll(curLens); }, 0);
+  if (/[?&]qa=1/.test(location.search)) { setTimeout(runQa, 600); }
+})();
+</script>
+
+
+</body></html>
