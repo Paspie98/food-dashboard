@@ -71,5 +71,11 @@ foreach ($L in @('event', 'ytd', 'yoy', '3m')) {
   else { Write-Host ("screenshot archived: {0} ({1} KB)" -f (Split-Path -Leaf $shot), [int]((Get-Item $shot).Length / 1KB)) }
 }
 
+# ---- 3. offline integrity: the page must reference 0 external resources (same bar as the prior index.html) ----
+$pageText = Get-Content $IndexPath -Raw -Encoding UTF8
+$ext = [regex]::Matches($pageText, '(?i)(src|href)\s*=\s*"https?://[^"]*"')
+if ($ext.Count -gt 0) { foreach ($m in $ext) { $fails.Add('external resource ref: ' + $m.Value) }; Write-Host ("external resource refs: {0} (must be 0)" -f $ext.Count) }
+else { Write-Host 'external resources: 0 (fully self-contained)' }
+
 if ($fails.Count -gt 0) { Write-Host ("RESULT: FAIL ({0})" -f $fails.Count); foreach ($f in $fails) { Write-Host (' - ' + $f) }; exit 1 }
-Write-Host 'RESULT: PASS (exposure rendered-DOM QA across 4 lenses + screenshots)'; exit 0
+Write-Host 'RESULT: PASS (exposure rendered-DOM QA across 4 lenses + 0 external resources + screenshots)'; exit 0

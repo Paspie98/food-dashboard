@@ -32,7 +32,7 @@ if (@($negHits).Count -gt 0) { $fails.Add(('negative fixture: false positives: '
 else { Write-Host 'negative fixture: 0 hits (no false positives)' }
 
 # --- 3. live scan over emitted artifacts ---
-$targets = @('dashboard\data.js', 'dashboard\display_contract.js', 'dashboard\synthesis.js', 'dashboard\index.html', 'dashboard\commodity_exposure.html')
+$targets = @('dashboard\data.js', 'dashboard\display_contract.js', 'dashboard\synthesis.js', 'dashboard\commodity_exposure.html')
 $mandatory = @('dashboard\data.js', 'dashboard\display_contract.js')
 foreach ($t in $targets) {
   $p = Join-Path $base $t

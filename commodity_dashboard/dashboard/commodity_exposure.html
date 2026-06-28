@@ -13,7 +13,9 @@
   routine (no CDN) using timer-based draws so the headless --dump-dom QA captures them.
   The per-card context block is an EXPLICITLY EMPTY, labelled analysis slot for the later layer.
 -->
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Fonts: requested families with system fallbacks (DM Sans -> system-ui, Instrument Serif -> Georgia/serif,
+     DM Mono -> ui-monospace). No external resources, so the page is fully self-contained offline and on Pages
+     (same offline-integrity bar as the prior front end). -->
 <style>
 :root{--bg:#f4f5f7;--s:#fff;--b:#dfe2e8;--bl:#eceef2;--t1:#1a1d26;--t2:#555a6a;--t3:#939ab0;--c22:#d4650a;--c26:#2558c7}
 *{margin:0;padding:0;box-sizing:border-box}
