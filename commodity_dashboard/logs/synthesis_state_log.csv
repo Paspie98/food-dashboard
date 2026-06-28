@@ -1,0 +1,7 @@
+﻿"month","unit","raw_state","published_state","candidate_state","candidate_streak","score","breadth_pct","momentum_3m_med","voters","stale_voters","note"
+"2026-05","S1","escalating","escalating","","0","0.895","89.5","8.7","11","","initial"
+"2026-05","S2","tightening","tightening","","0","0.296","44.4","5.2","15","","initial"
+"2026-05","S3","tightening","tightening","","0","0.5","61.1","5.2","10","","initial"
+"2026-05","S4","escalating","escalating","","0","0.913","91.3","17.5","14","","initial"
+"2026-05","S5","tightening","tightening","","0","0.5","50","1.5","9","","initial"
+"2026-05","composite","tightening","tightening","","0","0.619","68","6.2","59","","initial"
