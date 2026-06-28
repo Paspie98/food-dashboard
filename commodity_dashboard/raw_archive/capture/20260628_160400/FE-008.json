@@ -1,0 +1,2137 @@
+[ {
+  "year" : 2026,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 370.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2026,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 541.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2026,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 717.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2026,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 368.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2026,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 554.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2026,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 700.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2026,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 359.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2026,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 519.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2026,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 663.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2026,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 357.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2026,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 416.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2026,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 606.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2026,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 360.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2026,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 405.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2026,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 604.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 360.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 397.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 607.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 363.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 396.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 606.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 366.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 366.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 611.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 369.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 372.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 626.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 370.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 390.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 623.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 366.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 389.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 620.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 365.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 366.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 600.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 360.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 353.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 577.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 360.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 376.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 569.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 350.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 394.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 571.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 335.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 401.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 572.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 330.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 365.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2025,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 552.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 327.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 349.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 588.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 333.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 335.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 589.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 339.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 328.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 602.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 340.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 321.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 602.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 338.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 318.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 588.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 350.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 324.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 590.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 351.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 322.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 580.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 371.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 307.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 575.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 373.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 317.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 581.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 380.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 330.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 590.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 389.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 338.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 586.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 400.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 340.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2024,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 584.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 400.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 355.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 600.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 405.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 375.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 598.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 418.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 375.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 548.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 415.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 376.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 552.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 415.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 367.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 540.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 417.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 337.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 500.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 478.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 315.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 540.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 558.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 351.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 620.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 664.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 378.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 680.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 727.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 447.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 700.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 750.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 523.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 721.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 793.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 595.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2023,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 751.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 833.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 667.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 780.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 837.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 752.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 841.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 873.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 836.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 909.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 873.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 846.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 985.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 871.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 758.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 1004.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 876.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 738.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 1012.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 800.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 734.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 1026.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 797.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 785.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 1035.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 800.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 923.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 1025.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 728.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 896.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 920.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 560.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 673.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 791.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 568.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 698.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2022,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 787.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 565.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 709.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 794.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 567.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 663.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 730.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 510.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 593.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 655.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 460.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 353.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 615.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 427.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 334.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 609.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 381.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 319.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 603.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 325.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 294.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 544.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 267.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 282.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 497.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 262.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 294.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 495.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 252.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 290.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 474.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 247.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 277.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 436.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 243.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 219.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2021,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 341.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 241.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 203.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 333.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 243.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 199.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 323.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 243.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 197.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 321.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 247.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 197.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 314.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 247.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 190.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 302.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 247.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 185.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 296.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 250.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 186.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 296.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 267.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 194.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 306.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 273.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 205.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 311.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 278.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 214.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 309.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 275.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 215.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 310.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 275.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 217.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2020,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 301.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 280.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 215.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q4",
+  "month" : "Dec",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 303.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 280.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 224.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q4",
+  "month" : "Nov",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 316.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 277.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 230.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q4",
+  "month" : "Oct",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 328.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 290.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 232.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q3",
+  "month" : "Sep",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 338.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 290.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 237.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q3",
+  "month" : "Aug",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 343.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 298.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 240.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q3",
+  "month" : "Jul",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 357.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 298.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 235.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q2",
+  "month" : "Jun",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 367.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 298.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 233.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q2",
+  "month" : "May",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 388.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 300.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 231.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q2",
+  "month" : "Apr",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 391.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 298.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 245.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q1",
+  "month" : "Mar",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 403.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 295.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 249.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q1",
+  "month" : "Feb",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 408.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "K (Potash)",
+  "price" : 297.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "N (Nitrogen)",
+  "price" : 263.0,
+  "unit" : "€/tonne"
+}, {
+  "year" : 2019,
+  "quarter" : "Q1",
+  "month" : "Jan",
+  "memberStateName" : "European Commission",
+  "product" : "P (Phosphorus)",
+  "price" : 410.0,
+  "unit" : "€/tonne"
+} ]

@@ -1,6 +1,6 @@
 ﻿{
-    "generated":  "2026-06-28T16:00:10Z",
-    "started":  "2026-06-28T15:55:14Z",
+    "generated":  "2026-06-28T16:09:50Z",
+    "started":  "2026-06-28T16:03:58Z",
     "overall":  "PASS",
     "baseline":  {
                      "captured":  59,
@@ -21,12 +21,12 @@
                 },
     "freshness":  {
                       "run_environment":  "github_actions",
-                      "runner_marker":  "runner=GitHub Actions; os=Windows; run_id=28327725253; sha=9cd5777a7d4d42aaad45ac94f58efd94bab288e6",
-                      "refresh_started_at_utc":  "2026-06-28T15:55:14Z",
-                      "capture_started_at_utc":  "2026-06-28T15:55:14Z",
-                      "capture_completed_at_utc":  "2026-06-28T15:58:20Z",
-                      "build_started_at_utc":  "2026-06-28T15:59:09Z",
-                      "build_completed_at_utc":  "2026-06-28T15:59:23Z",
+                      "runner_marker":  "runner=GitHub Actions; os=Windows; run_id=28327969713; sha=0c1b4634b58a11c9610953a6bbc42b36ff0bfe98",
+                      "refresh_started_at_utc":  "2026-06-28T16:03:58Z",
+                      "capture_started_at_utc":  "2026-06-28T16:03:59Z",
+                      "capture_completed_at_utc":  "2026-06-28T16:07:48Z",
+                      "build_started_at_utc":  "2026-06-28T16:08:36Z",
+                      "build_completed_at_utc":  "2026-06-28T16:08:47Z",
                       "source_families_attempted":  7,
                       "source_families_succeeded":  7,
                       "source_families_failed":  0,
