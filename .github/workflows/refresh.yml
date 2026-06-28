@@ -1,0 +1,89 @@
+# Cloud refresh — Mission 8. Lives at the REPO ROOT because GitHub Actions only reads
+# workflows from /.github/workflows (the project-layout copy under commodity_dashboard/
+# is a pointer). Weekly schedule + manual dispatch; every gate a named step; commit-back
+# by bot; licensed lane reads ONLY the committed inbox (CI never fetches licensed data).
+name: commodity-dashboard-refresh
+
+on:
+  schedule:
+    - cron: '30 6 * * 1'   # weekly, Monday 06:30 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: commodity-refresh
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: powershell      # Windows PowerShell 5.1 — same engine the build targets
+    working-directory: commodity_dashboard
+
+jobs:
+  refresh:
+    runs-on: windows-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: refresh-all (capture -> build -> synthesis -> gates -> manifest)
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          USDA_FAS_KEY: ${{ secrets.USDA_FAS_KEY }}
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/refresh_all.ps1
+
+      # ---- every gate as a named step (idempotent re-runs over the built artifacts) ----
+      - name: gate-registry-integrity
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/tests/test_registry_integrity.ps1
+      - name: gate-chart-integrity
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/tests/test_chart_integrity.ps1
+      - name: gate-display-contract
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/tests/test_display_contract.ps1
+      - name: gate-frontend-category
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/tests/test_frontend_category_integrity.ps1
+      - name: gate-axis-sanity
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/tests/test_axis_sanity.ps1
+      - name: gate-banned-words
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/tests/test_banned_words.ps1
+      - name: gate-licensed-contract
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/tests/test_licensed_contract.ps1
+      - name: gate-synthesis-fixtures
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/tests/test_synthesis_fixtures.ps1
+      - name: determinism-synthesis-vs-committed-log
+        # cloud-built synthesis states must equal the same-history local build: the
+        # stability gate replays the committed state log and asserts the cloud emission
+        # matches it (same-month rebuilds never flip).
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/tests/test_synthesis_stability.ps1
+
+      - name: browser-qa-rendered-dom
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run_browser_qa.ps1
+
+      - name: package-offline-artifact (hash-verify + offline DOM QA)
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package_artifact.ps1
+
+      - name: upload-offline-artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: commodity-dashboard-offline
+          path: commodity_dashboard/logs/artifact/*.zip
+          retention-days: 90
+
+      - name: upload-raw-archive (full fetch evidence incl. files excluded from commit-back)
+        uses: actions/upload-artifact@v4
+        with:
+          name: raw-archive-${{ github.run_id }}
+          path: commodity_dashboard/raw_archive/capture/
+          retention-days: 90
+
+      - name: commit-back
+        working-directory: .
+        run: |
+          git config user.name 'commodity-dashboard-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git diff-index --quiet HEAD; if ($LASTEXITCODE -ne 0) {
+            git commit -m ('cloud refresh ' + (Get-Date -Format 'yyyy-MM-dd HHmm') + ' UTC [skip ci]')
+            git push
+          } else { Write-Host 'nothing to commit' }
