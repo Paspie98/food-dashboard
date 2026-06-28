@@ -58,8 +58,8 @@ jobs:
         # matches it (same-month rebuilds never flip).
         run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/tests/test_synthesis_stability.ps1
 
-      - name: browser-qa-rendered-dom
-        run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run_browser_qa.ps1
+      - name: browser-qa-rendered-dom (commodity_exposure.html, 4 lenses)
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run_exposure_qa.ps1
 
       - name: package-offline-artifact (hash-verify + offline DOM QA)
         run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package_artifact.ps1

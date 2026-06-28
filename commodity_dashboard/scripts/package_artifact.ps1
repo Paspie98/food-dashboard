@@ -37,7 +37,7 @@ Write-Host ("packaged: {0} ({1} KB)" -f (Split-Path -Leaf $zipPath), [int]((Get-
 $scratch = Join-Path $env:TEMP ('cmd_artifact_qa_' + (Get-Random))
 [System.IO.Compression.ZipFile]::ExtractToDirectory($zipPath, $scratch)
 try {
-  & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $scriptDir 'run_browser_qa.ps1') -IndexPath (Join-Path $scratch 'index.html')
+  & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $scriptDir 'run_exposure_qa.ps1') -IndexPath (Join-Path $scratch 'commodity_exposure.html')
   $qa = $LASTEXITCODE
 } finally {
   Remove-Item -Recurse -Force $scratch -ErrorAction SilentlyContinue
