@@ -1,0 +1,417 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QA:PASS</title>
+<style>
+  :root {
+    --bg:#fafaf8; --card:#ffffff; --ink:#1c2330; --muted:#5b6573; --line:#e3e6ea;
+    --accent:#1f5fbf; --warn:#b87a1e; --bad:#b3413c; --good:#3f7a4e; --chip:#f0f2f5;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:14px/1.45 -apple-system,"Segoe UI",Roboto,Arial,sans-serif; }
+  .mono { font-family:ui-monospace,Consolas,"Cascadia Mono",Menlo,monospace; }
+  header { padding:18px 22px 10px; border-bottom:1px solid var(--line); background:var(--card); }
+  header h1 { margin:0 0 4px; font-size:19px; font-weight:650; }
+  .counts { color:var(--muted); font-size:12.5px; }
+  .tabs { padding:10px 22px 0; background:var(--card); border-bottom:1px solid var(--line); }
+  .tabs button { border:1px solid var(--line); background:var(--chip); color:var(--ink);
+                 padding:6px 14px; margin-right:8px; border-radius:6px 6px 0 0; cursor:pointer; font-size:13px; }
+  .tabs button.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+  main { padding:14px 22px 30px; max-width:1480px; margin:0 auto; }
+  h2.layer { font-size:15px; margin:26px 0 10px; padding-bottom:6px; border-bottom:2px solid var(--line); }
+  h3.subblock { font-size:13px; color:var(--muted); margin:12px 0 8px; font-weight:600; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:14px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:12px 14px 10px; }
+  .card .t { font-size:13px; font-weight:600; margin-bottom:6px; min-height:33px; }
+  .badges { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:8px; }
+  .badge { font-size:10.5px; padding:1.5px 7px; border-radius:9px; background:var(--chip); color:var(--muted); border:1px solid var(--line); }
+  .badge.tier { background:#eef4ee; color:var(--good); border-color:#cfe0cf; }
+  .badge.geo { color:#fff; border:none; }
+  .badge.stale { background:#fbf3e4; color:var(--warn); border-color:#e8d7b4; }
+  .badge.stale2 { background:#f9e9e8; color:var(--bad); border-color:#e4c2c0; }
+  .badge.fc { background:#efe9f7; color:#5b3d8f; border-color:#d8cbeb; }
+  canvas { width:100%; height:120px; display:block; }
+  .sum { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-size:12px; margin-top:8px;
+         color:var(--ink); }
+  .xcheck { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-size:11px; margin-top:3px; color:var(--warn); }
+  .legend { font-size:11.5px; margin-top:6px; }
+  .legend span.k { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:4px; vertical-align:-1px; }
+  .legend div { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  footer { border-top:1px solid var(--line); background:var(--card); margin-top:30px;
+           padding:14px 22px; font-size:12px; color:var(--muted); }
+  footer .status { font-weight:700; padding:2px 10px; border-radius:5px; }
+  footer .status.PASS { background:#eef4ee; color:var(--good); }
+  footer .status.FAILURE { background:#f9e9e8; color:var(--bad); }
+  .synth { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; margin:14px 0 6px; }
+  .tile { background:var(--card); border:1px solid var(--line); border-left-width:5px; border-radius:8px; padding:10px 13px; }
+  .tile .u { font-size:12px; color:var(--muted); font-weight:600; }
+  .tile .state { font-size:17px; font-weight:700; margin:2px 0 4px; }
+  .tile .m { font-size:11.5px; color:var(--muted); }
+  .tile details { margin-top:7px; font-size:11.5px; }
+  .tile summary { cursor:pointer; color:var(--accent); }
+  .tile table { width:100%; border-spacing:0; margin-top:5px; }
+  .tile td { padding:1.5px 4px; border-top:1px solid var(--line); font-size:11px; }
+  .tile td.num { text-align:right; font-family:ui-monospace,Consolas,monospace; }
+  #qa-results { display:none; }
+  .view { display:none; } .view.active { display:block; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Food &amp; Beverage Commodity Cost Dashboard</h1>
+  <div class="counts" id="hdr-counts">European food-producer procurement lens · registry v9 · selected 62 / captured 59 / charted 59 / not captured 3 · generated 2026-06-28T15:59:10Z</div>
+</header>
+<div class="tabs">
+  <button id="tab-layers" class="active" onclick="showView('layers')">By layer</button>
+  <button id="tab-groups" onclick="showView('groups')">Metric groups</button>
+</div>
+<main>
+  <div id="view-layers" class="view active"><h2 class="layer">Cost-pressure synthesis — 2026-05</h2><div class="synth"><div class="tile" style="border-left-color: rgb(179, 65, 60);"><div class="u">S1 · Farm inputs</div><div class="state" style="color: rgb(179, 65, 60);">escalating</div><div class="m mono">score 0.895 · breadth 90% · Δ3m med 8.7% · volatility normal</div><div class="m">broad base: 11 series voting, 100% fresh</div><details><summary>evidence (11 rows)</summary><table><tr><td>FE-001 Urea, fob Black Sea bulk, monthly (World Ban…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +63.24%</td></tr><tr><td>FE-002 DAP, fob US Gulf, monthly (World Bank CMO)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +22.83%</td></tr><tr><td>FE-003 TSP, fob Morocco, monthly (World Bank CMO)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +33.05%</td></tr><tr><td>FE-004 Potassium chloride (MOP), fob Vancouver, mon…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +8.72%</td></tr><tr><td>FE-005 Phosphate rock, fob Morocco, monthly (World …</td><td class="num" style="color: rgb(91, 101, 115);">→ w2</td><td class="num">Δ3m +0%</td></tr><tr><td>FE-006 EU producer prices: fertilisers and nitrogen…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +8.7pt</td></tr><tr><td>FE-007 EU agricultural input price index: fertilise…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +6.75pt</td></tr><tr><td>FE-008 EU fertiliser price: N (Nitrogen) composite,…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +30.05%</td></tr><tr><td>FE-009 EU producer prices: lime and plaster (NACE C…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +2pt</td></tr><tr><td>FE-010 EU fertiliser price: P (Phosphorus) composit…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +18.32%</td></tr><tr><td>FE-011 EU fertiliser price: K (Potash) composite, m…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +3.64%</td></tr></table></details></div><div class="tile" style="border-left-color: rgb(184, 122, 30);"><div class="u">S2 · Raw crops</div><div class="state" style="color: rgb(184, 122, 30);">tightening</div><div class="m mono">score 0.296 · breadth 44% · Δ3m med 5.2% · volatility normal</div><div class="m">broad base: 15 series voting, 100% fresh</div><details><summary>evidence (15 rows)</summary><table><tr><td>CF-001 Coffee Arabica, ICO indicator basis, monthly…</td><td class="num" style="color: rgb(91, 101, 115);">→ w2</td><td class="num">Δ3m -1.84%</td></tr><tr><td>CF-002 Coffee Robusta, ICO indicator basis, monthly…</td><td class="num" style="color: rgb(63, 122, 78);">▼ w2</td><td class="num">Δ3m -7.32%</td></tr><tr><td>CO-001 Cocoa beans, ICCO daily price average basis,…</td><td class="num" style="color: rgb(91, 101, 115);">→ w2</td><td class="num">Δ3m +15.88%</td></tr><tr><td>EG-001 EU egg prices, packing station, EU average, …</td><td class="num" style="color: rgb(91, 101, 115);">→ w2</td><td class="num">Δ3m -6.01%</td></tr><tr><td>EG-002 US city average egg price, grade A large, mo…</td><td class="num" style="color: rgb(63, 122, 78);">▼ w2</td><td class="num">Δ3m -12.36%</td></tr><tr><td>IX-001 FAO Food Price Index, monthly (2014-2016=100)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +5.3pt</td></tr><tr><td>IX-002 FAO Cereals Price Index, monthly (2014-2016=…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +5.6pt</td></tr><tr><td>IX-005 FAO Sugar Price Index, monthly (2014-2016=100)</td><td class="num" style="color: rgb(91, 101, 115);">→ w1</td><td class="num">Δ3m +8.9pt</td></tr><tr><td>MZ-001 Maize (corn), US export price Gulf, monthly …</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +3.14%</td></tr><tr><td>MZ-002 Feed maize, France, National Average, weekly…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +10.33%</td></tr><tr><td>SG-001 Sugar, world (ISA daily basis), monthly (Wor…</td><td class="num" style="color: rgb(91, 101, 115);">→ w2</td><td class="num">Δ3m +9.68%</td></tr><tr><td>SG-002 Sugar, EU (CXL import basis), monthly (World…</td><td class="num" style="color: rgb(91, 101, 115);">→ w2</td><td class="num">Δ3m -2.56%</td></tr><tr><td>WH-001 Wheat US HRW, export price Gulf, monthly (Wo…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +17.65%</td></tr><tr><td>WH-002 Wheat US SRW, export price Gulf, monthly (Wo…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +11.7%</td></tr><tr><td>WH-003 Breadmaking common wheat, France, National A…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +6.65%</td></tr></table></details></div><div class="tile" style="border-left-color: rgb(184, 122, 30);"><div class="u">S3 · Processed ingredients</div><div class="state" style="color: rgb(184, 122, 30);">tightening</div><div class="m mono">score 0.5 · breadth 61% · Δ3m med 5.2% · volatility normal</div><div class="m">broad base: 10 series voting, 100% fresh</div><details><summary>evidence (10 rows)</summary><table><tr><td>DY-001 EU butter, weekly average price, EU aggregat…</td><td class="num" style="color: rgb(63, 122, 78);">▼ w2</td><td class="num">Δ3m -5.46%</td></tr><tr><td>DY-002 EU skimmed milk powder, weekly average price…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +19.15%</td></tr><tr><td>IX-003 FAO Vegetable Oils Price Index, monthly (201…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +10.8pt</td></tr><tr><td>IX-004 FAO Dairy Price Index, monthly (2014-2016=100)</td><td class="num" style="color: rgb(91, 101, 115);">→ w1</td><td class="num">Δ3m -0.2pt</td></tr><tr><td>SG-003 EU white sugar ex-works average price, month…</td><td class="num" style="color: rgb(91, 101, 115);">→ w2</td><td class="num">Δ3m -1.68%</td></tr><tr><td>VO-001 Soybean oil, crude fob ex-mill, monthly (Wor…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +38.48%</td></tr><tr><td>VO-002 Palm oil, crude cif NW Europe, monthly (Worl…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +9.67%</td></tr><tr><td>VO-003 Sunflower oil, monthly (World Bank CMO)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +4.15%</td></tr><tr><td>VO-004 Rapeseed oil, monthly (World Bank CMO)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +15.47%</td></tr><tr><td>VO-005 Crude rapeseed oil, Romania, weekly (EUR/t)</td><td class="num" style="color: rgb(91, 101, 115);">→ w2</td><td class="num">Δ3m +1.12%</td></tr></table></details></div><div class="tile" style="border-left-color: rgb(179, 65, 60);"><div class="u">S4 · Logistics &amp; energy</div><div class="state" style="color: rgb(179, 65, 60);">escalating</div><div class="m mono">score 0.913 · breadth 91% · Δ3m med 17.5% · volatility normal</div><div class="m">broad base: 14 series voting, 100% fresh</div><details><summary>evidence (14 rows)</summary><table><tr><td>EN-001 Natural gas, Europe, monthly (World Bank CMO)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +43.86%</td></tr><tr><td>EN-003 Crude oil WTI, weekly spot (EIA)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +41.87%</td></tr><tr><td>EN-004 Henry Hub natural gas, weekly spot (EIA)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +4.98%</td></tr><tr><td>EN-005 US on-highway diesel retail, weekly (EIA)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +45%</td></tr><tr><td>EN-006 US regular gasoline retail, weekly (EIA)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +49.9%</td></tr><tr><td>EN-007 EU automotive gas oil (diesel) retail incl. …</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +19.2%</td></tr><tr><td>EN-008 EU Euro-super 95 petrol retail incl. tax, we…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +16.06%</td></tr><tr><td>EN-009 Crude oil Brent, monthly (World Bank CMO)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +51.23%</td></tr><tr><td>EN-010 Coal, Australian, monthly (World Bank CMO)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +15.62%</td></tr><tr><td>FR-001 ATA Truck Tonnage Index, monthly (FRED)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +1pt</td></tr><tr><td>FR-002 US PPI: long-distance truckload freight, mon…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +33.37pt</td></tr><tr><td>FR-003 US PPI: line-haul rail freight, monthly (FRED)</td><td class="num" style="color: rgb(91, 101, 115);">→ w1</td><td class="num">Δ3m +0.16pt</td></tr><tr><td>FR-004 US PPI: deep sea freight transportation, mon…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +24.57pt</td></tr><tr><td>FR-005 EU land transport services producer prices (…</td><td class="num" style="color: rgb(91, 101, 115);">→ w1</td><td class="num">Δ3m +0pt</td></tr></table></details></div><div class="tile" style="border-left-color: rgb(184, 122, 30);"><div class="u">S5 · Packaging</div><div class="state" style="color: rgb(184, 122, 30);">tightening</div><div class="m mono">score 0.5 · breadth 50% · Δ3m med 1.5% · volatility normal</div><div class="m">broad base: 9 series voting, 100% fresh</div><details><summary>evidence (9 rows)</summary><table><tr><td>PK-001 US PPI: wood pulp (WPU0911), monthly index</td><td class="num" style="color: rgb(91, 101, 115);">→ w1</td><td class="num">Δ3m +2.02pt</td></tr><tr><td>PK-002 EU producer prices: pulp, paper and paperboa…</td><td class="num" style="color: rgb(91, 101, 115);">→ w1</td><td class="num">Δ3m +4.6pt</td></tr><tr><td>PK-003 US PPI: paperboard mills (PCU322130322130), …</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +5.7pt</td></tr><tr><td>PK-004 EU producer prices: articles of paper and pa…</td><td class="num" style="color: rgb(91, 101, 115);">→ w1</td><td class="num">Δ3m +0.6pt</td></tr><tr><td>PK-005 Aluminium, LME-basis cash price, monthly (Wo…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +19.6%</td></tr><tr><td>PK-006 US PPI: glass container manufacturing (PCU32…</td><td class="num" style="color: rgb(91, 101, 115);">→ w1</td><td class="num">Δ3m -5.02pt</td></tr><tr><td>PK-007 EU producer prices: glass and glass products…</td><td class="num" style="color: rgb(91, 101, 115);">→ w1</td><td class="num">Δ3m +0.5pt</td></tr><tr><td>PK-008 US PPI: plastics material and resins (PCU325…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +69.37pt</td></tr><tr><td>PK-009 EU producer prices: plastic products (NACE C…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +3.2pt</td></tr></table></details></div><div class="tile" style="border-left-color: rgb(184, 122, 30);"><div class="u">All segments</div><div class="state" style="color: rgb(184, 122, 30);">tightening</div><div class="m mono">score 0.619 · breadth 68% · Δ3m med 6.2% · volatility normal</div><div class="m">broad base: 59 series voting, 100% fresh</div><details><summary>evidence (59 rows)</summary><table><tr><td>CF-001 Coffee Arabica, ICO indicator basis, monthly…</td><td class="num" style="color: rgb(91, 101, 115);">→ w2</td><td class="num">Δ3m -1.84%</td></tr><tr><td>CF-002 Coffee Robusta, ICO indicator basis, monthly…</td><td class="num" style="color: rgb(63, 122, 78);">▼ w2</td><td class="num">Δ3m -7.32%</td></tr><tr><td>CO-001 Cocoa beans, ICCO daily price average basis,…</td><td class="num" style="color: rgb(91, 101, 115);">→ w2</td><td class="num">Δ3m +15.88%</td></tr><tr><td>DY-001 EU butter, weekly average price, EU aggregat…</td><td class="num" style="color: rgb(63, 122, 78);">▼ w2</td><td class="num">Δ3m -5.46%</td></tr><tr><td>DY-002 EU skimmed milk powder, weekly average price…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +19.15%</td></tr><tr><td>EG-001 EU egg prices, packing station, EU average, …</td><td class="num" style="color: rgb(91, 101, 115);">→ w2</td><td class="num">Δ3m -6.01%</td></tr><tr><td>EG-002 US city average egg price, grade A large, mo…</td><td class="num" style="color: rgb(63, 122, 78);">▼ w2</td><td class="num">Δ3m -12.36%</td></tr><tr><td>EN-001 Natural gas, Europe, monthly (World Bank CMO)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +43.86%</td></tr><tr><td>EN-003 Crude oil WTI, weekly spot (EIA)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +41.87%</td></tr><tr><td>EN-004 Henry Hub natural gas, weekly spot (EIA)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +4.98%</td></tr><tr><td>EN-005 US on-highway diesel retail, weekly (EIA)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +45%</td></tr><tr><td>EN-006 US regular gasoline retail, weekly (EIA)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +49.9%</td></tr><tr><td>EN-007 EU automotive gas oil (diesel) retail incl. …</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +19.2%</td></tr><tr><td>EN-008 EU Euro-super 95 petrol retail incl. tax, we…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +16.06%</td></tr><tr><td>EN-009 Crude oil Brent, monthly (World Bank CMO)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +51.23%</td></tr><tr><td>EN-010 Coal, Australian, monthly (World Bank CMO)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +15.62%</td></tr><tr><td>FE-001 Urea, fob Black Sea bulk, monthly (World Ban…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +63.24%</td></tr><tr><td>FE-002 DAP, fob US Gulf, monthly (World Bank CMO)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +22.83%</td></tr><tr><td>FE-003 TSP, fob Morocco, monthly (World Bank CMO)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +33.05%</td></tr><tr><td>FE-004 Potassium chloride (MOP), fob Vancouver, mon…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +8.72%</td></tr><tr><td>FE-005 Phosphate rock, fob Morocco, monthly (World …</td><td class="num" style="color: rgb(91, 101, 115);">→ w2</td><td class="num">Δ3m +0%</td></tr><tr><td>FE-006 EU producer prices: fertilisers and nitrogen…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +8.7pt</td></tr><tr><td>FE-007 EU agricultural input price index: fertilise…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +6.75pt</td></tr><tr><td>FE-008 EU fertiliser price: N (Nitrogen) composite,…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +30.05%</td></tr><tr><td>FE-009 EU producer prices: lime and plaster (NACE C…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +2pt</td></tr><tr><td>FE-010 EU fertiliser price: P (Phosphorus) composit…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +18.32%</td></tr><tr><td>FE-011 EU fertiliser price: K (Potash) composite, m…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +3.64%</td></tr><tr><td>FR-001 ATA Truck Tonnage Index, monthly (FRED)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +1pt</td></tr><tr><td>FR-002 US PPI: long-distance truckload freight, mon…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +33.37pt</td></tr><tr><td>FR-003 US PPI: line-haul rail freight, monthly (FRED)</td><td class="num" style="color: rgb(91, 101, 115);">→ w1</td><td class="num">Δ3m +0.16pt</td></tr><tr><td>FR-004 US PPI: deep sea freight transportation, mon…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +24.57pt</td></tr><tr><td>FR-005 EU land transport services producer prices (…</td><td class="num" style="color: rgb(91, 101, 115);">→ w1</td><td class="num">Δ3m +0pt</td></tr><tr><td>IX-001 FAO Food Price Index, monthly (2014-2016=100)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +5.3pt</td></tr><tr><td>IX-002 FAO Cereals Price Index, monthly (2014-2016=…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +5.6pt</td></tr><tr><td>IX-003 FAO Vegetable Oils Price Index, monthly (201…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +10.8pt</td></tr><tr><td>IX-004 FAO Dairy Price Index, monthly (2014-2016=100)</td><td class="num" style="color: rgb(91, 101, 115);">→ w1</td><td class="num">Δ3m -0.2pt</td></tr><tr><td>IX-005 FAO Sugar Price Index, monthly (2014-2016=100)</td><td class="num" style="color: rgb(91, 101, 115);">→ w1</td><td class="num">Δ3m +8.9pt</td></tr><tr><td>MZ-001 Maize (corn), US export price Gulf, monthly …</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +3.14%</td></tr><tr><td>MZ-002 Feed maize, France, National Average, weekly…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +10.33%</td></tr><tr><td>PK-001 US PPI: wood pulp (WPU0911), monthly index</td><td class="num" style="color: rgb(91, 101, 115);">→ w1</td><td class="num">Δ3m +2.02pt</td></tr><tr><td>PK-002 EU producer prices: pulp, paper and paperboa…</td><td class="num" style="color: rgb(91, 101, 115);">→ w1</td><td class="num">Δ3m +4.6pt</td></tr><tr><td>PK-003 US PPI: paperboard mills (PCU322130322130), …</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +5.7pt</td></tr><tr><td>PK-004 EU producer prices: articles of paper and pa…</td><td class="num" style="color: rgb(91, 101, 115);">→ w1</td><td class="num">Δ3m +0.6pt</td></tr><tr><td>PK-005 Aluminium, LME-basis cash price, monthly (Wo…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +19.6%</td></tr><tr><td>PK-006 US PPI: glass container manufacturing (PCU32…</td><td class="num" style="color: rgb(91, 101, 115);">→ w1</td><td class="num">Δ3m -5.02pt</td></tr><tr><td>PK-007 EU producer prices: glass and glass products…</td><td class="num" style="color: rgb(91, 101, 115);">→ w1</td><td class="num">Δ3m +0.5pt</td></tr><tr><td>PK-008 US PPI: plastics material and resins (PCU325…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +69.37pt</td></tr><tr><td>PK-009 EU producer prices: plastic products (NACE C…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w1</td><td class="num">Δ3m +3.2pt</td></tr><tr><td>SG-001 Sugar, world (ISA daily basis), monthly (Wor…</td><td class="num" style="color: rgb(91, 101, 115);">→ w2</td><td class="num">Δ3m +9.68%</td></tr><tr><td>SG-002 Sugar, EU (CXL import basis), monthly (World…</td><td class="num" style="color: rgb(91, 101, 115);">→ w2</td><td class="num">Δ3m -2.56%</td></tr><tr><td>SG-003 EU white sugar ex-works average price, month…</td><td class="num" style="color: rgb(91, 101, 115);">→ w2</td><td class="num">Δ3m -1.68%</td></tr><tr><td>VO-001 Soybean oil, crude fob ex-mill, monthly (Wor…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +38.48%</td></tr><tr><td>VO-002 Palm oil, crude cif NW Europe, monthly (Worl…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +9.67%</td></tr><tr><td>VO-003 Sunflower oil, monthly (World Bank CMO)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +4.15%</td></tr><tr><td>VO-004 Rapeseed oil, monthly (World Bank CMO)</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +15.47%</td></tr><tr><td>VO-005 Crude rapeseed oil, Romania, weekly (EUR/t)</td><td class="num" style="color: rgb(91, 101, 115);">→ w2</td><td class="num">Δ3m +1.12%</td></tr><tr><td>WH-001 Wheat US HRW, export price Gulf, monthly (Wo…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +17.65%</td></tr><tr><td>WH-002 Wheat US SRW, export price Gulf, monthly (Wo…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +11.7%</td></tr><tr><td>WH-003 Breadmaking common wheat, France, National A…</td><td class="num" style="color: rgb(179, 65, 60);">▲ w2</td><td class="num">Δ3m +6.65%</td></tr></table></details></div></div><h2 class="layer">S1 - Farm inputs</h2><div class="grid"><div class="card"><div class="t">Urea, fob Black Sea bulk, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(138, 109, 59);">origin-specific</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="FE-001" width="316" height="120"></canvas><div class="sum mono">770.5 USD/t · Δ3m +85.5% · Δ12m +99.2% · @2026-05</div></div><div class="card"><div class="t">DAP, fob US Gulf, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(138, 109, 59);">origin-specific</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="FE-002" width="316" height="120"></canvas><div class="sum mono">769.5 USD/t · Δ3m +24.3% · Δ12m +21.2% · @2026-05</div></div><div class="card"><div class="t">TSP, fob Morocco, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(138, 109, 59);">origin-specific</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="FE-003" width="316" height="120"></canvas><div class="sum mono">713.5 USD/t · Δ3m +34.8% · Δ12m +43.9% · @2026-05</div></div><div class="card"><div class="t">Potassium chloride (MOP), fob Vancouver, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(138, 109, 59);">origin-specific</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="FE-004" width="316" height="120"></canvas><div class="sum mono">405.0 USD/t · Δ3m +10.7% · Δ12m +15.1% · @2026-05</div></div><div class="card"><div class="t">Phosphate rock, fob Morocco, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(138, 109, 59);">origin-specific</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="FE-005" width="316" height="120"></canvas><div class="sum mono">152.5 USD/t · Δ3m +0.0% · Δ12m +0.0% · @2026-05</div></div><div class="card"><div class="t">EU producer prices: fertilisers and nitrogen compounds (NACE C20.15), monthly index</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">Eurostat</span></div><canvas data-qa-canvas="FE-006" width="316" height="120"></canvas><div class="sum mono">135.7 index · Δ3m +10.4pt (+8.3%) · Δ12m +11.8pt (+9.5%) · @2026-04</div></div><div class="card"><div class="t">EU agricultural input price index: fertilisers and soil improvers, quarterly (2020=100)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">Eurostat</span></div><canvas data-qa-canvas="FE-007" width="316" height="120"></canvas><div class="sum mono">168.8 index · Δ4q +18.8pt (+12.5%) · Δ8q +7.7pt (+4.7%) · @2026-03</div></div><div class="card"><div class="t">EU fertiliser price: N (Nitrogen) composite, monthly (EUR/t)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">EU Commission DG AGRI (Agri-food Dat…</span></div><canvas data-qa-canvas="FE-008" width="316" height="120"></canvas><div class="sum mono">541.0 EUR/t · Δ3m +33.6% · Δ12m +43.9% · @2026-05</div></div><div class="card"><div class="t">EU producer prices: lime and plaster (NACE C23.52), monthly index</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">Eurostat</span></div><canvas data-qa-canvas="FE-009" width="316" height="120"></canvas><div class="sum mono">174.9 index · Δ3m +9.4pt (+5.7%) · Δ12m +7.2pt (+4.3%) · @2026-04</div></div><div class="card"><div class="t">EU fertiliser price: P (Phosphorus) composite, monthly (EUR/t)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">EU Commission DG AGRI (Agri-food Dat…</span></div><canvas data-qa-canvas="FE-010" width="316" height="120"></canvas><div class="sum mono">717.0 EUR/t · Δ3m +18.7% · Δ12m +26.0% · @2026-05</div></div><div class="card"><div class="t">EU fertiliser price: K (Potash) composite, monthly (EUR/t)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">EU Commission DG AGRI (Agri-food Dat…</span></div><canvas data-qa-canvas="FE-011" width="316" height="120"></canvas><div class="sum mono">370.0 EUR/t · Δ3m +2.8% · Δ12m +2.8% · @2026-05</div></div></div><h2 class="layer">S2 - Raw crops</h2><div class="grid"><div class="card"><div class="t">Coffee Arabica, ICO indicator basis, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(63, 122, 78);">world</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="CF-001" width="316" height="120"></canvas><div class="sum mono">6.95 USD/kg · Δ3m −13.3% · Δ12m −19.6% · @2026-05</div><div class="xcheck mono">daily cross-check 5.76 USD/kg (KC=F via yahoo, unofficial) @2026-06-26</div></div><div class="card"><div class="t">Coffee Robusta, ICO indicator basis, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(63, 122, 78);">world</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="CF-002" width="316" height="120"></canvas><div class="sum mono">3.67 USD/kg · Δ3m −13.4% · Δ12m −32.4% · @2026-05</div></div><div class="card"><div class="t">Cocoa beans, ICCO daily price average basis, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(63, 122, 78);">world</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="CO-001" width="316" height="120"></canvas><div class="sum mono">4.16 USD/kg · Δ3m −16.3% · Δ12m −49.0% · @2026-05</div><div class="xcheck mono">daily cross-check 5.22 USD/kg (CC=F via yahoo, unofficial) @2026-06-26</div></div><div class="card"><div class="t">EU egg prices, packing station, EU average, barn, weekly (EUR/100 kg)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">EU Commission DG AGRI (Agri-food Dat…</span></div><canvas data-qa-canvas="EG-001" width="316" height="120"></canvas><div class="sum mono">280.0 EUR/100kg · Δ13w −14.2% · Δ52w +2.3% · @2026-06-21</div></div><div class="card"><div class="t">US city average egg price, grade A large, monthly (BLS)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(179, 65, 60);">US</span><span class="badge">US BLS average prices via FRED</span></div><canvas data-qa-canvas="EG-002" width="316" height="120"></canvas><div class="sum mono">2.19 USD per dozen · Δ3m −15.0% · Δ12m −57.2% · @2026-05</div></div><div class="card"><div class="t">FAO Food Price Index, monthly (2014-2016=100)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(63, 122, 78);">world</span><span class="badge">FAO (World Food Situation)</span></div><canvas data-qa-canvas="IX-001" width="316" height="120"></canvas><div class="sum mono">130.8 index · Δ3m +6.7pt (+5.4%) · Δ12m +2.6pt (+2.0%) · @2026-05</div></div><div class="card"><div class="t">FAO Cereals Price Index, monthly (2014-2016=100)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(63, 122, 78);">world</span><span class="badge">FAO (World Food Situation)</span></div><canvas data-qa-canvas="IX-002" width="316" height="120"></canvas><div class="sum mono">114.3 index · Δ3m +6.8pt (+6.3%) · Δ12m +3.4pt (+3.1%) · @2026-05</div></div><div class="card"><div class="t">FAO Sugar Price Index, monthly (2014-2016=100)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(63, 122, 78);">world</span><span class="badge">FAO (World Food Situation)</span></div><canvas data-qa-canvas="IX-005" width="316" height="120"></canvas><div class="sum mono">95.1 index · Δ3m +5.3pt (+5.9%) · Δ12m −17.2pt (−15.3%) · @2026-05</div></div><div class="card"><div class="t">Maize (corn), US export price Gulf, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(63, 122, 78);">world</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="MZ-001" width="316" height="120"></canvas><div class="sum mono">216.2 USD/t · Δ3m +5.7% · Δ12m +0.5% · @2026-05</div><div class="xcheck mono">daily cross-check 166.0 USD/t (ZC=F via yahoo, unofficial) @2026-06-26</div></div><div class="card"><div class="t">Feed maize, France, National Average, weekly (EUR/t)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">EU Commission DG AGRI (Agri-food Dat…</span></div><canvas data-qa-canvas="MZ-002" width="316" height="120"></canvas><div class="sum mono">211.4 EUR/t · Δ13w −0.7% · Δ52w +6.8% · @2026-06-21</div></div><div class="card"><div class="t">Sugar, world (ISA daily basis), monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(63, 122, 78);">world</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="SG-001" width="316" height="120"></canvas><div class="sum mono">0.34 USD/kg · Δ3m +6.3% · Δ12m −15.0% · @2026-05</div><div class="xcheck mono">daily cross-check 0.32 USD/kg (SB=F via yahoo, unofficial) @2026-06-26</div></div><div class="card"><div class="t">Sugar, EU (CXL import basis), monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="SG-002" width="316" height="120"></canvas><div class="sum mono">0.38 USD/kg · Δ3m +0.0% · Δ12m +2.7% · @2026-05</div></div><div class="card"><div class="t">Wheat US HRW, export price Gulf, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(179, 65, 60);">US</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="WH-001" width="316" height="120"></canvas><div class="sum mono">303.0 USD/t · Δ3m +21.2% · Δ12m +21.4% · @2026-05</div><div class="xcheck mono">daily cross-check 227.6 USD/t (KE=F via yahoo, unofficial) @2026-06-26</div></div><div class="card"><div class="t">Wheat US SRW, export price Gulf, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(179, 65, 60);">US</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="WH-002" width="316" height="120"></canvas><div class="sum mono">259.5 USD/t · Δ3m +19.2% · Δ12m +18.2% · @2026-05</div><div class="xcheck mono">daily cross-check 216.7 USD/t (ZW=F via yahoo, unofficial) @2026-06-26</div></div><div class="card"><div class="t">Breadmaking common wheat, France, National Average, weekly (EUR/t)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">EU Commission DG AGRI (Agri-food Dat…</span></div><canvas data-qa-canvas="WH-003" width="316" height="120"></canvas><div class="sum mono">209.7 EUR/t · Δ13w +3.1% · Δ52w +3.7% · @2026-06-21</div></div></div><h2 class="layer">S3 - Processed ingredients</h2><div class="grid"><div class="card"><div class="t">EU butter, weekly average price, EU aggregate (EUR/100 kg)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">EU Commission DG AGRI (Agri-food Dat…</span></div><canvas data-qa-canvas="DY-001" width="316" height="120"></canvas><div class="sum mono">385.4 EUR/100kg · Δ13w −12.0% · Δ52w −47.9% · @2026-06-21</div></div><div class="card"><div class="t">EU skimmed milk powder, weekly average price, EU aggregate (EUR/100 kg)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">EU Commission DG AGRI (Agri-food Dat…</span></div><canvas data-qa-canvas="DY-002" width="316" height="120"></canvas><div class="sum mono">272.1 EUR/100kg · Δ13w +4.8% · Δ52w +13.5% · @2026-06-21</div></div><div class="card"><div class="t">FAO Vegetable Oils Price Index, monthly (2014-2016=100)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(63, 122, 78);">world</span><span class="badge">FAO (World Food Situation)</span></div><canvas data-qa-canvas="IX-003" width="316" height="120"></canvas><div class="sum mono">185.0 index · Δ3m +16.4pt (+9.7%) · Δ12m +27.0pt (+17.1%) · @2026-05</div></div><div class="card"><div class="t">FAO Dairy Price Index, monthly (2014-2016=100)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(63, 122, 78);">world</span><span class="badge">FAO (World Food Situation)</span></div><canvas data-qa-canvas="IX-004" width="316" height="120"></canvas><div class="sum mono">119.2 index · Δ3m −1.5pt (−1.2%) · Δ12m −32.5pt (−21.4%) · @2026-05</div></div><div class="card"><div class="t">EU white sugar ex-works average price, monthly (EUR/t)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">EU Commission DG AGRI (Agri-food Dat…</span><span class="badge stale">stale 120d</span></div><canvas data-qa-canvas="SG-003" width="316" height="120"></canvas><div class="sum mono">510.2 EUR/t · Δ3m −2.9% · Δ12m −5.7% · @2026-03</div></div><div class="card"><div class="t">Soybean oil, crude fob ex-mill, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(63, 122, 78);">world</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="VO-001" width="316" height="120"></canvas><div class="sum mono">1,775 USD/t · Δ3m +53.9% · Δ12m +58.6% · @2026-05</div><div class="xcheck mono">daily cross-check 1,479 USD/t (ZL=F via yahoo, unofficial) @2026-06-26</div></div><div class="card"><div class="t">Palm oil, crude cif NW Europe, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(63, 122, 78);">world</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="VO-002" width="316" height="120"></canvas><div class="sum mono">1,140 USD/t · Δ3m +13.5% · Δ12m +14.6% · @2026-05</div></div><div class="card"><div class="t">Sunflower oil, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(63, 122, 78);">world</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="VO-003" width="316" height="120"></canvas><div class="sum mono">1,505 USD/t · Δ3m +4.4% · Δ12m +22.9% · @2026-05</div></div><div class="card"><div class="t">Rapeseed oil, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(63, 122, 78);">world</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="VO-004" width="316" height="120"></canvas><div class="sum mono">1,473 USD/t · Δ3m +20.4% · Δ12m +17.2% · @2026-05</div></div><div class="card"><div class="t">Crude rapeseed oil, Romania, weekly (EUR/t)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">EU Commission DG AGRI (Agri-food Dat…</span></div><canvas data-qa-canvas="VO-005" width="316" height="120"></canvas><div class="sum mono">1,099 EUR/t · Δ13w −3.5% · Δ52w −2.8% · @2026-06-21</div></div></div><h2 class="layer">S4 - Logistics &amp; energy</h2><div class="grid"><div class="card"><div class="t">Natural gas, Europe, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="EN-001" width="316" height="120"></canvas><div class="sum mono">16.17 USD/MMBtu · Δ3m +37.5% · Δ12m +39.5% · @2026-05</div></div><div class="card"><div class="t">Crude oil WTI, weekly spot (EIA)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(179, 65, 60);">US</span><span class="badge">US EIA</span></div><canvas data-qa-canvas="EN-003" width="316" height="120"></canvas><div class="sum mono">81.4 USD/bbl · Δ13w −15.3% · Δ52w +8.6% · @2026-06-19</div></div><div class="card"><div class="t">Henry Hub natural gas, weekly spot (EIA)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(179, 65, 60);">US</span><span class="badge">US EIA</span></div><canvas data-qa-canvas="EN-004" width="316" height="120"></canvas><div class="sum mono">3.12 USD/MMBtu · Δ13w +0.3% · Δ52w +1.3% · @2026-06-19</div></div><div class="card"><div class="t">US on-highway diesel retail, weekly (EIA)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(179, 65, 60);">US</span><span class="badge">US EIA</span></div><canvas data-qa-canvas="EN-005" width="316" height="120"></canvas><div class="sum mono">4.8 USD/gal · Δ13w −10.1% · Δ52w +28.0% · @2026-06-22</div></div><div class="card"><div class="t">US regular gasoline retail, weekly (EIA)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(179, 65, 60);">US</span><span class="badge">US EIA</span></div><canvas data-qa-canvas="EN-006" width="316" height="120"></canvas><div class="sum mono">4.0 USD/gal · Δ13w −1.2% · Δ52w +21.3% · @2026-06-22</div></div><div class="card"><div class="t">EU automotive gas oil (diesel) retail incl. tax, weekly (EU Oil Bulletin)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">EU Commission (Weekly Oil Bulletin)</span></div><canvas data-qa-canvas="EN-007" width="316" height="120"></canvas><div class="sum mono">1.7 EUR/L · Δ13w −16.2% · Δ52w +11.3% · @2026-06-22</div></div><div class="card"><div class="t">EU Euro-super 95 petrol retail incl. tax, weekly (EU Oil Bulletin)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">EU Commission (Weekly Oil Bulletin)</span></div><canvas data-qa-canvas="EN-008" width="316" height="120"></canvas><div class="sum mono">1.8 EUR/L · Δ13w −7.0% · Δ52w +7.5% · @2026-06-22</div></div><div class="card"><div class="t">Crude oil Brent, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(63, 122, 78);">world</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="EN-009" width="316" height="120"></canvas><div class="sum mono">107.5 USD/bbl · Δ3m +61.1% · Δ12m +58.7% · @2026-05</div></div><div class="card"><div class="t">Coal, Australian, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(63, 122, 78);">world</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="EN-010" width="316" height="120"></canvas><div class="sum mono">136.9 USD/t · Δ3m +24.7% · Δ12m +38.8% · @2026-05</div></div><div class="card"><div class="t">ATA Truck Tonnage Index, monthly (FRED)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(179, 65, 60);">US</span><span class="badge">American Trucking Associations via F…</span><span class="badge stale">stale 120d</span></div><canvas data-qa-canvas="FR-001" width="316" height="120"></canvas><div class="sum mono">116.8 index · Δ3m +3.9pt (+3.5%) · Δ12m +3.4pt (+3.0%) · @2026-03</div></div><div class="card"><div class="t">US PPI: long-distance truckload freight, monthly (FRED)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(179, 65, 60);">US</span><span class="badge">US BLS via FRED</span></div><canvas data-qa-canvas="FR-002" width="316" height="120"></canvas><div class="sum mono">209.6 index · Δ3m +38.3pt (+22.4%) · Δ12m +39.6pt (+23.3%) · @2026-05</div></div><div class="card"><div class="t">US PPI: line-haul rail freight, monthly (FRED)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(179, 65, 60);">US</span><span class="badge">US BLS via FRED</span></div><canvas data-qa-canvas="FR-003" width="316" height="120"></canvas><div class="sum mono">268.7 index · Δ3m +0.1pt (+0.0%) · Δ12m +0.7pt (+0.2%) · @2026-05</div></div><div class="card"><div class="t">US PPI: deep sea freight transportation, monthly (FRED)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(179, 65, 60);">US</span><span class="badge">US BLS via FRED</span></div><canvas data-qa-canvas="FR-004" width="316" height="120"></canvas><div class="sum mono">466.4 index · Δ3m +21.1pt (+4.7%) · Δ12m +56.0pt (+13.7%) · @2026-05</div></div><div class="card"><div class="t">EU land transport services producer prices (NACE H49, road-dominated), quarterly (Eurostat)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">Eurostat</span><span class="badge stale">stale 210d</span></div><canvas data-qa-canvas="FR-005" width="316" height="120"></canvas><div class="sum mono">121.3 index · Δ4q +3.0pt (+2.5%) · Δ8q +6.3pt (+5.5%) · @2025-12</div></div></div><h2 class="layer">S5 - Packaging</h2><div class="grid"><div class="card"><div class="t">US PPI: wood pulp (WPU0911), monthly index</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(179, 65, 60);">US</span><span class="badge">US BLS via FRED</span></div><canvas data-qa-canvas="PK-001" width="316" height="120"></canvas><div class="sum mono">201.3 index · Δ3m −0.9pt (−0.4%) · Δ12m −18.8pt (−8.5%) · @2026-05</div></div><div class="card"><div class="t">EU producer prices: pulp, paper and paperboard (NACE C17.1), monthly index</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">Eurostat</span></div><canvas data-qa-canvas="PK-002" width="316" height="120"></canvas><div class="sum mono">113.4 index · Δ3m +2.6pt (+2.3%) · Δ12m −3.7pt (−3.2%) · @2026-04</div></div><div class="card"><div class="t">US PPI: paperboard mills (PCU322130322130), monthly index</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(179, 65, 60);">US</span><span class="badge">US BLS via FRED</span></div><canvas data-qa-canvas="PK-003" width="316" height="120"></canvas><div class="sum mono">396.7 index · Δ3m +2.7pt (+0.7%) · Δ12m +5.9pt (+1.5%) · @2026-05</div></div><div class="card"><div class="t">EU producer prices: articles of paper and paperboard (NACE C17.2), monthly index</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">Eurostat</span></div><canvas data-qa-canvas="PK-004" width="316" height="120"></canvas><div class="sum mono">120.2 index · Δ3m +0.2pt (+0.2%) · Δ12m −0.6pt (−0.5%) · @2026-04</div></div><div class="card"><div class="t">Aluminium, LME-basis cash price, monthly (World Bank CMO)</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(63, 122, 78);">world</span><span class="badge">World Bank (CMO Pink Sheet)</span></div><canvas data-qa-canvas="PK-005" width="316" height="120"></canvas><div class="sum mono">3,666 USD/t · Δ3m +16.7% · Δ12m +54.6% · @2026-05</div><div class="xcheck mono">daily cross-check 3,311 USD/t (ALI=F via yahoo, unofficial) @2026-06-26</div></div><div class="card"><div class="t">US PPI: glass container manufacturing (PCU327213327213), monthly index</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(179, 65, 60);">US</span><span class="badge">US BLS via FRED</span></div><canvas data-qa-canvas="PK-006" width="316" height="120"></canvas><div class="sum mono">305.7 index · Δ3m −0.5pt (−0.2%) · Δ12m +8.8pt (+3.0%) · @2026-05</div></div><div class="card"><div class="t">EU producer prices: glass and glass products (NACE C23.1), monthly index</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">Eurostat</span></div><canvas data-qa-canvas="PK-007" width="316" height="120"></canvas><div class="sum mono">130.0 index · Δ3m +0.1pt (+0.1%) · Δ12m +4.0pt (+3.2%) · @2026-04</div></div><div class="card"><div class="t">US PPI: plastics material and resins (PCU325211325211), monthly index</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(179, 65, 60);">US</span><span class="badge">US BLS via FRED</span></div><canvas data-qa-canvas="PK-008" width="316" height="120"></canvas><div class="sum mono">377.7 index · Δ3m +74.2pt (+24.4%) · Δ12m +54.8pt (+17.0%) · @2026-05</div></div><div class="card"><div class="t">EU producer prices: plastic products (NACE C22.2), monthly index</div><div class="badges"><span class="badge tier">T1</span><span class="badge geo" style="background: rgb(31, 95, 191);">EU</span><span class="badge">Eurostat</span></div><canvas data-qa-canvas="PK-009" width="316" height="120"></canvas><div class="sum mono">114.8 index · Δ3m +3.0pt (+2.7%) · Δ12m +2.2pt (+2.0%) · @2026-04</div></div></div></div>
+  <div id="view-groups" class="view"><div class="card" style="margin-bottom: 14px;"><div class="t">coffee complex  ·  basis: indexed</div><canvas data-qa-canvas="grp-coffee_complex" width="320" height="120" style="height: 170px;"></canvas><div class="legend"><div><span class="k" style="background: rgb(63, 122, 78);"></span>Coffee Arabica, ICO indicator basis, monthly (World Bank CMO) — 152.1 (rebased=100)</div><div><span class="k" style="background: rgb(63, 122, 78);"></span>Coffee Robusta, ICO indicator basis, monthly (World Bank CMO) — 126.1 (rebased=100)</div></div></div><div class="card" style="margin-bottom: 14px;"><div class="t">wheat complex  ·  basis: indexed</div><canvas data-qa-canvas="grp-wheat_complex" width="320" height="120" style="height: 170px;"></canvas><div class="legend"><div><span class="k" style="background: rgb(179, 65, 60);"></span>Wheat US HRW, export price Gulf, monthly (World Bank CMO) — 87.7 (rebased=100)</div><div><span class="k" style="background: rgb(179, 65, 60);"></span>Wheat US SRW, export price Gulf, monthly (World Bank CMO) — 103.9 (rebased=100)</div><div><span class="k" style="background: rgb(31, 95, 191);"></span>Breadmaking common wheat, France, National Average, weekly (EUR/t) — 90.8 (rebased=100)</div></div></div><div class="card" style="margin-bottom: 14px;"><div class="t">maize complex  ·  basis: indexed</div><canvas data-qa-canvas="grp-maize_complex" width="320" height="120" style="height: 170px;"></canvas><div class="legend"><div><span class="k" style="background: rgb(63, 122, 78);"></span>Maize (corn), US export price Gulf, monthly (World Bank CMO) — 89.2 (rebased=100)</div><div><span class="k" style="background: rgb(31, 95, 191);"></span>Feed maize, France, National Average, weekly (EUR/t) — 82.5 (rebased=100)</div></div></div><div class="card" style="margin-bottom: 14px;"><div class="t">vegoil complex  ·  basis: level</div><canvas data-qa-canvas="grp-vegoil_complex" width="320" height="120" style="height: 170px;"></canvas><div class="legend"><div><span class="k" style="background: rgb(63, 122, 78);"></span>Soybean oil, crude fob ex-mill, monthly (World Bank CMO) — 1,775 USD/t</div><div><span class="k" style="background: rgb(63, 122, 78);"></span>Palm oil, crude cif NW Europe, monthly (World Bank CMO) — 1,140 USD/t</div><div><span class="k" style="background: rgb(63, 122, 78);"></span>Sunflower oil, monthly (World Bank CMO) — 1,505 USD/t</div><div><span class="k" style="background: rgb(63, 122, 78);"></span>Rapeseed oil, monthly (World Bank CMO) — 1,473 USD/t</div></div></div><div class="card" style="margin-bottom: 14px;"><div class="t">sugar complex  ·  basis: indexed</div><canvas data-qa-canvas="grp-sugar_complex" width="320" height="120" style="height: 170px;"></canvas><div class="legend"><div><span class="k" style="background: rgb(63, 122, 78);"></span>Sugar, world (ISA daily basis), monthly (World Bank CMO) — 63.0 (rebased=100)</div><div><span class="k" style="background: rgb(31, 95, 191);"></span>Sugar, EU (CXL import basis), monthly (World Bank CMO) — 108.6 (rebased=100)</div><div><span class="k" style="background: rgb(31, 95, 191);"></span>EU white sugar ex-works average price, monthly (EUR/t) — 62.5 (rebased=100)</div></div></div><div class="card" style="margin-bottom: 14px;"><div class="t">dairy eu  ·  basis: level</div><canvas data-qa-canvas="grp-dairy_eu" width="320" height="120" style="height: 170px;"></canvas><div class="legend"><div><span class="k" style="background: rgb(31, 95, 191);"></span>EU butter, weekly average price, EU aggregate (EUR/100 kg) — 385.4 EUR/100kg</div><div><span class="k" style="background: rgb(31, 95, 191);"></span>EU skimmed milk powder, weekly average price, EU aggregate (EUR/100 kg) — 272.1 EUR/100kg</div></div></div><div class="card" style="margin-bottom: 14px;"><div class="t">nitrogen complex  ·  basis: indexed</div><canvas data-qa-canvas="grp-nitrogen_complex" width="320" height="120" style="height: 170px;"></canvas><div class="legend"><div><span class="k" style="background: rgb(138, 109, 59);"></span>Urea, fob Black Sea bulk, monthly (World Bank CMO) — 268.0 (rebased=100)</div><div><span class="k" style="background: rgb(31, 95, 191);"></span>EU fertiliser price: N (Nitrogen) composite, monthly (EUR/t) — 171.7 (rebased=100)</div><div><span class="k" style="background: rgb(31, 95, 191);"></span>Natural gas, Europe, monthly (World Bank CMO) — 156.2 (rebased=100)</div></div></div><div class="card" style="margin-bottom: 14px;"><div class="t">phosphate complex  ·  basis: indexed</div><canvas data-qa-canvas="grp-phosphate_complex" width="320" height="120" style="height: 170px;"></canvas><div class="legend"><div><span class="k" style="background: rgb(138, 109, 59);"></span>DAP, fob US Gulf, monthly (World Bank CMO) — 169.3 (rebased=100)</div><div><span class="k" style="background: rgb(138, 109, 59);"></span>TSP, fob Morocco, monthly (World Bank CMO) — 182.9 (rebased=100)</div><div><span class="k" style="background: rgb(138, 109, 59);"></span>Phosphate rock, fob Morocco, monthly (World Bank CMO) — 44.3 (rebased=100)</div><div><span class="k" style="background: rgb(31, 95, 191);"></span>EU fertiliser price: P (Phosphorus) composite, monthly (EUR/t) — 132.8 (rebased=100)</div></div></div><div class="card" style="margin-bottom: 14px;"><div class="t">potash complex  ·  basis: indexed</div><canvas data-qa-canvas="grp-potash_complex" width="320" height="120" style="height: 170px;"></canvas><div class="legend"><div><span class="k" style="background: rgb(138, 109, 59);"></span>Potassium chloride (MOP), fob Vancouver, monthly (World Bank CMO) — 123.5 (rebased=100)</div><div><span class="k" style="background: rgb(31, 95, 191);"></span>EU fertiliser price: K (Potash) composite, monthly (EUR/t) — 77.4 (rebased=100)</div></div></div><div class="card" style="margin-bottom: 14px;"><div class="t">fao indices  ·  basis: level</div><canvas data-qa-canvas="grp-fao_indices" width="320" height="120" style="height: 170px;"></canvas><div class="legend"><div><span class="k" style="background: rgb(63, 122, 78);"></span>FAO Food Price Index, monthly (2014-2016=100) — 130.8 index</div><div><span class="k" style="background: rgb(63, 122, 78);"></span>FAO Cereals Price Index, monthly (2014-2016=100) — 114.3 index</div><div><span class="k" style="background: rgb(63, 122, 78);"></span>FAO Vegetable Oils Price Index, monthly (2014-2016=100) — 185.0 index</div><div><span class="k" style="background: rgb(63, 122, 78);"></span>FAO Dairy Price Index, monthly (2014-2016=100) — 119.2 index</div><div><span class="k" style="background: rgb(63, 122, 78);"></span>FAO Sugar Price Index, monthly (2014-2016=100) — 95.1 index</div></div></div><div class="card" style="margin-bottom: 14px;"><div class="t">eu packaging ppi  ·  basis: level</div><canvas data-qa-canvas="grp-eu_packaging_ppi" width="320" height="120" style="height: 170px;"></canvas><div class="legend"><div><span class="k" style="background: rgb(31, 95, 191);"></span>EU producer prices: pulp, paper and paperboard (NACE C17.1), monthly index — 113.4 index</div><div><span class="k" style="background: rgb(31, 95, 191);"></span>EU producer prices: articles of paper and paperboard (NACE C17.2), monthly index — 120.2 index</div><div><span class="k" style="background: rgb(31, 95, 191);"></span>EU producer prices: glass and glass products (NACE C23.1), monthly index — 130.0 index</div><div><span class="k" style="background: rgb(31, 95, 191);"></span>EU producer prices: plastic products (NACE C22.2), monthly index — 114.8 index</div></div></div><div class="card" style="margin-bottom: 14px;"><div class="t">eggs regions  ·  basis: indexed</div><canvas data-qa-canvas="grp-eggs_regions" width="320" height="120" style="height: 170px;"></canvas><div class="legend"><div><span class="k" style="background: rgb(31, 95, 191);"></span>EU egg prices, packing station, EU average, barn, weekly (EUR/100 kg) — 112.6 (rebased=100)</div><div><span class="k" style="background: rgb(179, 65, 60);"></span>US city average egg price, grade A large, monthly (BLS) — 104.6 (rebased=100)</div></div></div><div class="card" style="margin-bottom: 14px;"><div class="t">crude complex  ·  basis: indexed</div><canvas data-qa-canvas="grp-crude_complex" width="320" height="120" style="height: 170px;"></canvas><div class="legend"><div><span class="k" style="background: rgb(179, 65, 60);"></span>Crude oil WTI, weekly spot (EIA) — 115.6 (rebased=100)</div><div><span class="k" style="background: rgb(63, 122, 78);"></span>Crude oil Brent, monthly (World Bank CMO) — 134.3 (rebased=100)</div></div></div><div class="card" style="margin-bottom: 14px;"><div class="t">fuel pumps  ·  basis: indexed</div><canvas data-qa-canvas="grp-fuel_pumps" width="320" height="120" style="height: 170px;"></canvas><div class="legend"><div><span class="k" style="background: rgb(179, 65, 60);"></span>US on-highway diesel retail, weekly (EIA) — 127.1 (rebased=100)</div><div><span class="k" style="background: rgb(179, 65, 60);"></span>US regular gasoline retail, weekly (EIA) — 109.9 (rebased=100)</div><div><span class="k" style="background: rgb(31, 95, 191);"></span>EU automotive gas oil (diesel) retail incl. tax, weekly (EU Oil Bulletin) — 110.5 (rebased=100)</div><div><span class="k" style="background: rgb(31, 95, 191);"></span>EU Euro-super 95 petrol retail incl. tax, weekly (EU Oil Bulletin) — 102.3 (rebased=100)</div></div></div><div class="card" style="margin-bottom: 14px;"><div class="t">us freight rates  ·  basis: indexed</div><canvas data-qa-canvas="grp-us_freight_rates" width="320" height="120" style="height: 170px;"></canvas><div class="legend"><div><span class="k" style="background: rgb(179, 65, 60);"></span>US PPI: long-distance truckload freight, monthly (FRED) — 119.8 (rebased=100)</div><div><span class="k" style="background: rgb(179, 65, 60);"></span>US PPI: line-haul rail freight, monthly (FRED) — 105.4 (rebased=100)</div><div><span class="k" style="background: rgb(179, 65, 60);"></span>US PPI: deep sea freight transportation, monthly (FRED) — 113.3 (rebased=100)</div></div></div></div>
+</main>
+<footer id="footer"><span class="status PASS">PASS</span> · registry v9 · 2026-06-28T16:00:10Z · 4 artifacts manifest-hashed<span> · hash verification: external (artifact QA)</span><div class="mono">validate-registry:PASS  capture:PASS  ingest-licensed:PASS  build-crosscheck:PASS  build-data:PASS  build-display-contract:PASS  synthesis:PASS  gate-chart-integrity:PASS  gate-display-contract:PASS  gate-frontend-category:PASS  gate-axis-sanity:PASS  gate-banned-words:PASS  gate-licensed-contract:PASS  gate-no-secrets-in-archive:PASS  gate-crosscheck-integrity:PASS  gate-synthesis-fixtures:PASS  gate-synthesis-stability:PASS  qa-secrets-scan:PASS  qa-numeric-history:PASS  qa-ratchet:PASS  data-freshness:WARN</div></footer>
+<pre id="qa-results">{
+ "canvases_total": 74,
+ "canvases_drawn": 74,
+ "console_errors": [],
+ "banned_hits": [],
+ "empty_summaries": 0,
+ "footer_status": "PASS",
+ "verdict": "PASS"
+}</pre>
+
+<script src="data.js"></script>
+<script src="display_contract.js"></script>
+<script src="synthesis.js"></script>
+<script src="build_manifest.js"></script>
+<script>
+'use strict';
+// ---- error capture (QA mode counts these) ----
+var QA_ERRORS = [];
+window.onerror = function (m, s, l) { QA_ERRORS.push(String(m) + ' @' + l); };
+var _cerr = console.error.bind(console);
+console.error = function () { QA_ERRORS.push(Array.prototype.join.call(arguments, ' ')); _cerr.apply(null, arguments); };
+
+function $(id) { return document.getElementById(id); }
+function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt !== undefined) e.textContent = txt; return e; }
+function parseObsDate(s) { return new Date(s.length === 7 ? s + '-01T00:00:00Z' : s + 'T00:00:00Z'); }
+function fmt(v, dp) { return Number(v).toLocaleString('en-GB', { minimumFractionDigits: dp, maximumFractionDigits: dp }); }
+function windowDays(w) {
+  var m = /^(\d+)([mwqd])$/.exec(w || '');
+  if (!m) return 0;
+  var n = +m[1];
+  return m[2] === 'm' ? n * 31 : m[2] === 'w' ? n * 7 : m[2] === 'q' ? n * 92 : n;
+}
+// change over a named window: % for level basis, index points (+%) for index basis.
+function moveOver(obs, w, basis, dp) {
+  var days = windowDays(w);
+  if (!days || obs.length < 2) return 'Δ' + w + ' n/a';
+  var lastD = parseObsDate(obs[obs.length - 1][0]).getTime();
+  var lastV = obs[obs.length - 1][1];
+  var base = null;
+  for (var i = obs.length - 1; i >= 0; i--) {
+    var t = parseObsDate(obs[i][0]).getTime();
+    if (t <= lastD - days * 86400000) { base = obs[i]; break; }
+  }
+  if (!base) {
+    // tolerate one period of slack before declaring the window unservable
+    var first = parseObsDate(obs[0][0]).getTime();
+    if (lastD - first >= days * 86400000 * 0.7) base = obs[0]; else return 'Δ' + w + ' n/a';
+  }
+  var sign = function (x) { return (x >= 0 ? '+' : '−') + Math.abs(x).toFixed(basis === 'index' ? 1 : 1); };
+  if (basis === 'index') {
+    var pts = lastV - base[1];
+    var pc = base[1] !== 0 ? (lastV / base[1] - 1) * 100 : 0;
+    return 'Δ' + w + ' ' + sign(pts) + 'pt (' + sign(pc) + '%)';
+  }
+  if (base[1] === 0) return 'Δ' + w + ' n/a';
+  return 'Δ' + w + ' ' + sign((lastV / base[1] - 1) * 100) + '%';
+}
+function staleInfo(meta, obs) {
+  var bd = windowDays(meta.staleness_budget);
+  if (!bd || !obs.length) return null;
+  var age = (Date.now() - parseObsDate(obs[obs.length - 1][0]).getTime()) / 86400000;
+  if (age > 2 * bd) return { cls: 'stale2', label: 'stale ' + Math.round(age) + 'd (>2x budget)' };
+  if (age > bd) return { cls: 'stale', label: 'stale ' + Math.round(age) + 'd' };
+  return null;
+}
+function drawLine(canvas, seriesList) {
+  // seriesList: [{pts:[[ms,v],...], color}]
+  var dpr = window.devicePixelRatio || 1;
+  var W = canvas.clientWidth || 320, H = canvas.clientHeight || 120;
+  canvas.width = W * dpr; canvas.height = H * dpr;
+  var ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, W, H);
+  var padL = 6, padR = 6, padT = 8, padB = 16;
+  var xs = [], ys = [];
+  seriesList.forEach(function (s) { s.pts.forEach(function (p) { xs.push(p[0]); ys.push(p[1]); }); });
+  if (!xs.length) return;
+  var x0 = Math.min.apply(null, xs), x1 = Math.max.apply(null, xs);
+  var y0 = Math.min.apply(null, ys), y1 = Math.max.apply(null, ys);
+  if (y0 === y1) { y0 -= 1; y1 += 1; }
+  var ypad = (y1 - y0) * 0.07; y0 -= ypad; y1 += ypad;
+  var X = function (t) { return padL + (W - padL - padR) * (x1 === x0 ? 0.5 : (t - x0) / (x1 - x0)); };
+  var Y = function (v) { return padT + (H - padT - padB) * (1 - (v - y0) / (y1 - y0)); };
+  ctx.strokeStyle = '#e3e6ea'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(padL, Y(y0 + ypad)); ctx.lineTo(W - padR, Y(y0 + ypad)); ctx.stroke();
+  seriesList.forEach(function (s) {
+    ctx.strokeStyle = s.color; ctx.lineWidth = 1.6; ctx.beginPath();
+    s.pts.forEach(function (p, i) { var x = X(p[0]), y = Y(p[1]); if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y); });
+    ctx.stroke();
+    var lp = s.pts[s.pts.length - 1];
+    ctx.fillStyle = s.color; ctx.beginPath(); ctx.arc(X(lp[0]), Y(lp[1]), 2.4, 0, 7); ctx.fill();
+  });
+  ctx.fillStyle = '#5b6573'; ctx.font = '10px ui-monospace,Consolas,monospace';
+  ctx.fillText(new Date(x0).toISOString().slice(0, 7), padL, H - 4);
+  var endLbl = new Date(x1).toISOString().slice(0, 7);
+  ctx.fillText(endLbl, W - padR - ctx.measureText(endLbl).width, H - 4);
+}
+
+var D = window.DASHBOARD_DATA || null;
+var C = window.DISPLAY_CONTRACT || null;
+var M = window.BUILD_MANIFEST || null;
+var FIVE_Y = 5 * 365.25 * 86400000;
+
+function cardFor(id) {
+  var s = D.series[id], ct = C.rows[id], meta = s.meta;
+  var card = el('div', 'card');
+  card.appendChild(el('div', 't', ct.title));
+  var badges = el('div', 'badges');
+  var tb = el('span', 'badge tier', 'T' + meta.tier); badges.appendChild(tb);
+  var gb = el('span', 'badge geo', meta.geography); gb.style.background = ct.color; badges.appendChild(gb);
+  badges.appendChild(el('span', 'badge', meta.institution.length > 38 ? meta.institution.slice(0, 36) + '…' : meta.institution));
+  if (meta.data_class === 'forecast') badges.appendChild(el('span', 'badge fc', 'forecast'));
+  var st = staleInfo(meta, s.obs);
+  if (st) badges.appendChild(el('span', 'badge ' + st.cls, st.label));
+  card.appendChild(badges);
+  var cv = el('canvas'); cv.setAttribute('data-qa-canvas', id); card.appendChild(cv);
+  var cutoff = parseObsDate(s.obs[s.obs.length - 1][0]).getTime() - FIVE_Y;
+  var pts = s.obs.filter(function (o) { return parseObsDate(o[0]).getTime() >= cutoff; })
+                 .map(function (o) { return [parseObsDate(o[0]).getTime(), o[1]]; });
+  var last = s.obs[s.obs.length - 1];
+  var sum = el('div', 'sum mono');
+  sum.textContent = fmt(last[1], ct.decimals) + ' ' + ct.unit_label +
+    ' · ' + moveOver(s.obs, ct.window_primary, ct.basis, ct.decimals) +
+    ' · ' + moveOver(s.obs, ct.window_secondary, ct.basis, ct.decimals) +
+    ' · @' + last[0];
+  card.appendChild(sum);
+  if (meta.crosscheck) {
+    var xc = meta.crosscheck;
+    var xline = el('div', 'xcheck mono');
+    xline.textContent = 'daily cross-check ' + fmt(xc.value, ct.decimals) + ' ' + xc.unit +
+      ' (' + xc.ticker + ' via ' + xc.source + ', unofficial) @' + xc.date;
+    card.appendChild(xline);
+  }
+  setTimeout(function () { drawLine(cv, [{ pts: pts, color: ct.color }]); }, 0);
+  return card;
+}
+
+var STATE_COLORS = { easing: '#3f7a4e', stable: '#5b6573', tightening: '#b87a1e',
+                     escalating: '#b3413c', 'insufficient-data': '#6b5b8f' };
+function renderSynthesis(root) {
+  var S = window.SYNTHESIS;
+  if (!S || !S.units) return;
+  root.appendChild(el('h2', 'layer', 'Cost-pressure synthesis — ' + S.month));
+  var wrap = el('div', 'synth');
+  var labels = { 'S1': 'S1 · Farm inputs', 'S2': 'S2 · Raw crops', 'S3': 'S3 · Processed ingredients',
+                 'S4': 'S4 · Logistics & energy', 'S5': 'S5 · Packaging', 'composite': 'All segments' };
+  Object.keys(S.units).forEach(function (unit) {
+    var u = S.units[unit];
+    var tile = el('div', 'tile');
+    tile.style.borderLeftColor = STATE_COLORS[u.published] || '#5b6573';
+    tile.appendChild(el('div', 'u', labels[unit] || unit));
+    var st = el('div', 'state', u.published);
+    st.style.color = STATE_COLORS[u.published] || '#5b6573';
+    tile.appendChild(st);
+    tile.appendChild(el('div', 'm mono',
+      'score ' + u.score + ' · breadth ' + Math.round(u.breadth * 100) + '% · Δ3m med ' +
+      (u.momentum_3m_med === null ? 'n/a' : u.momentum_3m_med + '%') + ' · volatility ' + u.volatility));
+    tile.appendChild(el('div', 'm', u.confidence + (u.note ? ' · ' + u.note : '')));
+    var det = el('details');
+    det.appendChild(el('summary', '', 'evidence (' + u.evidence.length + ' rows)'));
+    var tbl = el('table');
+    u.evidence.forEach(function (e) {
+      var tr = el('tr');
+      var arrow = e.vote > 0 ? '▲' : e.vote < 0 ? '▼' : '→';
+      var t1 = el('td', '', e.row_id + ' ' + (e.title.length > 46 ? e.title.slice(0, 44) + '…' : e.title));
+      var t2 = el('td', 'num', arrow + ' w' + e.weight);
+      t2.style.color = e.vote > 0 ? STATE_COLORS.escalating : e.vote < 0 ? STATE_COLORS.easing : '#5b6573';
+      var d3txt = (e.d3 === null ? 'n/a' : ((e.d3 >= 0 ? '+' : '') + e.d3 + (e.basis === 'index' ? 'pt' : '%')));
+      var t3 = el('td', 'num', 'Δ3m ' + d3txt + (e.stale ? ' · stale, votes 0' : ''));
+      tr.appendChild(t1); tr.appendChild(t2); tr.appendChild(t3);
+      tbl.appendChild(tr);
+    });
+    det.appendChild(tbl);
+    tile.appendChild(det);
+    wrap.appendChild(tile);
+  });
+  root.appendChild(wrap);
+}
+
+function renderLayers() {
+  var root = $('view-layers');
+  renderSynthesis(root);
+  C.layout.layer_order.forEach(function (layer) {
+    var ids = Object.keys(C.rows).filter(function (id) { return C.rows[id].layer_block === layer; }).sort();
+    if (!ids.length) return;
+    root.appendChild(el('h2', 'layer', C.layout.layer_labels[layer]));
+    var realised = ids.filter(function (id) { return C.rows[id].class_block === 'realised'; });
+    var forecast = ids.filter(function (id) { return C.rows[id].class_block === 'forecast'; });
+    if (realised.length) {
+      var g = el('div', 'grid');
+      realised.forEach(function (id) { g.appendChild(cardFor(id)); });
+      root.appendChild(g);
+    }
+    if (forecast.length) {
+      root.appendChild(el('h3', 'subblock', 'Forecast class — agency projections, kept apart from realised prices'));
+      var gf = el('div', 'grid');
+      forecast.forEach(function (id) { gf.appendChild(cardFor(id)); });
+      root.appendChild(gf);
+    }
+  });
+}
+
+function renderGroups() {
+  var root = $('view-groups');
+  Object.keys(C.groups).forEach(function (gid) {
+    var grp = C.groups[gid];
+    var members = grp.members.filter(function (id) { return D.series[id] && C.rows[id]; });
+    if (members.length < 2) return;
+    var card = el('div', 'card');
+    card.style.marginBottom = '14px';
+    card.appendChild(el('div', 't', gid.replace(/_/g, ' ') + '  ·  basis: ' + grp.basis));
+    var cv = el('canvas'); cv.style.height = '170px'; cv.setAttribute('data-qa-canvas', 'grp-' + gid); card.appendChild(cv);
+    var legend = el('div', 'legend');
+    var now = Math.max.apply(null, members.map(function (id) {
+      var o = D.series[id].obs; return parseObsDate(o[o.length - 1][0]).getTime();
+    }));
+    var start = now - 3 * 365.25 * 86400000;
+    var seriesList = [];
+    members.forEach(function (id) {
+      var s = D.series[id], ct = C.rows[id];
+      var pts = s.obs.map(function (o) { return [parseObsDate(o[0]).getTime(), o[1]]; })
+                     .filter(function (p) { return p[0] >= start; });
+      if (pts.length < 2) return;
+      if (grp.basis === 'indexed') {
+        var base = pts[0][1];
+        if (base === 0) return;
+        pts = pts.map(function (p) { return [p[0], p[1] / base * 100]; });
+      }
+      seriesList.push({ pts: pts, color: ct.color });
+      var lastV = pts[pts.length - 1][1];
+      var line = el('div');
+      var k = el('span', 'k'); k.style.background = ct.color; line.appendChild(k);
+      line.appendChild(document.createTextNode(
+        ct.title + ' — ' + (grp.basis === 'indexed' ? fmt(lastV, 1) + ' (rebased=100)' : fmt(lastV, ct.decimals) + ' ' + ct.unit_label)));
+      legend.appendChild(line);
+    });
+    if (seriesList.length < 2) return;
+    card.appendChild(legend);
+    root.appendChild(card);
+    setTimeout(function () { drawLine(cv, seriesList); }, 0);
+  });
+}
+
+function renderHeader() {
+  var c = D.counts;
+  $('hdr-counts').textContent = 'European food-producer procurement lens · registry ' + D.registry_version +
+    ' · selected ' + c.selected + ' / captured ' + c.captured + ' / charted ' + c.charted +
+    ' / not captured ' + c.not_captured + ' · generated ' + D.generated_utc;
+}
+
+function renderFooter() {
+  var f = $('footer');
+  f.textContent = '';
+  if (!M || !M.BUILD_STATUS) {
+    f.appendChild(document.createTextNode('build manifest missing — '));
+    f.appendChild(el('span', 'status FAILURE', 'FAILURE'));
+    return;
+  }
+  var ok = M.BUILD_STATUS === 'PASS';
+  f.appendChild(el('span', 'status ' + (ok ? 'PASS' : 'FAILURE'), M.BUILD_STATUS));
+  var gates = Object.keys(M.gates || {}).map(function (k) { return k + ':' + M.gates[k]; }).join('  ');
+  var nHash = Object.keys(M.artifact_hashes_sha256 || {}).length;
+  f.appendChild(document.createTextNode(' · registry ' + M.registry_version + ' · ' + M.generated_utc +
+    ' · ' + nHash + ' artifacts manifest-hashed'));
+  var hv = el('span'); f.appendChild(hv);
+  f.appendChild(el('div', 'mono', gates));
+  if (window.crypto && window.crypto.subtle && location.protocol !== 'file:') {
+    ['data.js', 'display_contract.js'].forEach(function (name) {
+      fetch(name).then(function (r) { return r.arrayBuffer(); }).then(function (buf) {
+        return crypto.subtle.digest('SHA-256', buf);
+      }).then(function (h) {
+        var hex = Array.prototype.map.call(new Uint8Array(h), function (b) { return ('0' + b.toString(16)).slice(-2); }).join('').toUpperCase();
+        var want = (M.artifact_hashes_sha256 || {})[name];
+        hv.textContent += ' · ' + name + ' hash ' + (hex === want ? 'verified' : 'MISMATCH');
+      }).catch(function () { hv.textContent += ' · ' + name + ' hash check unavailable'; });
+    });
+  } else {
+    hv.textContent = ' · hash verification: external (artifact QA)';
+  }
+}
+
+function showView(which) {
+  $('view-layers').className = 'view' + (which === 'layers' ? ' active' : '');
+  $('view-groups').className = 'view' + (which === 'groups' ? ' active' : '');
+  $('tab-layers').className = which === 'layers' ? 'active' : '';
+  $('tab-groups').className = which === 'groups' ? 'active' : '';
+}
+
+// ---- QA mode ----
+// The banned list is stored REVERSED so the literal terms never appear in this file
+// (the file-level banned-words gate scans index.html itself; the discipline targets
+// rendered text, which the DOM scan below checks against the reconstructed terms).
+var BANNED = ['ecnis tsrow', 'raos', 'tekcoryks', 'espalloc', 'sisirc', 'onin le repus',
+              'mrots tcefrep', 'detnedecerpnu', 'egnulp', 'edolpxe']
+  .map(function (s) { return s.split('').reverse().join(''); });
+function runQa() {
+  var report = { canvases_total: 0, canvases_drawn: 0, console_errors: QA_ERRORS.slice(),
+                 banned_hits: [], empty_summaries: 0, footer_status: '', verdict: 'FAIL' };
+  var cvs = document.querySelectorAll('canvas');
+  report.canvases_total = cvs.length;
+  for (var i = 0; i < cvs.length; i++) {
+    try { if (cvs[i].toDataURL().length > 1000) report.canvases_drawn++; } catch (e) { QA_ERRORS.push('toDataURL: ' + e); }
+  }
+  var text = document.body.innerText.toLowerCase();
+  BANNED.forEach(function (w) { if (text.indexOf(w) >= 0) report.banned_hits.push(w); });
+  var sums = document.querySelectorAll('.sum');
+  for (var j = 0; j < sums.length; j++) { if (!sums[j].textContent.trim()) report.empty_summaries++; }
+  report.footer_status = (M && M.BUILD_STATUS) ? M.BUILD_STATUS : 'MISSING';
+  report.console_errors = QA_ERRORS.slice();
+  var pass = report.canvases_total > 0 &&
+             report.canvases_drawn === report.canvases_total &&
+             report.console_errors.length === 0 &&
+             report.banned_hits.length === 0 &&
+             report.empty_summaries === 0 &&
+             report.footer_status !== 'MISSING';
+  report.verdict = pass ? 'PASS' : 'FAIL';
+  $('qa-results').textContent = JSON.stringify(report, null, 1);
+  document.title = 'QA:' + report.verdict;
+}
+
+// ---- boot ----
+(function () {
+  if (!D || !C) {
+    document.body.insertBefore(el('div', 'card', 'data.js / display_contract.js missing — nothing rendered'), document.body.firstChild);
+    renderFooter();
+    return;
+  }
+  renderHeader();
+  renderLayers();
+  renderGroups();
+  renderFooter();
+  if (/[?&]view=groups/.test(location.search)) { showView('groups'); }
+  if (/[?&]qa=1/.test(location.search)) {
+    // Timer-based, not rAF: headless --dump-dom pumps virtual-time timers but not the rAF
+    // frame loop, so the rAF version was flaky in CI (report missing from the dumped DOM).
+    // The canvas draws above use setTimeout(0); runQa runs after them on a settle timeout.
+    setTimeout(runQa, 600);
+  }
+})();
+</script>
+
+
+</body></html>

@@ -1,6 +1,6 @@
 window.BUILD_MANIFEST = {
     "BUILD_STATUS":  "PASS",
-    "generated_utc":  "2026-06-28T15:34:00Z",
+    "generated_utc":  "2026-06-28T16:00:10Z",
     "registry_version":  "v9",
     "baselines":  {
                       "captured_floor":  59,
@@ -48,9 +48,9 @@ window.BUILD_MANIFEST = {
                                     ]
                   },
     "artifact_hashes_sha256":  {
-                                   "data.js":  "635FE231B61E46A2AF62B911D07A765165F2B255412D673C82A14DEDC14EEFE4",
+                                   "data.js":  "DC019400DA2E5DF076CB5F6A1BD8780B24ACA46639532D8C92B3DC28BB9A1987",
                                    "display_contract.js":  "2306A6AE1B02EB6289F6121C2EC6ED360813CFFFDFA589DD06ED79F3D903E569",
-                                   "index.html":  "157ADCB955AAA144929F2DB6A974947553173F72D3928A8DB1BE49F6D21841BB",
-                                   "synthesis.js":  "BA5B39806A15A7B49A4E85112A214D77AC547AAC8C9D70721C5300D458D92789"
+                                   "index.html":  "D6D63183569838A1B39C77B845B39C88206D0FEFB2BBD1C337191298E832F5B4",
+                                   "synthesis.js":  "9F3C3256570ACFDAD43D7F0D3C14A09784CDB0CA72484D7AD99D36760487F31A"
                                }
 };
