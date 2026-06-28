@@ -1,3 +1,17 @@
+# ---- commodity_dashboard build rules ----
+# secrets: keys live in .env / *.env locally and in GitHub Actions secrets in CI - NEVER committed
+# (broad *.env catches loose FRED_API_KEY.env / USDA_FAS_KEY.env drops at the repo root too)
+*.env
+.env
+**/*.env
+commodity_dashboard/.env
+# the ~15 MB World Bank CMO workbook is archived per run; committing every copy would
+# grow the repo unboundedly. The fetch evidence is preserved per-run as a GitHub Actions
+# artifact (90-day retention) - see .github/workflows/refresh.yml upload-raw-archive.
+commodity_dashboard/raw_archive/**/FAMILY_*.xlsx
+# packaged offline artifacts are uploaded as Actions artifacts, not committed
+commodity_dashboard/logs/artifact/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
