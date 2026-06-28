@@ -1,6 +1,6 @@
 window.BUILD_MANIFEST = {
     "BUILD_STATUS":  "PASS",
-    "generated_utc":  "2026-06-28T19:16:09Z",
+    "generated_utc":  "2026-06-28T19:45:50Z",
     "registry_version":  "v9",
     "baselines":  {
                       "captured_floor":  59,
@@ -48,10 +48,9 @@ window.BUILD_MANIFEST = {
                                     ]
                   },
     "artifact_hashes_sha256":  {
-                                   "commodity_exposure.html":  "484F585ED5E117C13FADB35C69302E86E3CF291812C1702E02E354F511ECA281",
-                                   "data.js":  "1562E06CBE898D99D4D451DA0E6E0BA778ED23741AC1E17546265B0DBEE375CE",
+                                   "commodity_exposure.html":  "60039B6EFCD8546D32F769F40ED24F57A70B5040ADBDF1EBC0C07D2CD5093C58",
+                                   "data.js":  "B9E6B82FF512A97DA20CBBCF57D769F825B8ED17185A663B407A57C2E2893797",
                                    "display_contract.js":  "2306A6AE1B02EB6289F6121C2EC6ED360813CFFFDFA589DD06ED79F3D903E569",
-                                   "index.html":  "D6D63183569838A1B39C77B845B39C88206D0FEFB2BBD1C337191298E832F5B4",
-                                   "synthesis.js":  "7DB192D0608378392CEC1C21C62572230A3D9AE89B72D95936E3547F09B6421F"
+                                   "synthesis.js":  "079176C607D7E5031234868DB5793B89431CC1B930D20E7B4902F41D64E8B060"
                                }
 };
