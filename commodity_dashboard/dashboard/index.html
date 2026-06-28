@@ -198,7 +198,7 @@ function cardFor(id) {
       ' (' + xc.ticker + ' via ' + xc.source + ', unofficial) @' + xc.date;
     card.appendChild(xline);
   }
-  requestAnimationFrame(function () { drawLine(cv, [{ pts: pts, color: ct.color }]); });
+  setTimeout(function () { drawLine(cv, [{ pts: pts, color: ct.color }]); }, 0);
   return card;
 }
 
@@ -304,7 +304,7 @@ function renderGroups() {
     if (seriesList.length < 2) return;
     card.appendChild(legend);
     root.appendChild(card);
-    requestAnimationFrame(function () { drawLine(cv, seriesList); });
+    setTimeout(function () { drawLine(cv, seriesList); }, 0);
   });
 }
 
@@ -398,8 +398,10 @@ function runQa() {
   renderFooter();
   if (/[?&]view=groups/.test(location.search)) { showView('groups'); }
   if (/[?&]qa=1/.test(location.search)) {
-    // canvases draw on rAF; QA runs after two frames + safety timeout
-    requestAnimationFrame(function () { requestAnimationFrame(function () { setTimeout(runQa, 400); }); });
+    // Timer-based, not rAF: headless --dump-dom pumps virtual-time timers but not the rAF
+    // frame loop, so the rAF version was flaky in CI (report missing from the dumped DOM).
+    // The canvas draws above use setTimeout(0); runQa runs after them on a settle timeout.
+    setTimeout(runQa, 600);
   }
 })();
 </script>
