@@ -5,370 +5,345 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Commodity Exposure — Food &amp; Beverage Cost Dashboard</title>
 <!--
-  Production front end (M11). Reads the committed pipeline outputs (data.js / display_contract.js /
-  synthesis.js / build_manifest.js) at load via <script src>, so the weekly commit-back updates the
-  page with no redeploy. The page only READS; the pipeline only WRITES; they share the committed
-  files. Design language follows commodity_exposure_v5 (DM Sans / DM Mono / Instrument Serif, light
-  theme, card grid, two-line rebased overlay) but charts are rendered by a dependency-free canvas
-  routine (no CDN) using timer-based draws so the headless --dump-dom QA captures them.
-  The per-card context block is an EXPLICITLY EMPTY, labelled analysis slot for the later layer.
+  Production front end (M11 → M13). Reads the committed pipeline outputs (data.js / display_contract.js /
+  synthesis.js / build_manifest.js) and the static descriptive dictionary (commodity_glossary.js) at load
+  via <script src> — no external resources (system fonts; charts hand-rolled; no CDN). The page only READS;
+  the pipeline only WRITES; they share the committed files, so the weekly commit-back updates the page with
+  no redeploy.
+  M13 readability restructure: reader-ordered segment groups → commodity-FAMILY sub-groups → cards in a
+  horizontal slider. Each family header shows a MECHANICAL up/flat/down rollup on the selected lens (counts
+  only). Each card has an info bubble (auto-pulled facts + a static descriptive gloss; NO market analysis)
+  and a four-basis hover. Distinct rows are never merged (raw/white sugar, oilseed/oil stay separate, just
+  adjacent). The per-card context block is an EXPLICITLY EMPTY analysis slot for the Claude layer.
 -->
-<!-- Fonts: requested families with system fallbacks (DM Sans -> system-ui, Instrument Serif -> Georgia/serif,
-     DM Mono -> ui-monospace). No external resources, so the page is fully self-contained offline and on Pages
-     (same offline-integrity bar as the prior front end). -->
 <style>
 :root{--bg:#f4f5f7;--s:#fff;--b:#dfe2e8;--bl:#eceef2;--t1:#1a1d26;--t2:#555a6a;--t3:#939ab0;--c22:#d4650a;--c26:#2558c7}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--t1);font-family:'DM Sans',system-ui,Segoe UI,sans-serif;padding:22px 20px 40px}
+body{background:var(--bg);color:var(--t1);font-family:'DM Sans',system-ui,Segoe UI,sans-serif;padding:22px 22px 44px}
 .w{max-width:1520px;margin:0 auto}
 .hdr{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
 h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:27px;letter-spacing:-.3px}
 h1 em{color:var(--t3);font-style:italic}
 .pills{display:flex;gap:8px;flex-wrap:wrap}
 .pill{font-family:'DM Mono',ui-monospace,monospace;font-size:9px;letter-spacing:.5px;text-transform:uppercase;padding:4px 9px;border-radius:5px;border:1px solid var(--b);background:var(--s);color:var(--t2)}
-.pill.ok{border-color:rgba(63,122,78,.35);color:#3f7a4e}
-.pill.bad{border-color:rgba(179,65,60,.35);color:#b3413c}
+.pill.ok{border-color:rgba(63,122,78,.35);color:#3f7a4e}.pill.bad{border-color:rgba(179,65,60,.35);color:#b3413c}
 .intro{font-size:12px;color:var(--t2);line-height:1.5;margin:6px 0 12px;max-width:1120px}
 .lensbar{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
-.lensbtn{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;padding:6px 14px;border-radius:7px;border:1px solid var(--b);background:var(--s);color:var(--t2);cursor:pointer}
+.lensbtn{font-size:12px;font-weight:500;padding:6px 14px;border-radius:7px;border:1px solid var(--b);background:var(--s);color:var(--t2);cursor:pointer}
 .lensbtn.active{background:var(--t1);color:#fff;border-color:var(--t1)}
 .legend{font-family:'DM Mono',monospace;font-size:9px;color:var(--t3);margin-left:4px}
 .legend .a{color:var(--c22)}.legend .b{color:var(--c26)}
-.seg{margin-top:20px}
-.seg-hd{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--b);padding-bottom:6px;margin-bottom:11px}
-.seg-title{font-family:'Instrument Serif',serif;font-weight:400;font-size:20px}
-.seg-state{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.5px;padding:2px 8px;border:1px solid var(--b);border-radius:5px}
-.seg-meta{font-family:'DM Mono',monospace;font-size:9px;color:var(--t3)}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}
-.card{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:13px 13px 11px;display:flex;flex-direction:column;transition:box-shadow .2s}
-.card:hover{box-shadow:0 3px 16px rgba(0,0,0,.05)}
-.cn{font-weight:700;font-size:13px;letter-spacing:-.1px;margin-bottom:2px}
-.csub{font-size:10px;color:var(--t2);line-height:1.35;margin-bottom:6px;min-height:26px}
+.seg-title{font-family:'Instrument Serif',serif;font-size:21px;margin:22px 0 2px;border-bottom:1px solid var(--b);padding-bottom:5px}
+.fam{margin:14px 0 6px}
+.fam-hd{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.fam-name{font-weight:700;font-size:14px}
+.rollup{font-family:'DM Mono',ui-monospace,monospace;font-size:10px;color:var(--t2);background:var(--s);border:1px solid var(--b);border-radius:6px;padding:3px 9px}
+.rollup .u{color:#b3413c}.rollup .d{color:#3f7a4e}.rollup .f{color:var(--t3)}.rollup .n{color:var(--t3)}
+.slider{position:relative}
+.track{display:flex;gap:11px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 1px 9px;scroll-behavior:smooth}
+.track::-webkit-scrollbar{height:7px}.track::-webkit-scrollbar-thumb{background:#d2d6de;border-radius:4px}
+.scard{flex:0 0 300px;scroll-snap-align:start;background:var(--s);border:1px solid var(--b);border-radius:10px;padding:12px 12px 10px;display:flex;flex-direction:column;position:relative}
+.scard.agg{background:#fbfaf7;border-style:dashed}
+.arrow{position:absolute;top:34%;z-index:5;width:30px;height:30px;border-radius:50%;border:1px solid var(--b);background:var(--s);color:var(--t2);cursor:pointer;font-size:14px;line-height:1;box-shadow:0 1px 6px rgba(0,0,0,.08)}
+.arrow.prev{left:-6px}.arrow.next{right:-6px}
+.cn{font-weight:700;font-size:13px;padding-right:22px}
+.csub{font-size:10px;color:var(--t2);line-height:1.35;margin:2px 0 6px;min-height:26px}
+.aggtag{display:inline-block;font-family:'DM Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.4px;color:#8a6d3b;background:#f3ecdd;border:1px solid #e6d8bd;border-radius:4px;padding:1px 5px;margin-bottom:5px}
 .badges{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:7px}
 .badge{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.4px;text-transform:uppercase;padding:2px 6px;border-radius:5px;border:1px solid var(--b);background:var(--s);color:var(--t2)}
-.badge.region{border:none;color:#fff}
-.ch{position:relative;height:105px;margin:0 -2px}
-.ch canvas{width:100%;height:105px;display:block}
-.es{display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:5px;padding-bottom:6px;border-bottom:1px solid var(--bl);font-family:'DM Mono',monospace;font-size:9px;color:var(--t3);min-height:18px}
+.ibtn{position:absolute;top:10px;right:10px;width:18px;height:18px;border-radius:50%;border:1px solid var(--b);background:var(--s);color:var(--t2);font-size:11px;line-height:16px;text-align:center;cursor:pointer;font-family:Georgia,serif;font-style:italic}
+.ch{position:relative;height:104px;margin:0 -2px}
+.ch canvas{width:100%;height:104px;display:block}
+.es{display:flex;gap:12px;flex-wrap:wrap;margin-top:5px;padding-bottom:6px;border-bottom:1px solid var(--bl);font-family:'DM Mono',monospace;font-size:9px;color:var(--t3);min-height:16px}
 .es b{color:var(--t2);font-weight:500}
-.rv{margin-top:7px;flex:1;display:flex;flex-direction:column}
-.rv-src{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:.3px;text-transform:uppercase;color:var(--t3);margin-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rv-row{font-family:'DM Mono',monospace;font-size:9px;color:var(--t2);margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rv-src{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:.3px;text-transform:uppercase;color:var(--t3);margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rv-row{font-family:'DM Mono',monospace;font-size:9px;color:var(--t2);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .rv-row.xc{color:var(--c22)}
-.rv-ctx.empty{color:var(--t3);font-style:italic;font-size:10px;line-height:1.4;margin-top:6px;padding:7px 8px;border:1px dashed var(--b);border-radius:5px;background:repeating-linear-gradient(45deg,transparent,transparent 6px,rgba(0,0,0,.012) 6px,rgba(0,0,0,.012) 12px)}
-.ft{margin-top:22px;padding-top:14px;border-top:1px solid var(--b);font-family:'DM Mono',monospace;font-size:9px;color:var(--t3);line-height:1.7}
-.ft .status{padding:2px 8px;border-radius:5px;font-weight:600}
-.ft .status.PASS{background:#eef4ee;color:#3f7a4e}
-.ft .status.FAILURE{background:#f9e9e8;color:#b3413c}
+.slot{margin-top:7px;color:var(--t3);font-style:italic;font-size:10px;border:1px dashed var(--b);border-radius:5px;padding:6px 8px;background:repeating-linear-gradient(45deg,transparent,transparent 6px,rgba(0,0,0,.012) 6px,rgba(0,0,0,.012) 12px)}
+.bubble{display:none;margin-top:8px;border:1px solid var(--b);border-radius:8px;background:#fcfcfd;padding:9px 10px;font-size:10.5px;line-height:1.5;color:var(--t2)}
+.bubble.open{display:block}
+.bubble h4{font-size:11.5px;color:var(--t1);margin-bottom:4px}
+.bubble .k{font-family:'DM Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.4px;color:var(--t3);display:block;margin-top:5px}
+.ft{margin-top:24px;padding-top:14px;border-top:1px solid var(--b);font-family:'DM Mono',monospace;font-size:9px;color:var(--t3);line-height:1.7}
+.ft .status{padding:2px 8px;border-radius:5px;font-weight:600}.ft .status.PASS{background:#eef4ee;color:#3f7a4e}.ft .status.FAILURE{background:#f9e9e8;color:#b3413c}
+.tt{position:fixed;z-index:50;pointer-events:none;display:none;background:var(--s);border:1px solid var(--b);border-radius:7px;box-shadow:0 4px 18px rgba(0,0,0,.12);padding:8px 10px;font-family:'DM Mono',monospace;font-size:9.5px;color:var(--t2);min-width:196px}
+.tt.show{display:block}.tt .d{color:var(--t1);font-weight:500;margin-bottom:4px}.tt .r{display:flex;justify-content:space-between;gap:14px}.tt .r b{color:var(--t1);font-weight:500}
 #qa-results{display:none}
-@media(max-width:1200px){.grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.scard{flex-basis:260px}}
 </style>
 </head>
 <body>
 <div class="w">
-  <div class="hdr">
-    <h1>Commodity Exposure <em>— Food &amp; Beverage cost dashboard</em></h1>
-    <div class="pills" id="pills"></div>
-  </div>
+  <div class="hdr"><h1>Commodity Exposure <em>— Food &amp; Beverage cost dashboard</em></h1><div class="pills" id="pills"></div></div>
   <p class="intro" id="intro"></p>
   <div class="lensbar"><span id="lenses"></span><span class="legend" id="legend"></span></div>
   <div id="app"></div>
   <div class="ft" id="footer"></div>
 </div>
 <pre id="qa-results"></pre>
+<div class="tt" id="tt"></div>
 
 <script src="data.js"></script>
 <script src="display_contract.js"></script>
 <script src="synthesis.js"></script>
 <script src="build_manifest.js"></script>
+<script src="commodity_glossary.js"></script>
 <script>
 'use strict';
-// ---- error capture (QA counts these) ----
-var QA_ERRORS = [];
-window.onerror = function (m, s, l) { QA_ERRORS.push(String(m) + ' @' + l); };
-var _cerr = console.error.bind(console);
-console.error = function () { QA_ERRORS.push(Array.prototype.join.call(arguments, ' ')); _cerr.apply(null, arguments); };
+var QA_ERRORS=[];
+window.onerror=function(m,s,l){QA_ERRORS.push(String(m)+' @'+l);};
+var _ce=console.error.bind(console);console.error=function(){QA_ERRORS.push(Array.prototype.join.call(arguments,' '));_ce.apply(null,arguments);};
+function $(id){return document.getElementById(id);}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e;}
+function parseObsDate(s){return new Date(s.length===7?s+'-01T00:00:00Z':s+'T00:00:00Z');}
+function fmt(v,dp){return Number(v).toLocaleString('en-GB',{minimumFractionDigits:dp,maximumFractionDigits:dp});}
+function pct(z){return (z>=0?'+':'−')+Math.abs(z).toFixed(1)+'%';}
+function ptsfmt(z){return (z>=0?'+':'−')+Math.abs(z).toFixed(1)+'pt';}
+function titleCase(s){return String(s).replace(/\b\w/g,function(c){return c.toUpperCase();});}
+function clip(s,n){s=String(s);return s.length>n?s.slice(0,n-1)+'…':s;}
 
-function $(id) { return document.getElementById(id); }
-function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x !== undefined) e.textContent = x; return e; }
-function parseObsDate(s) { return new Date(s.length === 7 ? s + '-01T00:00:00Z' : s + 'T00:00:00Z'); }
-function fmt(v, dp) { return Number(v).toLocaleString('en-GB', { minimumFractionDigits: dp, maximumFractionDigits: dp }); }
-function pct(z) { return (z >= 0 ? '+' : '−') + Math.abs(z).toFixed(1) + '%'; }
-function titleCase(s) { return String(s).replace(/\b\w/g, function (c) { return c.toUpperCase(); }); }
-function clip(s, n) { s = String(s); return s.length > n ? s.slice(0, n - 1) + '…' : s; }
+var D=window.DASHBOARD_DATA||null,C=window.DISPLAY_CONTRACT||null,SY=window.SYNTHESIS||null,M=window.BUILD_MANIFEST||null;
+var G=window.COMMODITY_GLOSSARY||{byCommodity:{},byRow:{},abbrev:{},basis:{}};
+var C22='#d4650a',C26='#2558c7';
+var ROLLUP_FLAT_BAND=0.5;   // % move below which a row counts as "flat" on the rollup — single tunable knob
+var LENSES=[{k:'event',label:'Event overlay'},{k:'ytd',label:'YTD'},{k:'yoy',label:'YoY'},{k:'3m',label:'Last 3 months'}];
+var curLens='event',CARDS={},FAMILIES=[];
 
-var D = window.DASHBOARD_DATA || null;
-var C = window.DISPLAY_CONTRACT || null;
-var SY = window.SYNTHESIS || null;
-var M = window.BUILD_MANIFEST || null;
+// ---- FAMILY_MAP (display layer over the registry; rows keep their distinct identity, never merged) ----
+// aggregate[] flags the FAO sub-index = the family's aggregate read, not a peer price line.
+// Nitrogen lists urea (global) + the EU N composite; ammonia, IF ever wired, is its OWN line here and is
+// NEVER merged into urea (urea is made from ammonia but is a distinct product). Same rule for raw/white
+// sugar and oilseed/refined oil: separate rows, sitting adjacent.
+var SEGMENTS=[
+  {key:'crops',label:'Crops & Ingredients',families:[
+    {key:'faoidx',label:'FAO Food Price Index',rows:['IX-001'],aggregate:['IX-001']},
+    {key:'cereals',label:'Cereals & Grains',rows:['WH-001','WH-002','WH-003','MZ-001','MZ-002','IX-002'],aggregate:['IX-002']},
+    {key:'oils',label:'Oilseeds & Vegetable Oils',rows:['VO-001','VO-002','VO-003','VO-004','VO-005','IX-003'],aggregate:['IX-003']},
+    {key:'dairy',label:'Dairy, Butter & Fats',rows:['DY-001','DY-002','IX-004'],aggregate:['IX-004']},
+    {key:'sugar',label:'Sugar & Sweeteners',rows:['SG-001','SG-002','SG-003','IX-005'],aggregate:['IX-005']},
+    {key:'softs',label:'Other Softs',rows:['CO-001','CF-001','CF-002','EG-001','EG-002'],aggregate:[]}
+  ]},
+  {key:'inputs',label:'Farm Inputs',families:[
+    {key:'nitrogen',label:'Nitrogen',rows:['FE-001','FE-008'],aggregate:[]},
+    {key:'phosphate',label:'Phosphate',rows:['FE-002','FE-003','FE-005','FE-010'],aggregate:[]},
+    {key:'potash',label:'Potash',rows:['FE-004','FE-011'],aggregate:[]},
+    {key:'other',label:'Other inputs',rows:['FE-006','FE-007','FE-009'],aggregate:[]}
+  ]},
+  {key:'logistics',label:'Logistics & Energy',families:[
+    {key:'energy',label:'Crude, Gas & Coal',rows:['EN-003','EN-009','EN-001','EN-004','EN-010'],aggregate:[]},
+    {key:'fuels',label:'Road & Retail Fuels',rows:['EN-005','EN-006','EN-007','EN-008'],aggregate:[]},
+    {key:'freight',label:'Freight & Logistics',rows:['FR-001','FR-002','FR-003','FR-004','FR-005'],aggregate:[]}
+  ]},
+  {key:'packaging',label:'Packaging',families:[
+    {key:'paper',label:'Paper & Board',rows:['PK-001','PK-002','PK-003','PK-004'],aggregate:[]},
+    {key:'metals',label:'Metals',rows:['PK-005'],aggregate:[]},
+    {key:'glass',label:'Glass',rows:['PK-006','PK-007'],aggregate:[]},
+    {key:'plastics',label:'Plastics',rows:['PK-008','PK-009'],aggregate:[]}
+  ]}
+];
 
-var C22 = '#d4650a', C26 = '#2558c7';
-var SEG_ORDER = ['S1', 'S2', 'S3', 'S4', 'S5'];
-var SEG_LABELS = { S1: 'S1 · Farm inputs', S2: 'S2 · Raw crops', S3: 'S3 · Processed ingredients',
-                   S4: 'S4 · Logistics & energy', S5: 'S5 · Packaging' };
-var REGION_COLORS = { EU: '#2558c7', US: '#d4650a', world: '#5b6573', 'origin-specific': '#6b5b8f' };
-var REGION_RANK = { EU: 0, US: 1, world: 2, 'origin-specific': 3 };
-var STATE_COLORS = { easing: '#3f7a4e', stable: '#5b6573', tightening: '#b87a1e', escalating: '#b3413c', 'insufficient-data': '#6b5b8f' };
-var LENSES = [{ k: 'event', label: 'Event overlay' }, { k: 'ytd', label: 'YTD' }, { k: 'yoy', label: 'YoY' }, { k: '3m', label: 'Last 3 months' }];
-var curLens = 'event';
-var CARDS = {};   // id -> {cv, es, r1, r2}
+function dec(id){return C.rows[id]?C.rows[id].decimals:2;}
+function unitOf(id){return C.rows[id]?C.rows[id].unit_label:(D.series[id].meta.unit||'');}
+function obsMs(id){return D.series[id].obs.map(function(o){return [parseObsDate(o[0]).getTime(),o[1]];});}
+function cadOf(id){return D.series[id].meta.refresh_cadence;}
 
-function dec(id) { return C.rows[id] ? C.rows[id].decimals : 2; }
-function unitOf(id) { return C.rows[id] ? C.rows[id].unit_label : (D.series[id].meta.unit || ''); }
-function obsMs(id) { return D.series[id].obs.map(function (o) { return [parseObsDate(o[0]).getTime(), o[1]]; }); }
-function isoFor(ms, id) { var n = D.series[id].meta.refresh_cadence === 'weekly' ? 10 : 7; return new Date(ms).toISOString().slice(0, n); }
-
-// ---- lens computation: pure front-end slice/rebase of the captured history ----
-function lensData(id, lens) {
-  var obs = obsMs(id);
-  var out = { seriesList: [], stat: [], reserve2: '', hasData: false };
-  if (!obs.length) { out.stat = [['n/a', null]]; return out; }
-  var last = obs[obs.length - 1];
-
-  if (lens === 'event') {
-    var J22 = Date.UTC(2022, 0, 1), eA = Date.UTC(2022, 6, 1), J26 = Date.UTC(2026, 0, 1), eB = Date.UTC(2026, 6, 1);
-    var A = obs.filter(function (p) { return p[0] >= J22 && p[0] < eA; });
-    var B = obs.filter(function (p) { return p[0] >= J26 && p[0] < eB; });
-    var pk22 = null, pk26 = null, now = null;
-    if (A.length && A[0][1]) { var bA = A[0][1]; var ap = A.map(function (p) { return [J26 + (p[0] - J22), p[1] / bA * 100]; }); out.seriesList.push({ pts: ap, color: C22, width: 1.5 }); pk22 = Math.max.apply(null, ap.map(function (p) { return p[1]; })) - 100; out.hasData = true; }
-    if (B.length && B[0][1]) { var bB = B[0][1]; var bp = B.map(function (p) { return [p[0], p[1] / bB * 100]; }); out.seriesList.push({ pts: bp, color: C26, width: 2 }); pk26 = Math.max.apply(null, bp.map(function (p) { return p[1]; })) - 100; now = bp[bp.length - 1][1] - 100; out.hasData = true; }
-    out.stat = [["'22 pk", pk22], ["'26 pk", pk26], ['now', now]];
-    out.reserve2 = 'H1 22 pk ' + (pk22 == null ? 'n/a' : pct(pk22)) + ' · H1 26 pk ' + (pk26 == null ? 'n/a' : pct(pk26));
+function lensData(id,lens){
+  var obs=obsMs(id),raw=D.series[id].obs,out={seriesList:[],hoverPoints:[],primary:null,stat:[],reserve2:''};
+  if(!obs.length){return out;}
+  var last=obs[obs.length-1];
+  function hp(px,idx){return {px:px,date:raw[idx][0],value:raw[idx][1]};}
+  if(lens==='event'){
+    var J22=Date.UTC(2022,0,1),eA=Date.UTC(2022,6,1),J26=Date.UTC(2026,0,1),eB=Date.UTC(2026,6,1);
+    var Ai=[],Bi=[];for(var i=0;i<obs.length;i++){var t=obs[i][0];if(t>=J22&&t<eA)Ai.push(i);if(t>=J26&&t<eB)Bi.push(i);}
+    var pk22=null,pk26=null,now=null;
+    if(Ai.length&&obs[Ai[0]][1]){var bA=obs[Ai[0]][1];var ap=Ai.map(function(i){return [J26+(obs[i][0]-J22),obs[i][1]/bA*100];});out.seriesList.push({pts:ap,color:C22,width:1.5});pk22=Math.max.apply(null,ap.map(function(p){return p[1];}))-100;Ai.forEach(function(i,k){out.hoverPoints.push(hp(ap[k][0],i));});}
+    if(Bi.length&&obs[Bi[0]][1]){var bB=obs[Bi[0]][1];var bp=Bi.map(function(i){return [obs[i][0],obs[i][1]/bB*100];});out.seriesList.push({pts:bp,color:C26,width:2});pk26=Math.max.apply(null,bp.map(function(p){return p[1];}))-100;now=bp[bp.length-1][1]-100;Bi.forEach(function(i,k){out.hoverPoints.push(hp(bp[k][0],i));});}
+    out.primary=now;out.stat=[["'22 pk",pk22],["'26 pk",pk26],['now',now]];
+    out.reserve2='H1 22 pk '+(pk22==null?'n/a':pct(pk22))+' · H1 26 pk '+(pk26==null?'n/a':pct(pk26));
     return out;
   }
-
-  if (lens === 'ytd') {
-    var y0 = Date.UTC(2026, 0, 1);
-    var Y = obs.filter(function (p) { return p[0] >= y0; });
-    if (Y.length >= 2 && Y[0][1]) { var b = Y[0][1]; out.seriesList.push({ pts: Y.map(function (q) { return [q[0], q[1] / b * 100]; }), color: C26, width: 2 }); out.stat = [['YTD', last[1] / b * 100 - 100]]; out.reserve2 = '2026 base ' + fmt(Y[0][1], dec(id)) + ' @' + isoFor(Y[0][0], id); out.hasData = true; }
-    else { out.stat = [['YTD', null]]; out.reserve2 = '< 2 obs in 2026'; }
-    return out;
-  }
-
-  if (lens === 'yoy') {
-    var cut = last[0] - 365 * 864e5;
-    var win = obs.filter(function (p) { return p[0] >= cut; });
-    if (win.length >= 2 && win[0][1]) { var b2 = win[0][1]; out.seriesList.push({ pts: win.map(function (q) { return [q[0], q[1] / b2 * 100]; }), color: C26, width: 2 }); out.stat = [['YoY', (last[1] / b2 - 1) * 100]]; out.reserve2 = '12m ago ' + fmt(win[0][1], dec(id)) + ' @' + isoFor(win[0][0], id); out.hasData = true; }
-    else { out.stat = [['YoY', null]]; out.reserve2 = '< 2 obs in 12m'; }
-    return out;
-  }
-
-  // 3m
-  var cut3 = last[0] - 92 * 864e5;
-  var w = obs.filter(function (p) { return p[0] >= cut3; });
-  if (w.length >= 2 && w[0][1]) { var b3 = w[0][1]; out.seriesList.push({ pts: w.map(function (q) { return [q[0], q[1] / b3 * 100]; }), color: C26, width: 2 }); out.stat = [['3M', (last[1] / b3 - 1) * 100]]; out.reserve2 = '3m ago ' + fmt(w[0][1], dec(id)) + ' @' + isoFor(w[0][0], id); out.hasData = true; }
-  else { out.stat = [['3M', null]]; out.reserve2 = '< 2 obs in 3m (' + D.series[id].meta.refresh_cadence + ')'; }
+  var winFrom;if(lens==='ytd')winFrom=Date.UTC(2026,0,1);else if(lens==='yoy')winFrom=last[0]-365*864e5;else winFrom=last[0]-92*864e5;
+  var idx=[];for(var j=0;j<obs.length;j++){if(obs[j][0]>=winFrom)idx.push(j);}
+  var label=lens==='ytd'?'YTD':lens==='yoy'?'YoY':'3M';
+  if(idx.length>=2&&obs[idx[0]][1]){var b=obs[idx[0]][1];var p=idx.map(function(i){return [obs[i][0],obs[i][1]/b*100];});out.seriesList.push({pts:p,color:C26,width:2});idx.forEach(function(i,k){out.hoverPoints.push(hp(p[k][0],i));});out.primary=last[1]/b*100-100;out.stat=[[label,out.primary]];out.reserve2=(lens==='ytd'?'2026 base ':lens==='yoy'?'12m ago ':'3m ago ')+fmt(obs[idx[0]][1],dec(id))+' @'+raw[idx[0]][0];}
+  else{out.stat=[[label,null]];out.reserve2='< 2 obs in window ('+cadOf(id)+')';}
   return out;
 }
 
-// ---- dependency-free chart (always draws a rebased=100 reference line so a run that executed is
-//      distinguishable from a blank/undrawn canvas; that is what the QA toDataURL check verifies) ----
-function drawChart(cv, seriesList, opts) {
-  try {
-    opts = opts || {};
-    var dpr = window.devicePixelRatio || 1, W = cv.clientWidth || 320, H = cv.clientHeight || 105;
-    cv.width = W * dpr; cv.height = H * dpr;
-    var ctx = cv.getContext('2d'); ctx.scale(dpr, dpr); ctx.clearRect(0, 0, W, H);
-    var padL = 4, padR = 4, padT = 8, padB = 15;
-    var xs = [], ys = [];
-    seriesList.forEach(function (s) { s.pts.forEach(function (p) { xs.push(p[0]); ys.push(p[1]); }); });
-    var ref = opts.refLine != null ? opts.refLine : null;
-    var y0, y1, x0, x1, haveX = xs.length > 0;
-    if (haveX) { x0 = Math.min.apply(null, xs); x1 = Math.max.apply(null, xs); y0 = Math.min.apply(null, ys); y1 = Math.max.apply(null, ys); }
-    else { x0 = 0; x1 = 1; y0 = 90; y1 = 110; }
-    if (ref != null) { y0 = Math.min(y0, ref); y1 = Math.max(y1, ref); }
-    if (y0 === y1) { y0 -= 1; y1 += 1; }
-    var yp = (y1 - y0) * 0.08; y0 -= yp; y1 += yp;
-    var X = function (t) { return padL + (W - padL - padR) * (x1 === x0 ? 0.5 : (t - x0) / (x1 - x0)); };
-    var Y = function (v) { return padT + (H - padT - padB) * (1 - (v - y0) / (y1 - y0)); };
-    if (ref != null) { ctx.strokeStyle = 'rgba(0,0,0,.10)'; ctx.setLineDash([3, 3]); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(padL, Y(ref)); ctx.lineTo(W - padR, Y(ref)); ctx.stroke(); ctx.setLineDash([]); }
-    seriesList.forEach(function (s) {
-      if (!s.pts.length) return;
-      ctx.strokeStyle = s.color; ctx.lineWidth = s.width || 1.6; ctx.beginPath();
-      s.pts.forEach(function (p, i) { var x = X(p[0]), y = Y(p[1]); if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y); });
-      ctx.stroke();
-      var lp = s.pts[s.pts.length - 1]; ctx.fillStyle = s.color; ctx.beginPath(); ctx.arc(X(lp[0]), Y(lp[1]), 2.4, 0, 7); ctx.fill();
-    });
-    ctx.fillStyle = '#939ab0'; ctx.font = "9px 'DM Mono',ui-monospace,monospace";
-    if (haveX) {
-      var fx = function (t) { return new Date(t).toISOString().slice(0, 7); };
-      ctx.fillText(fx(x0), padL, H - 3);
-      var e = fx(x1); ctx.fillText(e, W - padR - ctx.measureText(e).width, H - 3);
-    } else {
-      ctx.fillText('no data for this lens', padL, Math.round(H / 2));
-    }
+function drawChart(cv,ld){
+  try{
+    var seriesList=ld.seriesList,dpr=window.devicePixelRatio||1,W=cv.clientWidth||300,H=cv.clientHeight||104;
+    cv.width=W*dpr;cv.height=H*dpr;var ctx=cv.getContext('2d');ctx.scale(dpr,dpr);ctx.clearRect(0,0,W,H);
+    var padL=4,padR=4,padT=8,padB=15,xs=[],ys=[];
+    seriesList.forEach(function(s){s.pts.forEach(function(p){xs.push(p[0]);ys.push(p[1]);});});
+    var have=xs.length>0,x0,x1,y0,y1;
+    if(have){x0=Math.min.apply(null,xs);x1=Math.max.apply(null,xs);y0=Math.min.apply(null,ys);y1=Math.max.apply(null,ys);}else{x0=0;x1=1;y0=90;y1=110;}
+    y0=Math.min(y0,100);y1=Math.max(y1,100);if(y0===y1){y0-=1;y1+=1;}var yp=(y1-y0)*0.08;y0-=yp;y1+=yp;
+    var X=function(t){return padL+(W-padL-padR)*(x1===x0?0.5:(t-x0)/(x1-x0));};
+    var Y=function(v){return padT+(H-padT-padB)*(1-(v-y0)/(y1-y0));};
+    ctx.strokeStyle='rgba(0,0,0,.10)';ctx.setLineDash([3,3]);ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(padL,Y(100));ctx.lineTo(W-padR,Y(100));ctx.stroke();ctx.setLineDash([]);
+    seriesList.forEach(function(s){if(!s.pts.length)return;ctx.strokeStyle=s.color;ctx.lineWidth=s.width||1.6;ctx.beginPath();s.pts.forEach(function(p,i){var x=X(p[0]),y=Y(p[1]);if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);});ctx.stroke();var lp=s.pts[s.pts.length-1];ctx.fillStyle=s.color;ctx.beginPath();ctx.arc(X(lp[0]),Y(lp[1]),2.4,0,7);ctx.fill();});
+    ctx.fillStyle='#939ab0';ctx.font="9px 'DM Mono',ui-monospace,monospace";
+    if(have){var fx=function(t){return new Date(t).toISOString().slice(0,7);};ctx.fillText(fx(x0),padL,H-3);var e=fx(x1);ctx.fillText(e,W-padR-ctx.measureText(e).width,H-3);}
+    else{ctx.fillText('no data for this lens',padL,Math.round(H/2));}
+    cv._hp=ld.hoverPoints||[];cv._dom={x0:x0,x1:x1,padL:padL,padR:padR,W:W};
     return true;
-  } catch (err) { QA_ERRORS.push('draw: ' + err.message); return false; }
+  }catch(err){QA_ERRORS.push('draw: '+err.message);return false;}
+}
+
+// ---- four-basis hover (all from raw obs; n/a where short, never fabricated) ----
+function valueAtJan(obs,year){var t0=Date.UTC(year,0,1),t1=Date.UTC(year,6,1);for(var i=0;i<obs.length;i++){if(obs[i][0]>=t0&&obs[i][0]<t1)return obs[i][1];}return null;}
+function valueAtMonth(obs,year,month){var s=Date.UTC(year,month,1),e=Date.UTC(year,month+1,1);for(var i=0;i<obs.length;i++){if(obs[i][0]>=s&&obs[i][0]<e)return obs[i][1];}return null;}
+function nearestBefore(obs,ms){var best=null;for(var i=0;i<obs.length;i++){if(obs[i][0]<=ms)best=obs[i][1];else break;}return best;}
+function hoverReadings(id,dateStr,V){
+  var obs=obsMs(id),dt=parseObsDate(dateStr),yr=dt.getUTCFullYear(),mo=dt.getUTCMonth(),D0=dt.getTime(),R={};
+  var janY=valueAtJan(obs,yr),v22=valueAtMonth(obs,2022,mo),jan22=valueAtJan(obs,2022);
+  R.event=(janY&&v22&&jan22)?((V/janY*100)-(v22/jan22*100)):null;
+  R.ytd=(janY)?((V/janY-1)*100):null;
+  var v12=nearestBefore(obs,D0-365*864e5);R.yoy=(v12)?((V/v12-1)*100):null;
+  var acc=[];for(var k=1;k<=3;k++){var vp=valueAtMonth(obs,yr-k,mo);if(vp)acc.push(vp);}
+  R.prior=acc.length?((V/(acc.reduce(function(a,b){return a+b;},0)/acc.length)-1)*100):null;
+  return R;
+}
+function showTip(id,hpItem,cx,cy){
+  var R=hoverReadings(id,hpItem.date,hpItem.value),tt=$('tt');
+  function row(l,v,isPt){return '<div class="r"><span>'+l+'</span><b>'+(v==null?'n/a':(isPt?ptsfmt(v):pct(v)))+'</b></div>';}
+  tt.innerHTML='<div class="d">'+hpItem.date+' · '+fmt(hpItem.value,dec(id))+' '+unitOf(id)+'</div>'+row("vs '22 path",R.event,true)+row('YTD',R.ytd)+row('YoY',R.yoy)+row('vs prior yrs',R.prior);
+  tt.style.left=Math.min(cx+14,window.innerWidth-214)+'px';tt.style.top=(cy+14)+'px';tt.className='tt show';
+}
+function hideTip(){$('tt').className='tt';}
+
+// ---- mechanical rollup (counts only) ----
+function computeRollup(rows,lens){var up=0,flat=0,down=0,na=0;rows.forEach(function(id){if(!D.series[id]){na++;return;}var p=lensData(id,lens).primary;if(p==null){na++;}else if(p>ROLLUP_FLAT_BAND){up++;}else if(p<-ROLLUP_FLAT_BAND){down++;}else{flat++;}});return {up:up,flat:flat,down:down,na:na};}
+function rollupHTML(rows,lens){var r=computeRollup(rows,lens);return 'over '+(lens==='3m'?'3m':lens==='ytd'?'YTD':lens==='yoy'?'YoY':'event')+': <span class="u">▲'+r.up+'</span> <span class="f">▬'+r.flat+'</span> <span class="d">▼'+r.down+'</span>'+(r.na?' <span class="n">· n/a '+r.na+'</span>':'');}
+
+// ---- info bubble (auto facts + static descriptive gloss; no analysis) ----
+function basisDecode(seriesName){var sn=String(seriesName).toLowerCase(),keys=Object.keys(G.basis).sort(function(a,b){return b.length-a.length;});for(var i=0;i<keys.length;i++){if(sn.indexOf(keys[i])>=0)return G.basis[keys[i]];}return '';}
+function buildBubble(id){
+  var meta=D.series[id].meta,ct=C.rows[id],ov=G.byRow[id]||{},b=el('div','bubble');
+  var fullName=ov.name||titleCase(meta.commodity),abbr=G.abbrev[meta.commodity];
+  if(abbr&&!ov.name)fullName=meta.commodity+' — '+abbr;
+  var gloss=ov.gloss||G.byCommodity[meta.commodity]||'',basis=basisDecode(ct?ct.title:meta.series_name);
+  b.appendChild(el('h4','',fullName));if(gloss)b.appendChild(el('div','',gloss));
+  function field(k,v){if(!v)return;var w=el('div');w.appendChild(el('span','k',k));w.appendChild(document.createTextNode(v));b.appendChild(w);}
+  field('What the price is',(ct?ct.title:meta.series_name));
+  if(basis)field('Pricing basis',basis);
+  field('Unit / cadence',unitOf(id)+' · '+meta.refresh_cadence);
+  field('Source',meta.institution+' · Tier '+meta.tier+(meta.geography?' · region '+meta.geography:''));
+  field('Why it matters',meta.relevance);
+  if(meta.crosscheck){var xc=meta.crosscheck;field('Daily cross-check (unofficial)',fmt(xc.value,dec(id))+' '+xc.unit+' · '+xc.ticker+' via '+xc.source+' @'+xc.date);}
+  return b;
 }
 
 // ---- card ----
-function cardEl(id) {
-  var s = D.series[id], ct = C.rows[id], meta = s.meta;
-  var c = el('div', 'card'); c.setAttribute('data-row', id);
-  c.appendChild(el('div', 'cn', titleCase(meta.commodity)));
-  c.appendChild(el('div', 'csub', clip(ct ? ct.title : meta.series_name, 60)));
-  var bs = el('div', 'badges');
-  var rb = el('span', 'badge region', meta.geography); rb.style.background = REGION_COLORS[meta.geography] || '#5b6573'; bs.appendChild(rb);
-  bs.appendChild(el('span', 'badge', meta.refresh_cadence));
-  bs.appendChild(el('span', 'badge', 'T' + meta.tier));
-  if (meta.data_class === 'forecast') bs.appendChild(el('span', 'badge', 'forecast'));
-  c.appendChild(bs);
-  var ch = el('div', 'ch'); var cv = el('canvas'); cv.setAttribute('data-qa-canvas', id); ch.appendChild(cv); c.appendChild(ch);
-  var es = el('div', 'es'); c.appendChild(es);
-  var rv = el('div', 'rv');
-  rv.appendChild(el('div', 'rv-src', clip(meta.institution + ' · Tier ' + meta.tier, 64)));
-  var r1 = el('div', 'rv-row'); rv.appendChild(r1);
-  var r2 = el('div', 'rv-row'); rv.appendChild(r2);
-  if (meta.crosscheck) {
-    var xc = meta.crosscheck;
-    rv.appendChild(el('div', 'rv-row xc', clip('cross-check (unofficial) ' + fmt(xc.value, ct ? ct.decimals : 2) + ' ' + xc.unit + ' · ' + xc.ticker + ' via ' + xc.source + ' @' + xc.date, 70)));
-  }
-  var slot = el('div', 'rv-ctx empty', 'Analysis pending — Claude layer'); slot.setAttribute('data-analysis-slot', id); rv.appendChild(slot);
-  c.appendChild(rv);
-  CARDS[id] = { cv: cv, es: es, r1: r1, r2: r2 };
+function cardEl(id,fam){
+  var meta=D.series[id].meta,ct=C.rows[id],isAgg=fam.aggregate.indexOf(id)>=0;
+  var c=el('div','scard'+(isAgg?' agg':''));c.setAttribute('data-row',id);
+  var ib=el('div','ibtn','i');ib.title='details';c.appendChild(ib);
+  c.appendChild(el('div','cn',(G.byRow[id]&&G.byRow[id].card)||titleCase(meta.commodity)));
+  if(isAgg)c.appendChild(el('div','aggtag','family aggregate · index'));
+  c.appendChild(el('div','csub',clip(ct?ct.title:meta.series_name,58)));
+  var bs=el('div','badges');bs.appendChild(el('span','badge',meta.geography));bs.appendChild(el('span','badge',meta.refresh_cadence));bs.appendChild(el('span','badge','T'+meta.tier));if(meta.data_class==='forecast')bs.appendChild(el('span','badge','forecast'));c.appendChild(bs);
+  var ch=el('div','ch');var cv=el('canvas');cv.setAttribute('data-qa-canvas',id);ch.appendChild(cv);c.appendChild(ch);
+  var es=el('div','es');c.appendChild(es);
+  c.appendChild(el('div','rv-src',clip(meta.institution+' · Tier '+meta.tier,60)));
+  var r1=el('div','rv-row');c.appendChild(r1);var r2=el('div','rv-row');c.appendChild(r2);
+  var slot=el('div','slot','Analysis pending — Claude layer');slot.setAttribute('data-analysis-slot',id);c.appendChild(slot);
+  var bub=buildBubble(id);c.appendChild(bub);
+  ib.onclick=function(){bub.className='bubble'+(bub.className.indexOf('open')<0?' open':'');};
+  cv.addEventListener('mousemove',function(ev){var dm=cv._dom,hp=cv._hp;if(!dm||!hp||!hp.length)return;var rect=cv.getBoundingClientRect();var mx=ev.clientX-rect.left;var dx=dm.x0+(mx-dm.padL)/(dm.W-dm.padL-dm.padR)*(dm.x1-dm.x0);var best=hp[0],bd=Infinity;hp.forEach(function(p){var d=Math.abs(p.px-dx);if(d<bd){bd=d;best=p;}});showTip(id,best,ev.clientX,ev.clientY);});
+  cv.addEventListener('mouseleave',hideTip);
+  CARDS[id]={cv:cv,es:es,r1:r1,r2:r2};
   return c;
 }
 
-function applyLens(id, lens) {
-  var refs = CARDS[id]; if (!refs) return { drew: 0, data: 0 };
-  var ld = lensData(id, lens);
-  refs.es.textContent = '';
-  ld.stat.forEach(function (pair) {
-    var sp = el('span'); sp.appendChild(document.createTextNode(pair[0] + ' '));
-    var b = el('b'); b.textContent = pair[1] == null ? 'n/a' : pct(pair[1]); sp.appendChild(b); refs.es.appendChild(sp);
-  });
-  var last = D.series[id].obs[D.series[id].obs.length - 1];
-  refs.r1.textContent = 'latest ' + fmt(last[1], dec(id)) + ' ' + unitOf(id) + ' @' + last[0] + ' · ' + D.series[id].meta.refresh_cadence;
-  refs.r2.textContent = ld.reserve2 || '';
-  var drew = drawChart(refs.cv, ld.seriesList, { refLine: 100 });
-  return { drew: drew ? 1 : 0, data: ld.hasData ? 1 : 0 };
+function applyLens(id,lens){
+  var refs=CARDS[id];if(!refs)return;var ld=lensData(id,lens);
+  refs.es.textContent='';ld.stat.forEach(function(pr){var sp=el('span');sp.appendChild(document.createTextNode(pr[0]+' '));var b=el('b');b.textContent=pr[1]==null?'n/a':pct(pr[1]);sp.appendChild(b);refs.es.appendChild(sp);});
+  var last=D.series[id].obs[D.series[id].obs.length-1];
+  refs.r1.textContent='latest '+fmt(last[1],dec(id))+' '+unitOf(id)+' @'+last[0]+' · '+cadOf(id);
+  refs.r2.textContent=ld.reserve2||'';
+  drawChart(refs.cv,ld);
 }
+function redrawAll(lens){Object.keys(CARDS).forEach(function(id){try{applyLens(id,lens);}catch(e){QA_ERRORS.push('lens '+id+': '+e.message);}});}
 
-function redrawAll(lens) { Object.keys(CARDS).forEach(function (id) { try { applyLens(id, lens); } catch (e) { QA_ERRORS.push('lens ' + id + ': ' + e.message); } }); }
-
-function updateLegend(lens) {
-  var L = $('legend'); if (!L) return; L.textContent = '';
-  if (lens === 'event') {
-    var a = el('span', 'a', '━ H1 2022 (Russia–Ukraine, mapped to 2026 calendar)'); var b = el('span', 'b', '   ━ H1 2026 to date (US–Iran)');
-    L.appendChild(a); L.appendChild(b);
-  } else { L.appendChild(el('span', 'b', '━ 2026, rebased to 100')); }
-}
-
-function setLens(lens) {
-  curLens = lens;
-  var bs = document.querySelectorAll('.lensbtn');
-  for (var i = 0; i < bs.length; i++) { bs[i].className = 'lensbtn' + (bs[i].getAttribute('data-lens') === lens ? ' active' : ''); }
-  updateLegend(lens);
-  setTimeout(function () { redrawAll(lens); }, 0);
-}
-
-// ---- segment sections ----
-function slowestDate(u) {
-  var min = null;
-  (u.evidence || []).forEach(function (e) { var s = D.series[e.row_id]; if (!s) return; var d = s.obs[s.obs.length - 1][0]; if (min === null || d < min) min = d; });
-  return min || 'n/a';
-}
-function segHeader(seg) {
-  var h = el('div', 'seg-hd');
-  h.appendChild(el('div', 'seg-title', SEG_LABELS[seg] || seg));
-  if (SY && SY.units && SY.units[seg]) {
-    var u = SY.units[seg];
-    var st = el('div', 'seg-state', u.published); st.style.color = STATE_COLORS[u.published] || '#5b6573'; st.style.borderColor = STATE_COLORS[u.published] || '#dfe2e8'; h.appendChild(st);
-    h.appendChild(el('div', 'seg-meta', 'score ' + u.score + ' · breadth ' + Math.round(u.breadth * 100) + '% · as of ' + slowestDate(u) + ' (slowest contributing row)'));
-  }
-  return h;
-}
-function renderApp() {
-  var app = $('app'); app.textContent = ''; CARDS = {};
-  SEG_ORDER.forEach(function (seg) {
-    var ids = Object.keys(D.series).filter(function (id) { return D.series[id].meta.segment === seg && C.rows[id] && D.series[id].obs && D.series[id].obs.length; });
-    if (!ids.length) return;
-    ids.sort(function (a, b) {
-      var ma = D.series[a].meta, mb = D.series[b].meta;
-      if (ma.commodity !== mb.commodity) return ma.commodity < mb.commodity ? -1 : 1;
-      var ra = REGION_RANK[ma.geography] == null ? 9 : REGION_RANK[ma.geography], rbk = REGION_RANK[mb.geography] == null ? 9 : REGION_RANK[mb.geography];
-      if (ra !== rbk) return ra - rbk;
-      return a < b ? -1 : 1;
+// ---- render: segment groups -> families -> slider of cards ----
+function render(){
+  var app=$('app');app.textContent='';CARDS={};FAMILIES=[];
+  SEGMENTS.forEach(function(seg){
+    app.appendChild(el('div','seg-title',seg.label));
+    seg.families.forEach(function(fam){
+      var rows=fam.rows.filter(function(id){return D.series[id]&&C.rows[id]&&D.series[id].obs&&D.series[id].obs.length;});
+      if(!rows.length)return;   // fail-blank: an empty family is omitted, never a broken box
+      var f=el('div','fam'),hd=el('div','fam-hd');
+      hd.appendChild(el('div','fam-name',fam.label+' ('+rows.length+')'));
+      var ru=el('span','rollup');ru.innerHTML=rollupHTML(rows,curLens);hd.appendChild(ru);
+      FAMILIES.push({el:ru,rows:rows});
+      f.appendChild(hd);
+      var slider=el('div','slider'),track=el('div','track');track.id='track-'+fam.key;
+      rows.forEach(function(id){track.appendChild(cardEl(id,fam));});
+      if(rows.length>2){   // arrows only when there is something to slide (1-card group: no arrows)
+        var prev=el('button','arrow prev','‹'),next=el('button','arrow next','›');
+        prev.onclick=function(){track.scrollBy({left:-311,behavior:'smooth'});};
+        next.onclick=function(){track.scrollBy({left:311,behavior:'smooth'});};
+        slider.appendChild(prev);slider.appendChild(next);
+      }
+      slider.appendChild(track);f.appendChild(slider);app.appendChild(f);
     });
-    var sec = el('section', 'seg'); sec.appendChild(segHeader(seg));
-    var g = el('div', 'grid');
-    ids.forEach(function (id) { try { g.appendChild(cardEl(id)); } catch (e) { QA_ERRORS.push('card ' + id + ': ' + e.message); } });
-    sec.appendChild(g); app.appendChild(sec);
   });
 }
 
-function renderHeaderPills() {
-  var p = $('pills'); p.textContent = '';
-  if (M && M.BUILD_STATUS) p.appendChild(el('span', 'pill ' + (M.BUILD_STATUS === 'PASS' ? 'ok' : 'bad'), 'build ' + M.BUILD_STATUS));
-  if (SY && SY.units && SY.units.composite) p.appendChild(el('span', 'pill', 'composite ' + SY.units.composite.published + ' · ' + SY.month));
-  if (D) { p.appendChild(el('span', 'pill', 'registry ' + D.registry_version)); p.appendChild(el('span', 'pill', D.counts.captured + ' series')); }
-}
-function renderIntro() {
-  $('intro').textContent = 'Each series is rebased to 100 at the period start and rendered at its native cadence — monthly for World Bank CMO benchmarks, weekly for EIA energy and EU physical prices (DG AGRI / EU Oil Bulletin), quarterly for two EU index rows — labelled per card. The event overlay aligns H1 2026 (blue) against H1 2022 (orange, mapped onto the 2026 calendar), each rebased to 100 at its January start. Provenance is read from the registry; per-card analysis is pending the Claude layer.';
-}
-function renderLensBar() {
-  var w = $('lenses'); w.textContent = '';
-  LENSES.forEach(function (L) {
-    var b = el('button', 'lensbtn' + (L.k === curLens ? ' active' : ''), L.label);
-    b.setAttribute('data-lens', L.k); b.onclick = function () { setLens(L.k); }; w.appendChild(b);
-  });
-}
-function sourcesLine() {
-  var set = {}; Object.keys(D.series).forEach(function (id) { set[D.series[id].meta.institution] = 1; });
-  return 'Sources: ' + Object.keys(set).sort().join(' · ');
-}
-function renderFooter() {
-  var f = $('footer'); f.textContent = '';
-  if (!M || !M.BUILD_STATUS) { f.appendChild(document.createTextNode('build manifest missing — ')); f.appendChild(el('span', 'status FAILURE', 'FAILURE')); return; }
-  var ok = M.BUILD_STATUS === 'PASS';
-  var l1 = el('div');
-  l1.appendChild(el('span', 'status ' + (ok ? 'PASS' : 'FAILURE'), M.BUILD_STATUS));
-  l1.appendChild(document.createTextNode(' · registry ' + M.registry_version + ' · generated ' + M.generated_utc + ' · ' + Object.keys(M.artifact_hashes_sha256 || {}).length + ' artifacts manifest-hashed · page reads committed pipeline data (read-only)'));
-  f.appendChild(l1);
-  f.appendChild(el('div', '', sourcesLine()));
-  f.appendChild(el('div', '', Object.keys(M.gates || {}).map(function (k) { return k + ':' + M.gates[k]; }).join('  ')));
+function updateLegend(lens){var L=$('legend');if(!L)return;L.textContent='';if(lens==='event'){L.appendChild(el('span','a','━ H1 2022 (Russia–Ukraine, mapped)'));L.appendChild(el('span','b','   ━ H1 2026 to date (US–Iran)'));}else{L.appendChild(el('span','b','━ 2026, rebased to 100'));}}
+function renderLensBar(){var w=$('lenses');w.textContent='';LENSES.forEach(function(L){var b=el('button','lensbtn'+(L.k===curLens?' active':''),L.label);b.setAttribute('data-lens',L.k);b.onclick=function(){setLens(L.k);};w.appendChild(b);});}
+function setLens(lens){
+  curLens=lens;
+  var bs=document.querySelectorAll('.lensbtn');for(var i=0;i<bs.length;i++){bs[i].className='lensbtn'+(bs[i].getAttribute('data-lens')===lens?' active':'');}
+  updateLegend(lens);
+  FAMILIES.forEach(function(f){f.el.innerHTML=rollupHTML(f.rows,lens);});   // re-tally rollups (preserves slider scroll + open bubbles)
+  setTimeout(function(){redrawAll(lens);},0);
 }
 
-// ---- QA mode (stored reversed so the literal terms never appear in this file) ----
-var BANNED = ['ecnis tsrow', 'raos', 'tekcoryks', 'espalloc', 'sisirc', 'onin le repus',
-              'mrots tcefrep', 'detnedecerpnu', 'egnulp', 'edolpxe']
-  .map(function (s) { return s.split('').reverse().join(''); });
-function runQa() {
-  var report = { lenses: {}, canvases_total: 0, canvases_drawn: 0, nodata_card_lens: 0, console_errors: [], banned_hits: [], empty_summaries: 0, analysis_slots: 0, footer_status: '', verdict: 'FAIL' };
-  var ids = Object.keys(CARDS), lensKeys = ['event', 'ytd', 'yoy', '3m'], banned = {};
-  lensKeys.forEach(function (L) {
-    var drew = 0, withData = 0;
-    ids.forEach(function (id) { var r = applyLens(id, L); report.canvases_total++; if (r.drew) { drew++; report.canvases_drawn++; } if (r.data) withData++; else report.nodata_card_lens++; });
-    report.lenses[L] = drew + '/' + ids.length + ' drawn, ' + withData + ' with data';
-    var text = document.body.innerText.toLowerCase();
-    BANNED.forEach(function (w) { if (text.indexOf(w) >= 0) banned[w] = 1; });
-  });
-  report.banned_hits = Object.keys(banned);
-  report.console_errors = QA_ERRORS.slice();
-  redrawAll('event'); updateLegend('event');
-  var ess = document.querySelectorAll('.es'); for (var i = 0; i < ess.length; i++) { if (!ess[i].textContent.trim()) report.empty_summaries++; }
-  report.analysis_slots = document.querySelectorAll('[data-analysis-slot]').length;
-  report.footer_status = (M && M.BUILD_STATUS) ? M.BUILD_STATUS : 'MISSING';
-  var pass = report.canvases_total > 0 && report.canvases_drawn === report.canvases_total &&
-             report.console_errors.length === 0 && report.banned_hits.length === 0 &&
-             report.empty_summaries === 0 && report.footer_status !== 'MISSING';
-  report.verdict = pass ? 'PASS' : 'FAIL';
-  $('qa-results').textContent = JSON.stringify(report, null, 1);
-  document.title = 'QA:' + report.verdict;
+function renderHeaderPills(){var p=$('pills');p.textContent='';if(M&&M.BUILD_STATUS)p.appendChild(el('span','pill '+(M.BUILD_STATUS==='PASS'?'ok':'bad'),'build '+M.BUILD_STATUS));if(SY&&SY.units&&SY.units.composite)p.appendChild(el('span','pill','composite '+SY.units.composite.published+' · '+SY.month));if(D){p.appendChild(el('span','pill','registry '+D.registry_version));p.appendChild(el('span','pill',D.counts.captured+' series'));}}
+function renderIntro(){$('intro').textContent='Organised by what a producer buys: crops & ingredients first, then the cost drivers behind them (farm inputs, logistics & energy, packaging). Each family groups related commodities; the family tally counts rows up / flat / down on the selected lens. Cards rebase to 100 at the period start and render at each row’s native cadence. Hover a chart for the point read across four bases; open ⓘ for a plain-English explainer. Per-card analysis is pending the Claude layer.';}
+function sourcesLine(){var set={};Object.keys(D.series).forEach(function(id){set[D.series[id].meta.institution]=1;});return 'Sources: '+Object.keys(set).sort().join(' · ');}
+function renderFooter(){
+  var f=$('footer');f.textContent='';
+  if(!M||!M.BUILD_STATUS){f.appendChild(document.createTextNode('build manifest missing — '));f.appendChild(el('span','status FAILURE','FAILURE'));return;}
+  var ok=M.BUILD_STATUS==='PASS',l1=el('div');
+  l1.appendChild(el('span','status '+(ok?'PASS':'FAILURE'),M.BUILD_STATUS));
+  l1.appendChild(document.createTextNode(' · registry '+M.registry_version+' · generated '+M.generated_utc+' · '+Object.keys(M.artifact_hashes_sha256||{}).length+' artifacts manifest-hashed · page reads committed pipeline data (read-only)'));
+  f.appendChild(l1);f.appendChild(el('div','',sourcesLine()));
+  f.appendChild(el('div','',Object.keys(M.gates||{}).map(function(k){return k+':'+M.gates[k];}).join('  ')));
 }
 
-// ---- boot ----
-(function () {
-  if (!D || !C) {
-    document.body.insertBefore(el('div', 'card', 'data.js / display_contract.js missing — nothing rendered'), document.body.firstChild);
-    renderFooter(); return;
-  }
-  var m = /[?&]lens=(event|ytd|yoy|3m)/.exec(location.search); if (m) curLens = m[1];
-  renderHeaderPills(); renderIntro(); renderLensBar(); updateLegend(curLens); renderApp(); renderFooter();
-  // timer-based first paint so headless --dump-dom captures the rendered canvases
-  setTimeout(function () { redrawAll(curLens); }, 0);
-  if (/[?&]qa=1/.test(location.search)) { setTimeout(runQa, 600); }
+// ---- QA mode (BANNED stored reversed so the literal terms never appear in this file) ----
+var BANNED=['ecnis tsrow','raos','tekcoryks','espalloc','sisirc','onin le repus','mrots tcefrep','detnedecerpnu','egnulp','edolpxe'].map(function(s){return s.split('').reverse().join('');});
+function runQa(){
+  var report={lenses:{},canvases_total:0,canvases_drawn:0,nodata_card_lens:0,console_errors:[],banned_hits:[],empty_summaries:0,analysis_slots:0,families:0,footer_status:'',verdict:'FAIL'};
+  var ids=Object.keys(CARDS),lensKeys=['event','ytd','yoy','3m'],banned={};
+  report.families=FAMILIES.length;
+  lensKeys.forEach(function(L){
+    FAMILIES.forEach(function(f){f.el.innerHTML=rollupHTML(f.rows,L);});
+    var drew=0;ids.forEach(function(id){var ld=lensData(id,L);applyLens(id,L);report.canvases_total++;var ok=false;try{ok=CARDS[id].cv.toDataURL().length>1000;}catch(e){QA_ERRORS.push('toDataURL '+id+': '+e);}if(ok){drew++;report.canvases_drawn++;}if(!ld.hoverPoints.length)report.nodata_card_lens++;});
+    report.lenses[L]=drew+'/'+ids.length;
+    var text=document.body.innerText.toLowerCase();BANNED.forEach(function(w){if(text.indexOf(w)>=0)banned[w]=1;});
+  });
+  report.banned_hits=Object.keys(banned);report.console_errors=QA_ERRORS.slice();
+  setLens('event');
+  var ess=document.querySelectorAll('.es');for(var i=0;i<ess.length;i++){if(!ess[i].textContent.trim())report.empty_summaries++;}
+  report.analysis_slots=document.querySelectorAll('[data-analysis-slot],.slot').length;
+  report.footer_status=(M&&M.BUILD_STATUS)?M.BUILD_STATUS:'MISSING';
+  var pass=report.canvases_total>0&&report.canvases_drawn===report.canvases_total&&report.console_errors.length===0&&report.banned_hits.length===0&&report.empty_summaries===0&&report.footer_status!=='MISSING';
+  report.verdict=pass?'PASS':'FAIL';
+  $('qa-results').textContent=JSON.stringify(report,null,1);document.title='QA:'+report.verdict;
+}
+
+(function(){
+  if(!D||!C){document.body.insertBefore(el('div','scard','data.js / display_contract.js missing — nothing rendered'),document.body.firstChild);renderFooter();return;}
+  var m=/[?&]lens=(event|ytd|yoy|3m)/.exec(location.search);if(m)curLens=m[1];
+  renderHeaderPills();renderIntro();renderLensBar();updateLegend(curLens);render();renderFooter();
+  setTimeout(function(){redrawAll(curLens);},0);
+  if(/[?&]qa=1/.test(location.search)){setTimeout(runQa,700);}
 })();
 </script>
 </body>
