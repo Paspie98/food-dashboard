@@ -1,6 +1,6 @@
 ﻿{
-    "generated":  "2026-06-28T15:22:38Z",
-    "started":  "2026-06-28T15:18:16Z",
+    "generated":  "2026-06-28T15:34:00Z",
+    "started":  "2026-06-28T15:28:57Z",
     "overall":  "PASS",
     "baseline":  {
                      "captured":  59,
@@ -15,31 +15,28 @@
                    "history_series":  59
                },
     "capture":  {
-                    "captured":  55,
-                    "failed_kept_prior":  4,
+                    "captured":  59,
+                    "failed_kept_prior":  0,
                     "wired":  59
                 },
     "freshness":  {
                       "run_environment":  "github_actions",
-                      "runner_marker":  "runner=GitHub Actions; os=Windows; run_id=28326732544; sha=c2e37a6773d20e29dfd5ba506c9adeb531f681da",
-                      "refresh_started_at_utc":  "2026-06-28T15:18:16Z",
-                      "capture_started_at_utc":  "2026-06-28T15:18:16Z",
-                      "capture_completed_at_utc":  "2026-06-28T15:21:02Z",
-                      "build_started_at_utc":  "2026-06-28T15:21:50Z",
-                      "build_completed_at_utc":  "2026-06-28T15:22:01Z",
+                      "runner_marker":  "runner=GitHub Actions; os=Windows; run_id=28327018253; sha=0dda2c74afd7843ff61898d0b59daee5efaa7216",
+                      "refresh_started_at_utc":  "2026-06-28T15:28:57Z",
+                      "capture_started_at_utc":  "2026-06-28T15:28:58Z",
+                      "capture_completed_at_utc":  "2026-06-28T15:32:12Z",
+                      "build_started_at_utc":  "2026-06-28T15:33:01Z",
+                      "build_completed_at_utc":  "2026-06-28T15:33:14Z",
                       "source_families_attempted":  7,
-                      "source_families_succeeded":  6,
-                      "source_families_failed":  1,
+                      "source_families_succeeded":  7,
+                      "source_families_failed":  0,
                       "fetches_attempted":  59,
-                      "raw_files_written":  32,
-                      "observations_fetched":  23994,
-                      "rows_fresh_from_source":  55,
-                      "rows_kept_prior":  4,
+                      "raw_files_written":  36,
+                      "observations_fetched":  31060,
+                      "rows_fresh_from_source":  59,
+                      "rows_kept_prior":  0,
                       "kept_prior_row_ids":  [
-                                                 "EN-003",
-                                                 "EN-004",
-                                                 "EN-005",
-                                                 "EN-006"
+
                                              ]
                   },
     "gates":  {
