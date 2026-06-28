@@ -31,6 +31,7 @@ jobs:
       - name: refresh-all (capture -> build -> synthesis -> gates -> manifest)
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
           USDA_FAS_KEY: ${{ secrets.USDA_FAS_KEY }}
         run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/refresh_all.ps1
 
