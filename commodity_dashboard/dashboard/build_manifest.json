@@ -1,6 +1,6 @@
 ﻿{
     "BUILD_STATUS":  "PASS",
-    "generated_utc":  "2026-06-28T20:47:07Z",
+    "generated_utc":  "2026-06-29T17:20:52Z",
     "registry_version":  "v9",
     "baselines":  {
                       "captured_floor":  59,
@@ -39,9 +39,9 @@
     "freshness":  {
                       "fresh":  56,
                       "stale_warn":  [
-                                         "FR-001 (age 120d, budget 3m)",
-                                         "FR-005 (age 210d, budget 2q)",
-                                         "SG-003 (age 120d, budget 3m)"
+                                         "FR-001 (age 121d, budget 3m)",
+                                         "FR-005 (age 211d, budget 2q)",
+                                         "SG-003 (age 121d, budget 3m)"
                                      ],
                       "escalated":  [
 
@@ -50,8 +50,8 @@
     "artifact_hashes_sha256":  {
                                    "commodity_exposure.html":  "D1C0DF58D2ACC2241CE7583292C6939DB26C8DE85E6FC218EDADC61196BD3808",
                                    "commodity_glossary.js":  "C61F45C7F4D4037AE2C8CB7D3D6C4AFF4B377F9308CD2AB2EA8ED2C250A79686",
-                                   "data.js":  "BB05BC3025519CA2AF8366B773396EBA283B5C5B03AE4CC75490DC03A63DE5B1",
+                                   "data.js":  "62C7880D28A6FC73225A2BF0828EA8BC9BEC9C5CA166E0146597EDD9E4F9784F",
                                    "display_contract.js":  "2306A6AE1B02EB6289F6121C2EC6ED360813CFFFDFA589DD06ED79F3D903E569",
-                                   "synthesis.js":  "6C00A09E9985853313E64AEC6D77093D9A70E11E4AA7595E13F09FC9A8105EC3"
+                                   "synthesis.js":  "2361D8D69D44C93FB3C0CF9D1E96534298575370BC913F0353E4639A37480595"
                                }
 }
