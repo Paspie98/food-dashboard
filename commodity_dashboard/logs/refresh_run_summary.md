@@ -1,6 +1,6 @@
 ﻿# commodity dashboard refresh run summary
 
-**Overall: PASS**  -  generated 2026-07-20T09:45:34Z
+**Overall: PASS**  -  generated 2026-07-27T10:19:08Z
 
 | step | status | detail |
 |---|---|---|
@@ -22,9 +22,9 @@
 | gate-synthesis-fixtures | PASS |  |
 | gate-synthesis-stability | PASS |  |
 | qa-secrets-scan | PASS | no key-shaped content in emitted artifacts |
-| qa-numeric-history | PASS | 31143 observations, all castable, finite, unique |
+| qa-numeric-history | PASS | 31155 observations, all castable, finite, unique |
 | qa-ratchet | PASS | captured 59 (floor 59) / charted 59 (floor 59) |
-| data-freshness | WARN | fresh 58; stale-warn 1; escalated 0 / stale: FR-001 (age 110d, budget 3m) |
+| data-freshness | WARN | fresh 58; stale-warn 1; escalated 0 / stale: FR-001 (age 117d, budget 3m) |
 | manifest | PASS | BUILD_STATUS=PASS; 5 artifact hashes |
 
-counts: captured 59 / charted 59 / floors 59/59 / history obs 31143
+counts: captured 59 / charted 59 / floors 59/59 / history obs 31155
