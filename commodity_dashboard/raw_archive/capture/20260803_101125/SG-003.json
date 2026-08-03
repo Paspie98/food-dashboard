@@ -1,0 +1,6589 @@
+[ {
+  "sugarRegion" : "EU Average",
+  "price" : "504.2609",
+  "unit" : "Tonne",
+  "ym" : "2026/05",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "May",
+  "weight" : 685059.93,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "502.553",
+  "unit" : "Tonne",
+  "ym" : "2026/05",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "May",
+  "weight" : 151688.62,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "497.3828",
+  "unit" : "Tonne",
+  "ym" : "2026/05",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "May",
+  "weight" : 465773.8,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "555.4863",
+  "unit" : "Tonne",
+  "ym" : "2026/05",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "May",
+  "weight" : 67597.51,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "502.1113",
+  "unit" : "Tonne",
+  "ym" : "2026/04",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Apr",
+  "weight" : 727647.48,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "488.7805",
+  "unit" : "Tonne",
+  "ym" : "2026/04",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Apr",
+  "weight" : 15621.25,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "502.3408",
+  "unit" : "Tonne",
+  "ym" : "2026/04",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Apr",
+  "weight" : 164007.01,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "419.1388",
+  "unit" : "Tonne",
+  "ym" : "2026/04",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Apr",
+  "weight" : 7451.8,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "495.3363",
+  "unit" : "Tonne",
+  "ym" : "2026/04",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Apr",
+  "weight" : 503137.3,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "557.8295",
+  "unit" : "Tonne",
+  "ym" : "2026/04",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Apr",
+  "weight" : 60503.17,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "548.3003",
+  "unit" : "Tonne",
+  "ym" : "2026/04",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Apr",
+  "weight" : 7425.51,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "510.1677",
+  "unit" : "Tonne",
+  "ym" : "2026/03",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Mar",
+  "weight" : 787057.96,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "503.2841",
+  "unit" : "Tonne",
+  "ym" : "2026/03",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Mar",
+  "weight" : 178792.87,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "418.1857",
+  "unit" : "Tonne",
+  "ym" : "2026/03",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Mar",
+  "weight" : 6013.78,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "506.3575",
+  "unit" : "Tonne",
+  "ym" : "2026/03",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Mar",
+  "weight" : 539296.19,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "544.8158",
+  "unit" : "Tonne",
+  "ym" : "2026/03",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Mar",
+  "weight" : 7350.53,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "557.8055",
+  "unit" : "Tonne",
+  "ym" : "2026/03",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Mar",
+  "weight" : 68968.9,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "512.9793",
+  "unit" : "Tonne",
+  "ym" : "2026/02",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Feb",
+  "weight" : 690746.96,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "414.0459",
+  "unit" : "Tonne",
+  "ym" : "2026/02",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Feb",
+  "weight" : 6199.74,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "524.5827",
+  "unit" : "Tonne",
+  "ym" : "2026/02",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Feb",
+  "weight" : 160508.58,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "502.6389",
+  "unit" : "Tonne",
+  "ym" : "2026/02",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Feb",
+  "weight" : 475044.33,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "546.0269",
+  "unit" : "Tonne",
+  "ym" : "2026/02",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Feb",
+  "weight" : 4114.95,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "568.233",
+  "unit" : "Tonne",
+  "ym" : "2026/02",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Feb",
+  "weight" : 55194.05,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "516.2968",
+  "unit" : "Tonne",
+  "ym" : "2026/01",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Jan",
+  "weight" : 723748.7,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "515.1061",
+  "unit" : "Tonne",
+  "ym" : "2026/01",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Jan",
+  "weight" : 153464.23,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "421.4057",
+  "unit" : "Tonne",
+  "ym" : "2026/01",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Jan",
+  "weight" : 5532.22,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "511.4451",
+  "unit" : "Tonne",
+  "ym" : "2026/01",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Jan",
+  "weight" : 513109.53,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "572.4225",
+  "unit" : "Tonne",
+  "ym" : "2026/01",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Jan",
+  "weight" : 5426.27,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "563.0344",
+  "unit" : "Tonne",
+  "ym" : "2026/01",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Jan",
+  "weight" : 57174.94,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "518.3146",
+  "unit" : "Tonne",
+  "ym" : "2025/12",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Dec",
+  "weight" : 621447.03,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "512.6076",
+  "unit" : "Tonne",
+  "ym" : "2025/12",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Dec",
+  "weight" : 18948.63,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "454.7416",
+  "unit" : "Tonne",
+  "ym" : "2025/12",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Dec",
+  "weight" : 7094.75,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "527.8359",
+  "unit" : "Tonne",
+  "ym" : "2025/12",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Dec",
+  "weight" : 115846.16,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "508.7253",
+  "unit" : "Tonne",
+  "ym" : "2025/12",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Dec",
+  "weight" : 442157.07,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "567.7592",
+  "unit" : "Tonne",
+  "ym" : "2025/12",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Dec",
+  "weight" : 63443.8,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "578.1614",
+  "unit" : "Tonne",
+  "ym" : "2025/12",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Dec",
+  "weight" : 8712.59,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "503.1192",
+  "unit" : "Tonne",
+  "ym" : "2025/11",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Nov",
+  "weight" : 30564.48,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "525.4319",
+  "unit" : "Tonne",
+  "ym" : "2025/11",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Nov",
+  "weight" : 740366.06,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "527.5436",
+  "unit" : "Tonne",
+  "ym" : "2025/11",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Nov",
+  "weight" : 160743.01,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "485.5046",
+  "unit" : "Tonne",
+  "ym" : "2025/11",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Nov",
+  "weight" : 16727.42,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "517.044",
+  "unit" : "Tonne",
+  "ym" : "2025/11",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Nov",
+  "weight" : 508089.53,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "554.3628",
+  "unit" : "Tonne",
+  "ym" : "2025/11",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Nov",
+  "weight" : 7200.68,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "580.2649",
+  "unit" : "Tonne",
+  "ym" : "2025/11",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Nov",
+  "weight" : 71533.52,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "531.6697",
+  "unit" : "Tonne",
+  "ym" : "2025/10",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Oct",
+  "weight" : 785974.54,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "546.7177",
+  "unit" : "Tonne",
+  "ym" : "2025/10",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Oct",
+  "weight" : 20170.67,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "543.14",
+  "unit" : "Tonne",
+  "ym" : "2025/10",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Oct",
+  "weight" : 10635.93,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "537.6567",
+  "unit" : "Tonne",
+  "ym" : "2025/10",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Oct",
+  "weight" : 174521.66,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "521.5307",
+  "unit" : "Tonne",
+  "ym" : "2025/10",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Oct",
+  "weight" : 540723.69,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "564.317",
+  "unit" : "Tonne",
+  "ym" : "2025/10",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Oct",
+  "weight" : 6900.24,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "594.41",
+  "unit" : "Tonne",
+  "ym" : "2025/10",
+  "marketingYear" : "2025/2026",
+  "marketingYearMonth" : "Oct",
+  "weight" : 70729.19,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "528.9824",
+  "unit" : "Tonne",
+  "ym" : "2025/09",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Sep",
+  "weight" : 794968.31,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "524.9067",
+  "unit" : "Tonne",
+  "ym" : "2025/09",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Sep",
+  "weight" : 6786.76,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "531.646",
+  "unit" : "Tonne",
+  "ym" : "2025/09",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Sep",
+  "weight" : 194253.17,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "520.2078",
+  "unit" : "Tonne",
+  "ym" : "2025/09",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Sep",
+  "weight" : 527902.12,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "585.4927",
+  "unit" : "Tonne",
+  "ym" : "2025/09",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Sep",
+  "weight" : 72813.02,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "582.5621",
+  "unit" : "Tonne",
+  "ym" : "2025/09",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Sep",
+  "weight" : 6676.75,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "535.8926",
+  "unit" : "Tonne",
+  "ym" : "2025/08",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Aug",
+  "weight" : 718116.53,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "539.2653",
+  "unit" : "Tonne",
+  "ym" : "2025/08",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Aug",
+  "weight" : 172277.52,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "533.7205",
+  "unit" : "Tonne",
+  "ym" : "2025/08",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Aug",
+  "weight" : 3968.92,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "525.1524",
+  "unit" : "Tonne",
+  "ym" : "2025/08",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Aug",
+  "weight" : 472218.7,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "536.8039",
+  "unit" : "Tonne",
+  "ym" : "2025/08",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Aug",
+  "weight" : 7043.42,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "596.8904",
+  "unit" : "Tonne",
+  "ym" : "2025/08",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Aug",
+  "weight" : 73620.31,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "537.8029",
+  "unit" : "Tonne",
+  "ym" : "2025/07",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jul",
+  "weight" : 831363.83,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "566.1255",
+  "unit" : "Tonne",
+  "ym" : "2025/07",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jul",
+  "weight" : 21404.51,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "529.6183",
+  "unit" : "Tonne",
+  "ym" : "2025/07",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jul",
+  "weight" : 8971.84,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "533.1314",
+  "unit" : "Tonne",
+  "ym" : "2025/07",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jul",
+  "weight" : 190022.83,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "532.0275",
+  "unit" : "Tonne",
+  "ym" : "2025/07",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jul",
+  "weight" : 563120.75,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "612.5183",
+  "unit" : "Tonne",
+  "ym" : "2025/07",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jul",
+  "weight" : 9086.67,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "590.7294",
+  "unit" : "Tonne",
+  "ym" : "2025/07",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jul",
+  "weight" : 78220.25,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "556.4749",
+  "unit" : "Tonne",
+  "ym" : "2025/06",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jun",
+  "weight" : 21846.69,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "536.3391",
+  "unit" : "Tonne",
+  "ym" : "2025/06",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jun",
+  "weight" : 789922.19,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "516.3252",
+  "unit" : "Tonne",
+  "ym" : "2025/06",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jun",
+  "weight" : 8916.95,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "536.9305",
+  "unit" : "Tonne",
+  "ym" : "2025/06",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jun",
+  "weight" : 176100.09,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "524.4871",
+  "unit" : "Tonne",
+  "ym" : "2025/06",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jun",
+  "weight" : 540141.74,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "585.1406",
+  "unit" : "Tonne",
+  "ym" : "2025/06",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jun",
+  "weight" : 11654.14,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "621.8117",
+  "unit" : "Tonne",
+  "ym" : "2025/06",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jun",
+  "weight" : 73680.36,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "540.1505",
+  "unit" : "Tonne",
+  "ym" : "2025/05",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "May",
+  "weight" : 765615.33,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "541.6725",
+  "unit" : "Tonne",
+  "ym" : "2025/05",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "May",
+  "weight" : 18724.94,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "538.3113",
+  "unit" : "Tonne",
+  "ym" : "2025/05",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "May",
+  "weight" : 184682.74,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "493.725",
+  "unit" : "Tonne",
+  "ym" : "2025/05",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "May",
+  "weight" : 8775.36,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "530.1606",
+  "unit" : "Tonne",
+  "ym" : "2025/05",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "May",
+  "weight" : 502138.62,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "608.125",
+  "unit" : "Tonne",
+  "ym" : "2025/05",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "May",
+  "weight" : 78793.97,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "596.2803",
+  "unit" : "Tonne",
+  "ym" : "2025/05",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "May",
+  "weight" : 9013.54,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "561.6555",
+  "unit" : "Tonne",
+  "ym" : "2025/04",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Apr",
+  "weight" : 19996.76,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "540.3065",
+  "unit" : "Tonne",
+  "ym" : "2025/04",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Apr",
+  "weight" : 762343.78,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "532.462",
+  "unit" : "Tonne",
+  "ym" : "2025/04",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Apr",
+  "weight" : 177951.42,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "522.1655",
+  "unit" : "Tonne",
+  "ym" : "2025/04",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Apr",
+  "weight" : 7572.01,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "533.9455",
+  "unit" : "Tonne",
+  "ym" : "2025/04",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Apr",
+  "weight" : 513141.29,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "594.3262",
+  "unit" : "Tonne",
+  "ym" : "2025/04",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Apr",
+  "weight" : 11254.91,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "605.7099",
+  "unit" : "Tonne",
+  "ym" : "2025/04",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Apr",
+  "weight" : 71251.07,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "573.3327",
+  "unit" : "Tonne",
+  "ym" : "2025/03",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Mar",
+  "weight" : 25377.55,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "549.5766",
+  "unit" : "Tonne",
+  "ym" : "2025/03",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Mar",
+  "weight" : 763638.14,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "544.0828",
+  "unit" : "Tonne",
+  "ym" : "2025/03",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Mar",
+  "weight" : 181989.71,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "513.3819",
+  "unit" : "Tonne",
+  "ym" : "2025/03",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Mar",
+  "weight" : 8770.72,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "538.3307",
+  "unit" : "Tonne",
+  "ym" : "2025/03",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Mar",
+  "weight" : 500540.06,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "605.2656",
+  "unit" : "Tonne",
+  "ym" : "2025/03",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Mar",
+  "weight" : 13346.29,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "631.3045",
+  "unit" : "Tonne",
+  "ym" : "2025/03",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Mar",
+  "weight" : 81108.37,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "541.1946",
+  "unit" : "Tonne",
+  "ym" : "2025/02",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Feb",
+  "weight" : 734733.7,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "547.9709",
+  "unit" : "Tonne",
+  "ym" : "2025/02",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Feb",
+  "weight" : 16580.13,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "503.2212",
+  "unit" : "Tonne",
+  "ym" : "2025/02",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Feb",
+  "weight" : 5495.06,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "532.9485",
+  "unit" : "Tonne",
+  "ym" : "2025/02",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Feb",
+  "weight" : 165493.22,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "534.6688",
+  "unit" : "Tonne",
+  "ym" : "2025/02",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Feb",
+  "weight" : 495005.51,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "603.0928",
+  "unit" : "Tonne",
+  "ym" : "2025/02",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Feb",
+  "weight" : 74234.97,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "596.4442",
+  "unit" : "Tonne",
+  "ym" : "2025/02",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Feb",
+  "weight" : 7398.29,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "540.4899",
+  "unit" : "Tonne",
+  "ym" : "2025/01",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jan",
+  "weight" : 18661.87,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "558.889",
+  "unit" : "Tonne",
+  "ym" : "2025/01",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jan",
+  "weight" : 842508.09,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "553.8018",
+  "unit" : "Tonne",
+  "ym" : "2025/01",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jan",
+  "weight" : 209008.73,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "493.0877",
+  "unit" : "Tonne",
+  "ym" : "2025/01",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jan",
+  "weight" : 7835.38,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "553.7752",
+  "unit" : "Tonne",
+  "ym" : "2025/01",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jan",
+  "weight" : 556558.73,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "609.6999",
+  "unit" : "Tonne",
+  "ym" : "2025/01",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jan",
+  "weight" : 76940.63,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "582.9171",
+  "unit" : "Tonne",
+  "ym" : "2025/01",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Jan",
+  "weight" : 9014.01,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "541.0949",
+  "unit" : "Tonne",
+  "ym" : "2024/12",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Dec",
+  "weight" : 21800.77,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "580.4718",
+  "unit" : "Tonne",
+  "ym" : "2024/12",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Dec",
+  "weight" : 615715.35,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "484.4143",
+  "unit" : "Tonne",
+  "ym" : "2024/12",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Dec",
+  "weight" : 6699.92,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "586.0988",
+  "unit" : "Tonne",
+  "ym" : "2024/12",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Dec",
+  "weight" : 142117.32,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "570.2111",
+  "unit" : "Tonne",
+  "ym" : "2024/12",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Dec",
+  "weight" : 414016.08,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "638.3485",
+  "unit" : "Tonne",
+  "ym" : "2024/12",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Dec",
+  "weight" : 59581.95,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "573.3491",
+  "unit" : "Tonne",
+  "ym" : "2024/12",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Dec",
+  "weight" : 9516.43,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "598.9895",
+  "unit" : "Tonne",
+  "ym" : "2024/11",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Nov",
+  "weight" : 814545.38,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "584.4282",
+  "unit" : "Tonne",
+  "ym" : "2024/11",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Nov",
+  "weight" : 37349.98,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "591.0524",
+  "unit" : "Tonne",
+  "ym" : "2024/11",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Nov",
+  "weight" : 202879.25,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "491.9248",
+  "unit" : "Tonne",
+  "ym" : "2024/11",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Nov",
+  "weight" : 11010.9,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "595.6056",
+  "unit" : "Tonne",
+  "ym" : "2024/11",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Nov",
+  "weight" : 539006.12,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "655.4912",
+  "unit" : "Tonne",
+  "ym" : "2024/11",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Nov",
+  "weight" : 13977.06,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "586.4743",
+  "unit" : "Tonne",
+  "ym" : "2024/11",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Nov",
+  "weight" : 12362.02,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "646.2532",
+  "unit" : "Tonne",
+  "ym" : "2024/11",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Nov",
+  "weight" : 72660.01,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "618.8922",
+  "unit" : "Tonne",
+  "ym" : "2024/10",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Oct",
+  "weight" : 837562.24,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "541.1378",
+  "unit" : "Tonne",
+  "ym" : "2024/10",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Oct",
+  "weight" : 34356.98,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "615.608",
+  "unit" : "Tonne",
+  "ym" : "2024/10",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Oct",
+  "weight" : 204169.34,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "508.53",
+  "unit" : "Tonne",
+  "ym" : "2024/10",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Oct",
+  "weight" : 18775.07,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "608.9453",
+  "unit" : "Tonne",
+  "ym" : "2024/10",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Oct",
+  "weight" : 553834.2,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "599.6754",
+  "unit" : "Tonne",
+  "ym" : "2024/10",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Oct",
+  "weight" : 10577.53,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "696.5642",
+  "unit" : "Tonne",
+  "ym" : "2024/10",
+  "marketingYear" : "2024/2025",
+  "marketingYearMonth" : "Oct",
+  "weight" : 79558.7,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "578.6407",
+  "unit" : "Tonne",
+  "ym" : "2024/09",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Sep",
+  "weight" : 34313.42,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "757.6904",
+  "unit" : "Tonne",
+  "ym" : "2024/09",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Sep",
+  "weight" : 766867.4,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "717.8681",
+  "unit" : "Tonne",
+  "ym" : "2024/09",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Sep",
+  "weight" : 180374.95,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "512.2054",
+  "unit" : "Tonne",
+  "ym" : "2024/09",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Sep",
+  "weight" : 14724.0,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "762.8861",
+  "unit" : "Tonne",
+  "ym" : "2024/09",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Sep",
+  "weight" : 507375.62,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "607.3142",
+  "unit" : "Tonne",
+  "ym" : "2024/09",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Sep",
+  "weight" : 12282.28,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "815.1599",
+  "unit" : "Tonne",
+  "ym" : "2024/09",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Sep",
+  "weight" : 79116.83,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "787.0033",
+  "unit" : "Tonne",
+  "ym" : "2024/08",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Aug",
+  "weight" : 732968.38,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "611.9301",
+  "unit" : "Tonne",
+  "ym" : "2024/08",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Aug",
+  "weight" : 25736.08,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "536.8459",
+  "unit" : "Tonne",
+  "ym" : "2024/08",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Aug",
+  "weight" : 14122.2,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "738.6899",
+  "unit" : "Tonne",
+  "ym" : "2024/08",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Aug",
+  "weight" : 182234.42,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "794.2982",
+  "unit" : "Tonne",
+  "ym" : "2024/08",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Aug",
+  "weight" : 475956.52,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "858.3124",
+  "unit" : "Tonne",
+  "ym" : "2024/08",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Aug",
+  "weight" : 74777.44,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "621.8093",
+  "unit" : "Tonne",
+  "ym" : "2024/08",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Aug",
+  "weight" : 5570.0,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "647.7752",
+  "unit" : "Tonne",
+  "ym" : "2024/07",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jul",
+  "weight" : 27307.5,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "774.9728",
+  "unit" : "Tonne",
+  "ym" : "2024/07",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jul",
+  "weight" : 806128.65,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "601.2404",
+  "unit" : "Tonne",
+  "ym" : "2024/07",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jul",
+  "weight" : 17135.51,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "729.6701",
+  "unit" : "Tonne",
+  "ym" : "2024/07",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jul",
+  "weight" : 177958.09,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "779.1737",
+  "unit" : "Tonne",
+  "ym" : "2024/07",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jul",
+  "weight" : 551397.61,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "849.8118",
+  "unit" : "Tonne",
+  "ym" : "2024/07",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jul",
+  "weight" : 76772.95,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "676.6004",
+  "unit" : "Tonne",
+  "ym" : "2024/07",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jul",
+  "weight" : 5528.51,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "634.4419",
+  "unit" : "Tonne",
+  "ym" : "2024/06",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jun",
+  "weight" : 17565.8,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "807.3487",
+  "unit" : "Tonne",
+  "ym" : "2024/06",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jun",
+  "weight" : 759287.72,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "603.8945",
+  "unit" : "Tonne",
+  "ym" : "2024/06",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jun",
+  "weight" : 12462.79,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "755.4371",
+  "unit" : "Tonne",
+  "ym" : "2024/06",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jun",
+  "weight" : 184166.76,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "816.1873",
+  "unit" : "Tonne",
+  "ym" : "2024/06",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jun",
+  "weight" : 495017.79,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "872.0797",
+  "unit" : "Tonne",
+  "ym" : "2024/06",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jun",
+  "weight" : 80103.17,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "693.7245",
+  "unit" : "Tonne",
+  "ym" : "2024/06",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jun",
+  "weight" : 4395.63,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "827.1283",
+  "unit" : "Tonne",
+  "ym" : "2024/05",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "May",
+  "weight" : 741697.43,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "671.4091",
+  "unit" : "Tonne",
+  "ym" : "2024/05",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "May",
+  "weight" : 17900.44,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "645.0202",
+  "unit" : "Tonne",
+  "ym" : "2024/05",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "May",
+  "weight" : 12338.14,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "772.9518",
+  "unit" : "Tonne",
+  "ym" : "2024/05",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "May",
+  "weight" : 174561.68,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "838.1529",
+  "unit" : "Tonne",
+  "ym" : "2024/05",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "May",
+  "weight" : 483671.33,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "876.5486",
+  "unit" : "Tonne",
+  "ym" : "2024/05",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "May",
+  "weight" : 83464.42,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "729.4234",
+  "unit" : "Tonne",
+  "ym" : "2024/05",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "May",
+  "weight" : 4527.24,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "831.445",
+  "unit" : "Tonne",
+  "ym" : "2024/04",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Apr",
+  "weight" : 739900.58,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "658.2699",
+  "unit" : "Tonne",
+  "ym" : "2024/04",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Apr",
+  "weight" : 16320.77,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "628.8182",
+  "unit" : "Tonne",
+  "ym" : "2024/04",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Apr",
+  "weight" : 10962.16,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "779.6444",
+  "unit" : "Tonne",
+  "ym" : "2024/04",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Apr",
+  "weight" : 181905.16,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "842.7522",
+  "unit" : "Tonne",
+  "ym" : "2024/04",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Apr",
+  "weight" : 483128.89,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "705.6882",
+  "unit" : "Tonne",
+  "ym" : "2024/04",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Apr",
+  "weight" : 4146.41,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "884.339",
+  "unit" : "Tonne",
+  "ym" : "2024/04",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Apr",
+  "weight" : 74866.53,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "710.4434",
+  "unit" : "Tonne",
+  "ym" : "2024/03",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Mar",
+  "weight" : 14970.24,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "843.6439",
+  "unit" : "Tonne",
+  "ym" : "2024/03",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Mar",
+  "weight" : 707299.33,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "645.7796",
+  "unit" : "Tonne",
+  "ym" : "2024/03",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Mar",
+  "weight" : 8900.16,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "786.2195",
+  "unit" : "Tonne",
+  "ym" : "2024/03",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Mar",
+  "weight" : 161256.1,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "856.0372",
+  "unit" : "Tonne",
+  "ym" : "2024/03",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Mar",
+  "weight" : 473306.25,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "890.3083",
+  "unit" : "Tonne",
+  "ym" : "2024/03",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Mar",
+  "weight" : 72736.98,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "806.3566",
+  "unit" : "Tonne",
+  "ym" : "2024/03",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Mar",
+  "weight" : 3532.09,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "836.5274",
+  "unit" : "Tonne",
+  "ym" : "2024/02",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Feb",
+  "weight" : 725027.84,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "690.7079",
+  "unit" : "Tonne",
+  "ym" : "2024/02",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Feb",
+  "weight" : 6856.0,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "790.3484",
+  "unit" : "Tonne",
+  "ym" : "2024/02",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Feb",
+  "weight" : 162061.64,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "839.5691",
+  "unit" : "Tonne",
+  "ym" : "2024/02",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Feb",
+  "weight" : 486232.38,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "824.8537",
+  "unit" : "Tonne",
+  "ym" : "2024/02",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Feb",
+  "weight" : 2949.89,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "914.7829",
+  "unit" : "Tonne",
+  "ym" : "2024/02",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Feb",
+  "weight" : 76733.82,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "852.6572",
+  "unit" : "Tonne",
+  "ym" : "2024/01",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jan",
+  "weight" : 767131.65,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "771.8547",
+  "unit" : "Tonne",
+  "ym" : "2024/01",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jan",
+  "weight" : 16805.9,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "738.4093",
+  "unit" : "Tonne",
+  "ym" : "2024/01",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jan",
+  "weight" : 9674.12,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "821.5357",
+  "unit" : "Tonne",
+  "ym" : "2024/01",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jan",
+  "weight" : 175274.9,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "855.4813",
+  "unit" : "Tonne",
+  "ym" : "2024/01",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jan",
+  "weight" : 517531.65,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "906.3837",
+  "unit" : "Tonne",
+  "ym" : "2024/01",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jan",
+  "weight" : 74325.1,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "829.5553",
+  "unit" : "Tonne",
+  "ym" : "2024/01",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Jan",
+  "weight" : 2907.1,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "856.4084",
+  "unit" : "Tonne",
+  "ym" : "2023/12",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Dec",
+  "weight" : 587977.45,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "782.4318",
+  "unit" : "Tonne",
+  "ym" : "2023/12",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Dec",
+  "weight" : 23712.52,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "815.9868",
+  "unit" : "Tonne",
+  "ym" : "2023/12",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Dec",
+  "weight" : 135393.13,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "689.2638",
+  "unit" : "Tonne",
+  "ym" : "2023/12",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Dec",
+  "weight" : 10565.66,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "855.9473",
+  "unit" : "Tonne",
+  "ym" : "2023/12",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Dec",
+  "weight" : 390196.58,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "848.9358",
+  "unit" : "Tonne",
+  "ym" : "2023/12",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Dec",
+  "weight" : 8156.95,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "947.0144",
+  "unit" : "Tonne",
+  "ym" : "2023/12",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Dec",
+  "weight" : 62387.74,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "853.8394",
+  "unit" : "Tonne",
+  "ym" : "2023/11",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Nov",
+  "weight" : 789585.25,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "816.0247",
+  "unit" : "Tonne",
+  "ym" : "2023/11",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Nov",
+  "weight" : 30013.18,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "812.0034",
+  "unit" : "Tonne",
+  "ym" : "2023/11",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Nov",
+  "weight" : 182546.02,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "728.3658",
+  "unit" : "Tonne",
+  "ym" : "2023/11",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Nov",
+  "weight" : 11385.7,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "855.3958",
+  "unit" : "Tonne",
+  "ym" : "2023/11",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Nov",
+  "weight" : 527358.64,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "849.2265",
+  "unit" : "Tonne",
+  "ym" : "2023/11",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Nov",
+  "weight" : 8684.94,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "939.3834",
+  "unit" : "Tonne",
+  "ym" : "2023/11",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Nov",
+  "weight" : 79680.59,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "843.4815",
+  "unit" : "Tonne",
+  "ym" : "2023/10",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Oct",
+  "weight" : 775722.35,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "845.3002",
+  "unit" : "Tonne",
+  "ym" : "2023/10",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Oct",
+  "weight" : 31696.94,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "781.8652",
+  "unit" : "Tonne",
+  "ym" : "2023/10",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Oct",
+  "weight" : 9582.26,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "814.5859",
+  "unit" : "Tonne",
+  "ym" : "2023/10",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Oct",
+  "weight" : 186163.18,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "841.1919",
+  "unit" : "Tonne",
+  "ym" : "2023/10",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Oct",
+  "weight" : 505961.26,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "892.9552",
+  "unit" : "Tonne",
+  "ym" : "2023/10",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Oct",
+  "weight" : 10569.64,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "854.3217",
+  "unit" : "Tonne",
+  "ym" : "2023/10",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Oct",
+  "weight" : 11545.04,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "921.6865",
+  "unit" : "Tonne",
+  "ym" : "2023/10",
+  "marketingYear" : "2023/2024",
+  "marketingYearMonth" : "Oct",
+  "weight" : 83597.91,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "821.0778",
+  "unit" : "Tonne",
+  "ym" : "2023/09",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Sep",
+  "weight" : 742567.32,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "950.1393",
+  "unit" : "Tonne",
+  "ym" : "2023/09",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Sep",
+  "weight" : 28420.41,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "785.9463",
+  "unit" : "Tonne",
+  "ym" : "2023/09",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Sep",
+  "weight" : 192415.51,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "851.9634",
+  "unit" : "Tonne",
+  "ym" : "2023/09",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Sep",
+  "weight" : 5263.62,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "975.7098",
+  "unit" : "Tonne",
+  "ym" : "2023/09",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Sep",
+  "weight" : 11976.2,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "817.4386",
+  "unit" : "Tonne",
+  "ym" : "2023/09",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Sep",
+  "weight" : 469053.97,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "925.4808",
+  "unit" : "Tonne",
+  "ym" : "2023/09",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Sep",
+  "weight" : 81097.84,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "968.9687",
+  "unit" : "Tonne",
+  "ym" : "2023/09",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Sep",
+  "weight" : 11180.59,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "953.2453",
+  "unit" : "Tonne",
+  "ym" : "2023/08",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Aug",
+  "weight" : 20200.38,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "819.05",
+  "unit" : "Tonne",
+  "ym" : "2023/08",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Aug",
+  "weight" : 767329.92,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "795.3618",
+  "unit" : "Tonne",
+  "ym" : "2023/08",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Aug",
+  "weight" : 204459.49,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "883.1017",
+  "unit" : "Tonne",
+  "ym" : "2023/08",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Aug",
+  "weight" : 4959.66,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "808.4514",
+  "unit" : "Tonne",
+  "ym" : "2023/08",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Aug",
+  "weight" : 473684.14,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "929.6458",
+  "unit" : "Tonne",
+  "ym" : "2023/08",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Aug",
+  "weight" : 89186.29,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "984.3279",
+  "unit" : "Tonne",
+  "ym" : "2023/08",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Aug",
+  "weight" : 8499.28,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "937.9277",
+  "unit" : "Tonne",
+  "ym" : "2023/07",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Jul",
+  "weight" : 17620.44,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "821.1862",
+  "unit" : "Tonne",
+  "ym" : "2023/07",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Jul",
+  "weight" : 731810.98,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "809.8057",
+  "unit" : "Tonne",
+  "ym" : "2023/07",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Jul",
+  "weight" : 166410.82,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "882.8717",
+  "unit" : "Tonne",
+  "ym" : "2023/07",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Jul",
+  "weight" : 4545.38,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "805.9719",
+  "unit" : "Tonne",
+  "ym" : "2023/07",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Jul",
+  "weight" : 468778.47,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "992.8188",
+  "unit" : "Tonne",
+  "ym" : "2023/07",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Jul",
+  "weight" : 8345.74,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "914.6018",
+  "unit" : "Tonne",
+  "ym" : "2023/07",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Jul",
+  "weight" : 96621.69,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "816.8974",
+  "unit" : "Tonne",
+  "ym" : "2023/06",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Jun",
+  "weight" : 792997.89,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "898.531",
+  "unit" : "Tonne",
+  "ym" : "2023/06",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Jun",
+  "weight" : 4154.04,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "809.4354",
+  "unit" : "Tonne",
+  "ym" : "2023/06",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Jun",
+  "weight" : 185550.89,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "805.9809",
+  "unit" : "Tonne",
+  "ym" : "2023/06",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Jun",
+  "weight" : 519174.91,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "1009.8355",
+  "unit" : "Tonne",
+  "ym" : "2023/06",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Jun",
+  "weight" : 7475.87,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "896.7884",
+  "unit" : "Tonne",
+  "ym" : "2023/06",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Jun",
+  "weight" : 88272.09,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "813.7067",
+  "unit" : "Tonne",
+  "ym" : "2023/05",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "May",
+  "weight" : 741646.52,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "808.2492",
+  "unit" : "Tonne",
+  "ym" : "2023/05",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "May",
+  "weight" : 172288.71,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "800.078",
+  "unit" : "Tonne",
+  "ym" : "2023/05",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "May",
+  "weight" : 484731.41,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "902.8812",
+  "unit" : "Tonne",
+  "ym" : "2023/05",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "May",
+  "weight" : 84626.4,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "976.0972",
+  "unit" : "Tonne",
+  "ym" : "2023/05",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "May",
+  "weight" : 5801.11,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "812.1177",
+  "unit" : "Tonne",
+  "ym" : "2023/04",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Apr",
+  "weight" : 666358.92,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "805.5694",
+  "unit" : "Tonne",
+  "ym" : "2023/04",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Apr",
+  "weight" : 145115.54,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "799.9834",
+  "unit" : "Tonne",
+  "ym" : "2023/04",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Apr",
+  "weight" : 442119.09,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "891.9296",
+  "unit" : "Tonne",
+  "ym" : "2023/04",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Apr",
+  "weight" : 79124.29,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "945.5792",
+  "unit" : "Tonne",
+  "ym" : "2023/04",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Apr",
+  "weight" : 6167.34,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "803.7721",
+  "unit" : "Tonne",
+  "ym" : "2023/03",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Mar",
+  "weight" : 783670.6,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "801.7447",
+  "unit" : "Tonne",
+  "ym" : "2023/03",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Mar",
+  "weight" : 175582.63,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "792.9604",
+  "unit" : "Tonne",
+  "ym" : "2023/03",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Mar",
+  "weight" : 525205.96,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "992.6839",
+  "unit" : "Tonne",
+  "ym" : "2023/03",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Mar",
+  "weight" : 3859.22,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "876.5782",
+  "unit" : "Tonne",
+  "ym" : "2023/03",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Mar",
+  "weight" : 82882.02,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "803.9624",
+  "unit" : "Tonne",
+  "ym" : "2023/02",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Feb",
+  "weight" : 689194.29,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "802.1421",
+  "unit" : "Tonne",
+  "ym" : "2023/02",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Feb",
+  "weight" : 138421.47,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "788.3549",
+  "unit" : "Tonne",
+  "ym" : "2023/02",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Feb",
+  "weight" : 467256.24,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "968.5997",
+  "unit" : "Tonne",
+  "ym" : "2023/02",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Feb",
+  "weight" : 5685.38,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "894.2994",
+  "unit" : "Tonne",
+  "ym" : "2023/02",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Feb",
+  "weight" : 83516.58,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "773.3989",
+  "unit" : "Tonne",
+  "ym" : "2023/01",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Jan",
+  "weight" : 753659.47,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "773.618",
+  "unit" : "Tonne",
+  "ym" : "2023/01",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Jan",
+  "weight" : 154439.08,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "756.7961",
+  "unit" : "Tonne",
+  "ym" : "2023/01",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Jan",
+  "weight" : 514246.73,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "873.478",
+  "unit" : "Tonne",
+  "ym" : "2023/01",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Jan",
+  "weight" : 84973.66,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "935.6807",
+  "unit" : "Tonne",
+  "ym" : "2023/01",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Jan",
+  "weight" : 6085.74,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "655.1745",
+  "unit" : "Tonne",
+  "ym" : "2022/12",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Dec",
+  "weight" : 710698.28,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "806.5801",
+  "unit" : "Tonne",
+  "ym" : "2022/12",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Dec",
+  "weight" : 17640.09,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "665.5725",
+  "unit" : "Tonne",
+  "ym" : "2022/12",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Dec",
+  "weight" : 137914.63,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "928.0843",
+  "unit" : "Tonne",
+  "ym" : "2022/12",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Dec",
+  "weight" : 5568.8,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "624.3041",
+  "unit" : "Tonne",
+  "ym" : "2022/12",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Dec",
+  "weight" : 499237.34,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "978.9387",
+  "unit" : "Tonne",
+  "ym" : "2022/12",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Dec",
+  "weight" : 5407.31,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "845.2266",
+  "unit" : "Tonne",
+  "ym" : "2022/12",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Dec",
+  "weight" : 73546.31,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "736.9015",
+  "unit" : "Tonne",
+  "ym" : "2022/11",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Nov",
+  "weight" : 30267.39,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "622.4858",
+  "unit" : "Tonne",
+  "ym" : "2022/11",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Nov",
+  "weight" : 826153.74,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "863.4678",
+  "unit" : "Tonne",
+  "ym" : "2022/11",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Nov",
+  "weight" : 7735.44,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "622.8679",
+  "unit" : "Tonne",
+  "ym" : "2022/11",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Nov",
+  "weight" : 171134.52,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "588.0966",
+  "unit" : "Tonne",
+  "ym" : "2022/11",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Nov",
+  "weight" : 556118.94,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "576.9732",
+  "unit" : "Tonne",
+  "ym" : "2022/11",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Nov",
+  "weight" : 15959.24,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "815.196",
+  "unit" : "Tonne",
+  "ym" : "2022/11",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Nov",
+  "weight" : 98900.29,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "976.2683",
+  "unit" : "Tonne",
+  "ym" : "2022/11",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Nov",
+  "weight" : 6572.71,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "586.3083",
+  "unit" : "Tonne",
+  "ym" : "2022/10",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Oct",
+  "weight" : 788994.04,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "754.5537",
+  "unit" : "Tonne",
+  "ym" : "2022/10",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Oct",
+  "weight" : 27035.41,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "594.7984",
+  "unit" : "Tonne",
+  "ym" : "2022/10",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Oct",
+  "weight" : 163113.48,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "837.9322",
+  "unit" : "Tonne",
+  "ym" : "2022/10",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Oct",
+  "weight" : 5101.2,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "560.128",
+  "unit" : "Tonne",
+  "ym" : "2022/10",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Oct",
+  "weight" : 526695.22,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "611.5393",
+  "unit" : "Tonne",
+  "ym" : "2022/10",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Oct",
+  "weight" : 14154.82,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "711.3693",
+  "unit" : "Tonne",
+  "ym" : "2022/10",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Oct",
+  "weight" : 99185.34,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "960.0983",
+  "unit" : "Tonne",
+  "ym" : "2022/10",
+  "marketingYear" : "2022/2023",
+  "marketingYearMonth" : "Oct",
+  "weight" : 7779.39,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "512.0173",
+  "unit" : "Tonne",
+  "ym" : "2022/09",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Sep",
+  "weight" : 861516.43,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "666.699",
+  "unit" : "Tonne",
+  "ym" : "2022/09",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Sep",
+  "weight" : 35795.28,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "474.4671",
+  "unit" : "Tonne",
+  "ym" : "2022/09",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Sep",
+  "weight" : 178766.98,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "820.9862",
+  "unit" : "Tonne",
+  "ym" : "2022/09",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Sep",
+  "weight" : 4557.08,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "559.9668",
+  "unit" : "Tonne",
+  "ym" : "2022/09",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Sep",
+  "weight" : 23824.72,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "494.1592",
+  "unit" : "Tonne",
+  "ym" : "2022/09",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Sep",
+  "weight" : 574442.66,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "914.8637",
+  "unit" : "Tonne",
+  "ym" : "2022/09",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Sep",
+  "weight" : 7413.48,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "668.7127",
+  "unit" : "Tonne",
+  "ym" : "2022/09",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Sep",
+  "weight" : 108306.79,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "694.1847",
+  "unit" : "Tonne",
+  "ym" : "2022/08",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Aug",
+  "weight" : 32648.76,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "484.414",
+  "unit" : "Tonne",
+  "ym" : "2022/08",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Aug",
+  "weight" : 842717.81,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "466.7954",
+  "unit" : "Tonne",
+  "ym" : "2022/08",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Aug",
+  "weight" : 181719.44,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "822.1782",
+  "unit" : "Tonne",
+  "ym" : "2022/08",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Aug",
+  "weight" : 5088.29,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "462.4485",
+  "unit" : "Tonne",
+  "ym" : "2022/08",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Aug",
+  "weight" : 550858.61,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "611.432",
+  "unit" : "Tonne",
+  "ym" : "2022/08",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Aug",
+  "weight" : 20255.66,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "834.4954",
+  "unit" : "Tonne",
+  "ym" : "2022/08",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Aug",
+  "weight" : 7304.81,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "623.342",
+  "unit" : "Tonne",
+  "ym" : "2022/08",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Aug",
+  "weight" : 110139.77,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "596.3689",
+  "unit" : "Tonne",
+  "ym" : "2022/07",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jul",
+  "weight" : 21005.6,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "472.5888",
+  "unit" : "Tonne",
+  "ym" : "2022/07",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jul",
+  "weight" : 781025.39,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "445.1062",
+  "unit" : "Tonne",
+  "ym" : "2022/07",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jul",
+  "weight" : 152362.19,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "505.1002",
+  "unit" : "Tonne",
+  "ym" : "2022/07",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jul",
+  "weight" : 13981.53,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "457.4885",
+  "unit" : "Tonne",
+  "ym" : "2022/07",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jul",
+  "weight" : 520504.24,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "797.5384",
+  "unit" : "Tonne",
+  "ym" : "2022/07",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jul",
+  "weight" : 4057.59,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "583.9721",
+  "unit" : "Tonne",
+  "ym" : "2022/07",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jul",
+  "weight" : 108158.97,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "453.4149",
+  "unit" : "Tonne",
+  "ym" : "2022/06",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jun",
+  "weight" : 906456.24,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "544.3602",
+  "unit" : "Tonne",
+  "ym" : "2022/06",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jun",
+  "weight" : 26175.76,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "445.9266",
+  "unit" : "Tonne",
+  "ym" : "2022/06",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jun",
+  "weight" : 177680.22,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "480.0533",
+  "unit" : "Tonne",
+  "ym" : "2022/06",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jun",
+  "weight" : 18910.74,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "438.243",
+  "unit" : "Tonne",
+  "ym" : "2022/06",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jun",
+  "weight" : 628135.84,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "561.3293",
+  "unit" : "Tonne",
+  "ym" : "2022/06",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jun",
+  "weight" : 100640.18,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "703.4123",
+  "unit" : "Tonne",
+  "ym" : "2022/06",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jun",
+  "weight" : 4750.16,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "451.473",
+  "unit" : "Tonne",
+  "ym" : "2022/05",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "May",
+  "weight" : 841849.1,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "547.8681",
+  "unit" : "Tonne",
+  "ym" : "2022/05",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "May",
+  "weight" : 29075.48,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "440.709",
+  "unit" : "Tonne",
+  "ym" : "2022/05",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "May",
+  "weight" : 175312.03,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "437.9665",
+  "unit" : "Tonne",
+  "ym" : "2022/05",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "May",
+  "weight" : 567173.06,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "491.9354",
+  "unit" : "Tonne",
+  "ym" : "2022/05",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "May",
+  "weight" : 18893.8,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "547.5603",
+  "unit" : "Tonne",
+  "ym" : "2022/05",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "May",
+  "weight" : 99364.01,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "656.677",
+  "unit" : "Tonne",
+  "ym" : "2022/05",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "May",
+  "weight" : 6769.8,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "528.8491",
+  "unit" : "Tonne",
+  "ym" : "2022/04",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Apr",
+  "weight" : 25410.17,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "445.9537",
+  "unit" : "Tonne",
+  "ym" : "2022/04",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Apr",
+  "weight" : 721428.13,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "609.4186",
+  "unit" : "Tonne",
+  "ym" : "2022/04",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Apr",
+  "weight" : 4171.6,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "440.0461",
+  "unit" : "Tonne",
+  "ym" : "2022/04",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Apr",
+  "weight" : 153109.9,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "435.6899",
+  "unit" : "Tonne",
+  "ym" : "2022/04",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Apr",
+  "weight" : 493474.88,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "465.9941",
+  "unit" : "Tonne",
+  "ym" : "2022/04",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Apr",
+  "weight" : 13948.31,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "525.7129",
+  "unit" : "Tonne",
+  "ym" : "2022/04",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Apr",
+  "weight" : 74843.35,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "603.0052",
+  "unit" : "Tonne",
+  "ym" : "2022/04",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Apr",
+  "weight" : 7290.26,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "511.3381",
+  "unit" : "Tonne",
+  "ym" : "2022/03",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Mar",
+  "weight" : 25767.01,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "442.7923",
+  "unit" : "Tonne",
+  "ym" : "2022/03",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Mar",
+  "weight" : 829522.55,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "428.1944",
+  "unit" : "Tonne",
+  "ym" : "2022/03",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Mar",
+  "weight" : 178172.04,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "545.2518",
+  "unit" : "Tonne",
+  "ym" : "2022/03",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Mar",
+  "weight" : 4138.76,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "436.0083",
+  "unit" : "Tonne",
+  "ym" : "2022/03",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Mar",
+  "weight" : 569247.43,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "472.069",
+  "unit" : "Tonne",
+  "ym" : "2022/03",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Mar",
+  "weight" : 14167.75,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "521.507",
+  "unit" : "Tonne",
+  "ym" : "2022/03",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Mar",
+  "weight" : 82103.07,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "567.0976",
+  "unit" : "Tonne",
+  "ym" : "2022/03",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Mar",
+  "weight" : 7460.5,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "440.1597",
+  "unit" : "Tonne",
+  "ym" : "2022/02",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Feb",
+  "weight" : 728153.29,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "493.0062",
+  "unit" : "Tonne",
+  "ym" : "2022/02",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Feb",
+  "weight" : 24457.88,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "432.9671",
+  "unit" : "Tonne",
+  "ym" : "2022/02",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Feb",
+  "weight" : 139025.06,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "457.6547",
+  "unit" : "Tonne",
+  "ym" : "2022/02",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Feb",
+  "weight" : 14519.1,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "429.3586",
+  "unit" : "Tonne",
+  "ym" : "2022/02",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Feb",
+  "weight" : 512978.81,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "526.0528",
+  "unit" : "Tonne",
+  "ym" : "2022/02",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Feb",
+  "weight" : 76149.42,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "550.9866",
+  "unit" : "Tonne",
+  "ym" : "2022/02",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Feb",
+  "weight" : 7654.96,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "432.6411",
+  "unit" : "Tonne",
+  "ym" : "2022/01",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jan",
+  "weight" : 756931.15,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "496.5244",
+  "unit" : "Tonne",
+  "ym" : "2022/01",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jan",
+  "weight" : 31038.71,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "425.234",
+  "unit" : "Tonne",
+  "ym" : "2022/01",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jan",
+  "weight" : 153386.47,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "422.7572",
+  "unit" : "Tonne",
+  "ym" : "2022/01",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jan",
+  "weight" : 524340.18,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "456.4607",
+  "unit" : "Tonne",
+  "ym" : "2022/01",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jan",
+  "weight" : 14787.88,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "512.4181",
+  "unit" : "Tonne",
+  "ym" : "2022/01",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jan",
+  "weight" : 79204.5,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "539.3503",
+  "unit" : "Tonne",
+  "ym" : "2022/01",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Jan",
+  "weight" : 13208.74,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "420.7764",
+  "unit" : "Tonne",
+  "ym" : "2021/12",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Dec",
+  "weight" : 719458.26,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "456.0762",
+  "unit" : "Tonne",
+  "ym" : "2021/12",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Dec",
+  "weight" : 40776.79,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "451.9603",
+  "unit" : "Tonne",
+  "ym" : "2021/12",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Dec",
+  "weight" : 7285.13,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "408.4176",
+  "unit" : "Tonne",
+  "ym" : "2021/12",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Dec",
+  "weight" : 151527.94,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "411.1934",
+  "unit" : "Tonne",
+  "ym" : "2021/12",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Dec",
+  "weight" : 495595.74,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "420.2732",
+  "unit" : "Tonne",
+  "ym" : "2021/12",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Dec",
+  "weight" : 21969.22,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "512.3227",
+  "unit" : "Tonne",
+  "ym" : "2021/12",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Dec",
+  "weight" : 72334.59,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "526.9422",
+  "unit" : "Tonne",
+  "ym" : "2021/12",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Dec",
+  "weight" : 11522.44,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "413.8389",
+  "unit" : "Tonne",
+  "ym" : "2021/11",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Nov",
+  "weight" : 826032.04,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "458.0422",
+  "unit" : "Tonne",
+  "ym" : "2021/11",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Nov",
+  "weight" : 38582.21,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "428.1522",
+  "unit" : "Tonne",
+  "ym" : "2021/11",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Nov",
+  "weight" : 5504.99,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "405.7416",
+  "unit" : "Tonne",
+  "ym" : "2021/11",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Nov",
+  "weight" : 167505.4,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "427.5721",
+  "unit" : "Tonne",
+  "ym" : "2021/11",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Nov",
+  "weight" : 19611.2,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "404.8176",
+  "unit" : "Tonne",
+  "ym" : "2021/11",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Nov",
+  "weight" : 578380.46,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "495.8649",
+  "unit" : "Tonne",
+  "ym" : "2021/11",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Nov",
+  "weight" : 80146.18,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "514.6364",
+  "unit" : "Tonne",
+  "ym" : "2021/11",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Nov",
+  "weight" : 13466.02,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "457.1587",
+  "unit" : "Tonne",
+  "ym" : "2021/10",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Oct",
+  "weight" : 34357.37,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "416.3657",
+  "unit" : "Tonne",
+  "ym" : "2021/10",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Oct",
+  "weight" : 791711.03,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "400.9746",
+  "unit" : "Tonne",
+  "ym" : "2021/10",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Oct",
+  "weight" : 157761.64,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "416.316",
+  "unit" : "Tonne",
+  "ym" : "2021/10",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Oct",
+  "weight" : 3392.28,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "427.8773",
+  "unit" : "Tonne",
+  "ym" : "2021/10",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Oct",
+  "weight" : 17469.23,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "410.9674",
+  "unit" : "Tonne",
+  "ym" : "2021/10",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Oct",
+  "weight" : 547694.74,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "505.3271",
+  "unit" : "Tonne",
+  "ym" : "2021/10",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Oct",
+  "weight" : 13495.86,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "478.7941",
+  "unit" : "Tonne",
+  "ym" : "2021/10",
+  "marketingYear" : "2021/2022",
+  "marketingYearMonth" : "Oct",
+  "weight" : 86254.65,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "481.2016",
+  "unit" : "Tonne",
+  "ym" : "2021/09",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Sep",
+  "weight" : 52387.71,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "408.0752",
+  "unit" : "Tonne",
+  "ym" : "2021/09",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Sep",
+  "weight" : 801223.96,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "424.1568",
+  "unit" : "Tonne",
+  "ym" : "2021/09",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Sep",
+  "weight" : 10869.33,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "395.8054",
+  "unit" : "Tonne",
+  "ym" : "2021/09",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Sep",
+  "weight" : 161832.18,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "399.3274",
+  "unit" : "Tonne",
+  "ym" : "2021/09",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Sep",
+  "weight" : 530041.58,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "494.0783",
+  "unit" : "Tonne",
+  "ym" : "2021/09",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Sep",
+  "weight" : 30109.26,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "468.6359",
+  "unit" : "Tonne",
+  "ym" : "2021/09",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Sep",
+  "weight" : 109350.2,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "501.5651",
+  "unit" : "Tonne",
+  "ym" : "2021/09",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Sep",
+  "weight" : 11409.12,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "402.416",
+  "unit" : "Tonne",
+  "ym" : "2021/08",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Aug",
+  "weight" : 750294.98,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "445.5333",
+  "unit" : "Tonne",
+  "ym" : "2021/08",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Aug",
+  "weight" : 27536.46,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "447.5361",
+  "unit" : "Tonne",
+  "ym" : "2021/08",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Aug",
+  "weight" : 4183.05,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "393.9462",
+  "unit" : "Tonne",
+  "ym" : "2021/08",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Aug",
+  "weight" : 155923.9,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "426.1852",
+  "unit" : "Tonne",
+  "ym" : "2021/08",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Aug",
+  "weight" : 15819.93,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "393.3511",
+  "unit" : "Tonne",
+  "ym" : "2021/08",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Aug",
+  "weight" : 496304.59,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "485.0513",
+  "unit" : "Tonne",
+  "ym" : "2021/08",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Aug",
+  "weight" : 7533.48,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "461.7591",
+  "unit" : "Tonne",
+  "ym" : "2021/08",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Aug",
+  "weight" : 98066.49,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "426.5385",
+  "unit" : "Tonne",
+  "ym" : "2021/07",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jul",
+  "weight" : 27388.32,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "399.8782",
+  "unit" : "Tonne",
+  "ym" : "2021/07",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jul",
+  "weight" : 757953.51,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "391.3047",
+  "unit" : "Tonne",
+  "ym" : "2021/07",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jul",
+  "weight" : 148152.61,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "403.2664",
+  "unit" : "Tonne",
+  "ym" : "2021/07",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jul",
+  "weight" : 7248.46,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "417.7319",
+  "unit" : "Tonne",
+  "ym" : "2021/07",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jul",
+  "weight" : 13990.65,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "391.698",
+  "unit" : "Tonne",
+  "ym" : "2021/07",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jul",
+  "weight" : 517218.14,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "459.2965",
+  "unit" : "Tonne",
+  "ym" : "2021/07",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jul",
+  "weight" : 92582.77,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "474.0074",
+  "unit" : "Tonne",
+  "ym" : "2021/07",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jul",
+  "weight" : 6149.21,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "432.5782",
+  "unit" : "Tonne",
+  "ym" : "2021/06",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jun",
+  "weight" : 19585.47,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "396.6743",
+  "unit" : "Tonne",
+  "ym" : "2021/06",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jun",
+  "weight" : 802306.48,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "391.8618",
+  "unit" : "Tonne",
+  "ym" : "2021/06",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jun",
+  "weight" : 159673.32,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "388.5278",
+  "unit" : "Tonne",
+  "ym" : "2021/06",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jun",
+  "weight" : 552149.16,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "455.434",
+  "unit" : "Tonne",
+  "ym" : "2021/06",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jun",
+  "weight" : 7526.69,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "454.8777",
+  "unit" : "Tonne",
+  "ym" : "2021/06",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jun",
+  "weight" : 90484.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "408.7852",
+  "unit" : "Tonne",
+  "ym" : "2021/05",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "May",
+  "weight" : 22213.31,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "396.2295",
+  "unit" : "Tonne",
+  "ym" : "2021/05",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "May",
+  "weight" : 725056.2,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "389.7392",
+  "unit" : "Tonne",
+  "ym" : "2021/05",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "May",
+  "weight" : 148254.7,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "402.4229",
+  "unit" : "Tonne",
+  "ym" : "2021/05",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "May",
+  "weight" : 7409.66,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "387.3494",
+  "unit" : "Tonne",
+  "ym" : "2021/05",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "May",
+  "weight" : 483597.34,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "452.6286",
+  "unit" : "Tonne",
+  "ym" : "2021/05",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "May",
+  "weight" : 93204.16,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "443.7106",
+  "unit" : "Tonne",
+  "ym" : "2021/05",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "May",
+  "weight" : 7843.59,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "394.8225",
+  "unit" : "Tonne",
+  "ym" : "2021/04",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Apr",
+  "weight" : 709829.28,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "413.3808",
+  "unit" : "Tonne",
+  "ym" : "2021/04",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Apr",
+  "weight" : 16199.25,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "388.9875",
+  "unit" : "Tonne",
+  "ym" : "2021/04",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Apr",
+  "weight" : 143747.37,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "387.1517",
+  "unit" : "Tonne",
+  "ym" : "2021/04",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Apr",
+  "weight" : 486297.73,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "432.5332",
+  "unit" : "Tonne",
+  "ym" : "2021/04",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Apr",
+  "weight" : 7204.33,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "452.0902",
+  "unit" : "Tonne",
+  "ym" : "2021/04",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Apr",
+  "weight" : 79784.18,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "405.432",
+  "unit" : "Tonne",
+  "ym" : "2021/03",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Mar",
+  "weight" : 27372.79,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "394.2263",
+  "unit" : "Tonne",
+  "ym" : "2021/03",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Mar",
+  "weight" : 775174.12,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "386.3372",
+  "unit" : "Tonne",
+  "ym" : "2021/03",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Mar",
+  "weight" : 160991.66,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "386.6963",
+  "unit" : "Tonne",
+  "ym" : "2021/03",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Mar",
+  "weight" : 9374.2,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "387.5029",
+  "unit" : "Tonne",
+  "ym" : "2021/03",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Mar",
+  "weight" : 524662.44,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "447.8191",
+  "unit" : "Tonne",
+  "ym" : "2021/03",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Mar",
+  "weight" : 89520.02,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "431.7217",
+  "unit" : "Tonne",
+  "ym" : "2021/03",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Mar",
+  "weight" : 9138.42,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "390.3329",
+  "unit" : "Tonne",
+  "ym" : "2021/02",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Feb",
+  "weight" : 676208.86,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "410.2881",
+  "unit" : "Tonne",
+  "ym" : "2021/02",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Feb",
+  "weight" : 23827.38,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "391.7783",
+  "unit" : "Tonne",
+  "ym" : "2021/02",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Feb",
+  "weight" : 4879.08,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "390.3486",
+  "unit" : "Tonne",
+  "ym" : "2021/02",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Feb",
+  "weight" : 140576.97,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "396.1286",
+  "unit" : "Tonne",
+  "ym" : "2021/02",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Feb",
+  "weight" : 10170.16,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "380.4079",
+  "unit" : "Tonne",
+  "ym" : "2021/02",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Feb",
+  "weight" : 460846.59,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "436.9811",
+  "unit" : "Tonne",
+  "ym" : "2021/02",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Feb",
+  "weight" : 8778.14,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "451.4635",
+  "unit" : "Tonne",
+  "ym" : "2021/02",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Feb",
+  "weight" : 74785.3,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "400.3252",
+  "unit" : "Tonne",
+  "ym" : "2021/01",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jan",
+  "weight" : 21249.02,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "388.0283",
+  "unit" : "Tonne",
+  "ym" : "2021/01",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jan",
+  "weight" : 716473.69,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "348.7729",
+  "unit" : "Tonne",
+  "ym" : "2021/01",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jan",
+  "weight" : 5005.76,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "385.9716",
+  "unit" : "Tonne",
+  "ym" : "2021/01",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jan",
+  "weight" : 140623.52,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "377.8918",
+  "unit" : "Tonne",
+  "ym" : "2021/01",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jan",
+  "weight" : 482087.77,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "393.7351",
+  "unit" : "Tonne",
+  "ym" : "2021/01",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jan",
+  "weight" : 10801.12,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "460.8233",
+  "unit" : "Tonne",
+  "ym" : "2021/01",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jan",
+  "weight" : 5442.14,
+  "contractType" : "Short term contracts"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "443.2306",
+  "unit" : "Tonne",
+  "ym" : "2021/01",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Jan",
+  "weight" : 93762.4,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "379.3174",
+  "unit" : "Tonne",
+  "ym" : "2020/12",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Dec",
+  "weight" : 640375.44,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "380.8843",
+  "unit" : "Tonne",
+  "ym" : "2020/12",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Dec",
+  "weight" : 122997.6,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "367.4877",
+  "unit" : "Tonne",
+  "ym" : "2020/12",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Dec",
+  "weight" : 439535.93,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "443.6383",
+  "unit" : "Tonne",
+  "ym" : "2020/12",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Dec",
+  "weight" : 77841.91,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "378.998",
+  "unit" : "Tonne",
+  "ym" : "2020/11",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Nov",
+  "weight" : 805213.45,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "383.7308",
+  "unit" : "Tonne",
+  "ym" : "2020/11",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Nov",
+  "weight" : 147377.09,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "369.0844",
+  "unit" : "Tonne",
+  "ym" : "2020/11",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Nov",
+  "weight" : 585767.54,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "449.8967",
+  "unit" : "Tonne",
+  "ym" : "2020/11",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Nov",
+  "weight" : 72068.83,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "381.0587",
+  "unit" : "Tonne",
+  "ym" : "2020/10",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Oct",
+  "weight" : 841748.47,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "378.6894",
+  "unit" : "Tonne",
+  "ym" : "2020/10",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Oct",
+  "weight" : 156055.33,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "370.952",
+  "unit" : "Tonne",
+  "ym" : "2020/10",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Oct",
+  "weight" : 594281.52,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "450.809",
+  "unit" : "Tonne",
+  "ym" : "2020/10",
+  "marketingYear" : "2020/2021",
+  "marketingYearMonth" : "Oct",
+  "weight" : 91411.63,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "376.307",
+  "unit" : "Tonne",
+  "ym" : "2020/09",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Sep",
+  "weight" : 857291.65,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "380.8068",
+  "unit" : "Tonne",
+  "ym" : "2020/09",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Sep",
+  "weight" : 163510.84,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "362.2185",
+  "unit" : "Tonne",
+  "ym" : "2020/09",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Sep",
+  "weight" : 600775.63,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "459.4022",
+  "unit" : "Tonne",
+  "ym" : "2020/09",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Sep",
+  "weight" : 93005.18,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "378.3707",
+  "unit" : "Tonne",
+  "ym" : "2020/08",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Aug",
+  "weight" : 775006.24,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "382.5187",
+  "unit" : "Tonne",
+  "ym" : "2020/08",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Aug",
+  "weight" : 145038.58,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "365.3287",
+  "unit" : "Tonne",
+  "ym" : "2020/08",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Aug",
+  "weight" : 553430.05,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "464.8146",
+  "unit" : "Tonne",
+  "ym" : "2020/08",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Aug",
+  "weight" : 76537.61,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "378.252",
+  "unit" : "Tonne",
+  "ym" : "2020/07",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Jul",
+  "weight" : 845623.41,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "378.297",
+  "unit" : "Tonne",
+  "ym" : "2020/07",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Jul",
+  "weight" : 154608.53,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "367.3616",
+  "unit" : "Tonne",
+  "ym" : "2020/07",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Jul",
+  "weight" : 612490.12,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "463.1076",
+  "unit" : "Tonne",
+  "ym" : "2020/07",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Jul",
+  "weight" : 78524.77,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "378.6263",
+  "unit" : "Tonne",
+  "ym" : "2020/06",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Jun",
+  "weight" : 815432.99,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "380.3618",
+  "unit" : "Tonne",
+  "ym" : "2020/06",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Jun",
+  "weight" : 150429.46,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "367.2377",
+  "unit" : "Tonne",
+  "ym" : "2020/06",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Jun",
+  "weight" : 584773.38,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "458.3799",
+  "unit" : "Tonne",
+  "ym" : "2020/06",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Jun",
+  "weight" : 80230.15,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "375.388",
+  "unit" : "Tonne",
+  "ym" : "2020/05",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "May",
+  "weight" : 714316.45,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "386.2526",
+  "unit" : "Tonne",
+  "ym" : "2020/05",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "May",
+  "weight" : 134580.05,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "363.4378",
+  "unit" : "Tonne",
+  "ym" : "2020/05",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "May",
+  "weight" : 518618.8,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "452.8683",
+  "unit" : "Tonne",
+  "ym" : "2020/05",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "May",
+  "weight" : 61117.6,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "379.38",
+  "unit" : "Tonne",
+  "ym" : "2020/04",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Apr",
+  "weight" : 699688.7,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "384.2484",
+  "unit" : "Tonne",
+  "ym" : "2020/04",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Apr",
+  "weight" : 127873.97,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "371.1702",
+  "unit" : "Tonne",
+  "ym" : "2020/04",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Apr",
+  "weight" : 520647.82,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "450.752",
+  "unit" : "Tonne",
+  "ym" : "2020/04",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Apr",
+  "weight" : 51166.91,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "374.5252",
+  "unit" : "Tonne",
+  "ym" : "2020/03",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Mar",
+  "weight" : 831140.73,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "383.0827",
+  "unit" : "Tonne",
+  "ym" : "2020/03",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Mar",
+  "weight" : 165634.69,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "363.5083",
+  "unit" : "Tonne",
+  "ym" : "2020/03",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Mar",
+  "weight" : 592889.82,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "444.956",
+  "unit" : "Tonne",
+  "ym" : "2020/03",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Mar",
+  "weight" : 72616.22,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "370.7757",
+  "unit" : "Tonne",
+  "ym" : "2020/02",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Feb",
+  "weight" : 773654.44,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "378.533",
+  "unit" : "Tonne",
+  "ym" : "2020/02",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Feb",
+  "weight" : 139351.16,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "357.8807",
+  "unit" : "Tonne",
+  "ym" : "2020/02",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Feb",
+  "weight" : 557183.72,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "449.9239",
+  "unit" : "Tonne",
+  "ym" : "2020/02",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Feb",
+  "weight" : 77119.56,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "360.4775",
+  "unit" : "Tonne",
+  "ym" : "2020/01",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Jan",
+  "weight" : 856365.72,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "368.3746",
+  "unit" : "Tonne",
+  "ym" : "2020/01",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Jan",
+  "weight" : 157054.81,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "346.8972",
+  "unit" : "Tonne",
+  "ym" : "2020/01",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Jan",
+  "weight" : 615273.49,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "445.1462",
+  "unit" : "Tonne",
+  "ym" : "2020/01",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Jan",
+  "weight" : 84037.43,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "342.2393",
+  "unit" : "Tonne",
+  "ym" : "2019/12",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Dec",
+  "weight" : 719599.89,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "356.6252",
+  "unit" : "Tonne",
+  "ym" : "2019/12",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Dec",
+  "weight" : 142188.35,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "326.217",
+  "unit" : "Tonne",
+  "ym" : "2019/12",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Dec",
+  "weight" : 490373.5,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "409.0079",
+  "unit" : "Tonne",
+  "ym" : "2019/12",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Dec",
+  "weight" : 87038.04,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "333.8682",
+  "unit" : "Tonne",
+  "ym" : "2019/11",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Nov",
+  "weight" : 903266.81,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "344.8996",
+  "unit" : "Tonne",
+  "ym" : "2019/11",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Nov",
+  "weight" : 174239.95,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "321.1382",
+  "unit" : "Tonne",
+  "ym" : "2019/11",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Nov",
+  "weight" : 639754.25,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "403.5648",
+  "unit" : "Tonne",
+  "ym" : "2019/11",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Nov",
+  "weight" : 89272.61,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "332.3175",
+  "unit" : "Tonne",
+  "ym" : "2019/10",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Oct",
+  "weight" : 914911.32,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "337.6828",
+  "unit" : "Tonne",
+  "ym" : "2019/10",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Oct",
+  "weight" : 166967.83,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "320.4615",
+  "unit" : "Tonne",
+  "ym" : "2019/10",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Oct",
+  "weight" : 646757.16,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "399.2451",
+  "unit" : "Tonne",
+  "ym" : "2019/10",
+  "marketingYear" : "2019/2020",
+  "marketingYearMonth" : "Oct",
+  "weight" : 101186.33,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "327.7814",
+  "unit" : "Tonne",
+  "ym" : "2019/09",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Sep",
+  "weight" : 859849.38,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "332.9894",
+  "unit" : "Tonne",
+  "ym" : "2019/09",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Sep",
+  "weight" : 177011.89,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "316.4197",
+  "unit" : "Tonne",
+  "ym" : "2019/09",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Sep",
+  "weight" : 566682.99,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "375.2749",
+  "unit" : "Tonne",
+  "ym" : "2019/09",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Sep",
+  "weight" : 116154.5,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "320.1642",
+  "unit" : "Tonne",
+  "ym" : "2019/08",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Aug",
+  "weight" : 846402.85,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "320.9331",
+  "unit" : "Tonne",
+  "ym" : "2019/08",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Aug",
+  "weight" : 166422.01,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "309.848",
+  "unit" : "Tonne",
+  "ym" : "2019/08",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Aug",
+  "weight" : 582622.75,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "380.5858",
+  "unit" : "Tonne",
+  "ym" : "2019/08",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Aug",
+  "weight" : 97358.09,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "319.924",
+  "unit" : "Tonne",
+  "ym" : "2019/07",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Jul",
+  "weight" : 914162.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "323.9227",
+  "unit" : "Tonne",
+  "ym" : "2019/07",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Jul",
+  "weight" : 167138.56,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "308.0578",
+  "unit" : "Tonne",
+  "ym" : "2019/07",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Jul",
+  "weight" : 641981.11,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "386.0837",
+  "unit" : "Tonne",
+  "ym" : "2019/07",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Jul",
+  "weight" : 105042.33,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "321.047",
+  "unit" : "Tonne",
+  "ym" : "2019/06",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Jun",
+  "weight" : 786607.07,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "325.1981",
+  "unit" : "Tonne",
+  "ym" : "2019/06",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Jun",
+  "weight" : 157506.93,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "311.1216",
+  "unit" : "Tonne",
+  "ym" : "2019/06",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Jun",
+  "weight" : 551748.19,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "383.3922",
+  "unit" : "Tonne",
+  "ym" : "2019/06",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Jun",
+  "weight" : 77351.95,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "319.6536",
+  "unit" : "Tonne",
+  "ym" : "2019/05",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "May",
+  "weight" : 930565.94,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "325.3562",
+  "unit" : "Tonne",
+  "ym" : "2019/05",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "May",
+  "weight" : 208729.52,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "309.4229",
+  "unit" : "Tonne",
+  "ym" : "2019/05",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "May",
+  "weight" : 601639.28,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "360.96",
+  "unit" : "Tonne",
+  "ym" : "2019/05",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "May",
+  "weight" : 120197.14,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "319.1103",
+  "unit" : "Tonne",
+  "ym" : "2019/04",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Apr",
+  "weight" : 852935.18,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "324.1645",
+  "unit" : "Tonne",
+  "ym" : "2019/04",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Apr",
+  "weight" : 185907.12,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "311.3729",
+  "unit" : "Tonne",
+  "ym" : "2019/04",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Apr",
+  "weight" : 588747.39,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "365.2998",
+  "unit" : "Tonne",
+  "ym" : "2019/04",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Apr",
+  "weight" : 78280.67,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "313.7814",
+  "unit" : "Tonne",
+  "ym" : "2019/03",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Mar",
+  "weight" : 845990.84,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "321.2038",
+  "unit" : "Tonne",
+  "ym" : "2019/03",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Mar",
+  "weight" : 166086.05,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "304.3484",
+  "unit" : "Tonne",
+  "ym" : "2019/03",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Mar",
+  "weight" : 593874.81,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "364.5688",
+  "unit" : "Tonne",
+  "ym" : "2019/03",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Mar",
+  "weight" : 86029.98,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "313.9721",
+  "unit" : "Tonne",
+  "ym" : "2019/02",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Feb",
+  "weight" : 794674.32,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "321.6368",
+  "unit" : "Tonne",
+  "ym" : "2019/02",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Feb",
+  "weight" : 149267.19,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "303.013",
+  "unit" : "Tonne",
+  "ym" : "2019/02",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Feb",
+  "weight" : 549948.05,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "365.123",
+  "unit" : "Tonne",
+  "ym" : "2019/02",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Feb",
+  "weight" : 95459.08,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "312.2023",
+  "unit" : "Tonne",
+  "ym" : "2019/01",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Jan",
+  "weight" : 922856.49,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "315.1742",
+  "unit" : "Tonne",
+  "ym" : "2019/01",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Jan",
+  "weight" : 181284.63,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "301.0169",
+  "unit" : "Tonne",
+  "ym" : "2019/01",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Jan",
+  "weight" : 623915.42,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "366.9376",
+  "unit" : "Tonne",
+  "ym" : "2019/01",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Jan",
+  "weight" : 117656.43,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "314.0362",
+  "unit" : "Tonne",
+  "ym" : "2018/12",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Dec",
+  "weight" : 719828.52,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "324.6497",
+  "unit" : "Tonne",
+  "ym" : "2018/12",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Dec",
+  "weight" : 137481.95,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "300.3687",
+  "unit" : "Tonne",
+  "ym" : "2018/12",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Dec",
+  "weight" : 489208.05,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "370.1579",
+  "unit" : "Tonne",
+  "ym" : "2018/12",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Dec",
+  "weight" : 93138.52,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "319.6845",
+  "unit" : "Tonne",
+  "ym" : "2018/11",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Nov",
+  "weight" : 962272.46,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "329.4706",
+  "unit" : "Tonne",
+  "ym" : "2018/11",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Nov",
+  "weight" : 207887.93,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "308.4124",
+  "unit" : "Tonne",
+  "ym" : "2018/11",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Nov",
+  "weight" : 644974.77,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "367.5399",
+  "unit" : "Tonne",
+  "ym" : "2018/11",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Nov",
+  "weight" : 109409.76,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "321.0698",
+  "unit" : "Tonne",
+  "ym" : "2018/10",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Oct",
+  "weight" : 968119.49,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "325.3192",
+  "unit" : "Tonne",
+  "ym" : "2018/10",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Oct",
+  "weight" : 198572.5,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "309.4186",
+  "unit" : "Tonne",
+  "ym" : "2018/10",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Oct",
+  "weight" : 654908.13,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "380.2697",
+  "unit" : "Tonne",
+  "ym" : "2018/10",
+  "marketingYear" : "2018/2019",
+  "marketingYearMonth" : "Oct",
+  "weight" : 114638.87,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "346.9954",
+  "unit" : "Tonne",
+  "ym" : "2018/09",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Sep",
+  "weight" : 878371.53,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "337.7406",
+  "unit" : "Tonne",
+  "ym" : "2018/09",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Sep",
+  "weight" : 188352.37,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "339.5323",
+  "unit" : "Tonne",
+  "ym" : "2018/09",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Sep",
+  "weight" : 571927.05,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "397.9005",
+  "unit" : "Tonne",
+  "ym" : "2018/09",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Sep",
+  "weight" : 118092.11,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "347.2946",
+  "unit" : "Tonne",
+  "ym" : "2018/08",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Aug",
+  "weight" : 896937.39,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "338.0473",
+  "unit" : "Tonne",
+  "ym" : "2018/08",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Aug",
+  "weight" : 179729.94,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "345.2366",
+  "unit" : "Tonne",
+  "ym" : "2018/08",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Aug",
+  "weight" : 629613.94,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "381.0617",
+  "unit" : "Tonne",
+  "ym" : "2018/08",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Aug",
+  "weight" : 87593.52,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "346.499",
+  "unit" : "Tonne",
+  "ym" : "2018/07",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Jul",
+  "weight" : 918109.38,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "350.3548",
+  "unit" : "Tonne",
+  "ym" : "2018/07",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Jul",
+  "weight" : 155983.19,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "340.912",
+  "unit" : "Tonne",
+  "ym" : "2018/07",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Jul",
+  "weight" : 640861.06,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "371.0657",
+  "unit" : "Tonne",
+  "ym" : "2018/07",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Jul",
+  "weight" : 121265.14,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "361.4086",
+  "unit" : "Tonne",
+  "ym" : "2018/06",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Jun",
+  "weight" : 905641.05,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "362.7048",
+  "unit" : "Tonne",
+  "ym" : "2018/06",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Jun",
+  "weight" : 159737.9,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "358.5173",
+  "unit" : "Tonne",
+  "ym" : "2018/06",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Jun",
+  "weight" : 630840.43,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "375.4611",
+  "unit" : "Tonne",
+  "ym" : "2018/06",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Jun",
+  "weight" : 115062.73,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "368.0446",
+  "unit" : "Tonne",
+  "ym" : "2018/05",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "May",
+  "weight" : 879607.34,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "369.0806",
+  "unit" : "Tonne",
+  "ym" : "2018/05",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "May",
+  "weight" : 157694.4,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "364.6513",
+  "unit" : "Tonne",
+  "ym" : "2018/05",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "May",
+  "weight" : 597054.43,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "382.9623",
+  "unit" : "Tonne",
+  "ym" : "2018/05",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "May",
+  "weight" : 124858.52,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "364.9471",
+  "unit" : "Tonne",
+  "ym" : "2018/04",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Apr",
+  "weight" : 820387.05,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "365.5308",
+  "unit" : "Tonne",
+  "ym" : "2018/04",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Apr",
+  "weight" : 152816.16,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "360.9378",
+  "unit" : "Tonne",
+  "ym" : "2018/04",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Apr",
+  "weight" : 565228.87,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "386.2186",
+  "unit" : "Tonne",
+  "ym" : "2018/04",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Apr",
+  "weight" : 102342.02,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "375.5504",
+  "unit" : "Tonne",
+  "ym" : "2018/03",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Mar",
+  "weight" : 828540.07,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "370.8715",
+  "unit" : "Tonne",
+  "ym" : "2018/03",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Mar",
+  "weight" : 157147.83,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "373.5037",
+  "unit" : "Tonne",
+  "ym" : "2018/03",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Mar",
+  "weight" : 588742.43,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "399.0258",
+  "unit" : "Tonne",
+  "ym" : "2018/03",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Mar",
+  "weight" : 82649.81,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "371.7169",
+  "unit" : "Tonne",
+  "ym" : "2018/02",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Feb",
+  "weight" : 760815.99,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "370.7695",
+  "unit" : "Tonne",
+  "ym" : "2018/02",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Feb",
+  "weight" : 144480.54,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "366.8181",
+  "unit" : "Tonne",
+  "ym" : "2018/02",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Feb",
+  "weight" : 539059.16,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "407.6609",
+  "unit" : "Tonne",
+  "ym" : "2018/02",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Feb",
+  "weight" : 77276.29,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "370.9016",
+  "unit" : "Tonne",
+  "ym" : "2018/01",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Jan",
+  "weight" : 915814.19,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 1",
+  "price" : "375.7495",
+  "unit" : "Tonne",
+  "ym" : "2018/01",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Jan",
+  "weight" : 192671.05,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 2",
+  "price" : "364.8241",
+  "unit" : "Tonne",
+  "ym" : "2018/01",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Jan",
+  "weight" : 640551.09,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "Region 3",
+  "price" : "406.727",
+  "unit" : "Tonne",
+  "ym" : "2018/01",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Jan",
+  "weight" : 82592.06,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "400",
+  "unit" : "Tonne",
+  "ym" : "2017/12",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Dec",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "411",
+  "unit" : "Tonne",
+  "ym" : "2017/11",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Nov",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "422",
+  "unit" : "Tonne",
+  "ym" : "2017/10",
+  "marketingYear" : "2017/2018",
+  "marketingYearMonth" : "Oct",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "490",
+  "unit" : "Tonne",
+  "ym" : "2017/09",
+  "marketingYear" : "2016/2017",
+  "marketingYearMonth" : "Sep",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "501",
+  "unit" : "Tonne",
+  "ym" : "2017/08",
+  "marketingYear" : "2016/2017",
+  "marketingYearMonth" : "Aug",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "501",
+  "unit" : "Tonne",
+  "ym" : "2017/07",
+  "marketingYear" : "2016/2017",
+  "marketingYearMonth" : "Jul",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "498",
+  "unit" : "Tonne",
+  "ym" : "2017/06",
+  "marketingYear" : "2016/2017",
+  "marketingYearMonth" : "Jun",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "497",
+  "unit" : "Tonne",
+  "ym" : "2017/05",
+  "marketingYear" : "2016/2017",
+  "marketingYearMonth" : "May",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "495",
+  "unit" : "Tonne",
+  "ym" : "2017/04",
+  "marketingYear" : "2016/2017",
+  "marketingYearMonth" : "Apr",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "495",
+  "unit" : "Tonne",
+  "ym" : "2017/03",
+  "marketingYear" : "2016/2017",
+  "marketingYearMonth" : "Mar",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "497",
+  "unit" : "Tonne",
+  "ym" : "2017/02",
+  "marketingYear" : "2016/2017",
+  "marketingYearMonth" : "Feb",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "496",
+  "unit" : "Tonne",
+  "ym" : "2017/01",
+  "marketingYear" : "2016/2017",
+  "marketingYearMonth" : "Jan",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "479",
+  "unit" : "Tonne",
+  "ym" : "2016/12",
+  "marketingYear" : "2016/2017",
+  "marketingYearMonth" : "Dec",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "480",
+  "unit" : "Tonne",
+  "ym" : "2016/11",
+  "marketingYear" : "2016/2017",
+  "marketingYearMonth" : "Nov",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "469",
+  "unit" : "Tonne",
+  "ym" : "2016/10",
+  "marketingYear" : "2016/2017",
+  "marketingYearMonth" : "Oct",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "450",
+  "unit" : "Tonne",
+  "ym" : "2016/09",
+  "marketingYear" : "2015/2016",
+  "marketingYearMonth" : "Sep",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "442",
+  "unit" : "Tonne",
+  "ym" : "2016/08",
+  "marketingYear" : "2015/2016",
+  "marketingYearMonth" : "Aug",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "438",
+  "unit" : "Tonne",
+  "ym" : "2016/07",
+  "marketingYear" : "2015/2016",
+  "marketingYearMonth" : "Jul",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "437",
+  "unit" : "Tonne",
+  "ym" : "2016/06",
+  "marketingYear" : "2015/2016",
+  "marketingYearMonth" : "Jun",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "434",
+  "unit" : "Tonne",
+  "ym" : "2016/05",
+  "marketingYear" : "2015/2016",
+  "marketingYearMonth" : "May",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "428",
+  "unit" : "Tonne",
+  "ym" : "2016/04",
+  "marketingYear" : "2015/2016",
+  "marketingYearMonth" : "Apr",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "433",
+  "unit" : "Tonne",
+  "ym" : "2016/03",
+  "marketingYear" : "2015/2016",
+  "marketingYearMonth" : "Mar",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "427",
+  "unit" : "Tonne",
+  "ym" : "2016/02",
+  "marketingYear" : "2015/2016",
+  "marketingYearMonth" : "Feb",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "429",
+  "unit" : "Tonne",
+  "ym" : "2016/01",
+  "marketingYear" : "2015/2016",
+  "marketingYearMonth" : "Jan",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "427",
+  "unit" : "Tonne",
+  "ym" : "2015/12",
+  "marketingYear" : "2015/2016",
+  "marketingYearMonth" : "Dec",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "423",
+  "unit" : "Tonne",
+  "ym" : "2015/11",
+  "marketingYear" : "2015/2016",
+  "marketingYearMonth" : "Nov",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "417",
+  "unit" : "Tonne",
+  "ym" : "2015/10",
+  "marketingYear" : "2015/2016",
+  "marketingYearMonth" : "Oct",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "425",
+  "unit" : "Tonne",
+  "ym" : "2015/09",
+  "marketingYear" : "2014/2015",
+  "marketingYearMonth" : "Sep",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "419",
+  "unit" : "Tonne",
+  "ym" : "2015/08",
+  "marketingYear" : "2014/2015",
+  "marketingYearMonth" : "Aug",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "415",
+  "unit" : "Tonne",
+  "ym" : "2015/07",
+  "marketingYear" : "2014/2015",
+  "marketingYearMonth" : "Jul",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "414",
+  "unit" : "Tonne",
+  "ym" : "2015/06",
+  "marketingYear" : "2014/2015",
+  "marketingYearMonth" : "Jun",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "419",
+  "unit" : "Tonne",
+  "ym" : "2015/05",
+  "marketingYear" : "2014/2015",
+  "marketingYearMonth" : "May",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "417",
+  "unit" : "Tonne",
+  "ym" : "2015/04",
+  "marketingYear" : "2014/2015",
+  "marketingYearMonth" : "Apr",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "419",
+  "unit" : "Tonne",
+  "ym" : "2015/03",
+  "marketingYear" : "2014/2015",
+  "marketingYearMonth" : "Mar",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "414",
+  "unit" : "Tonne",
+  "ym" : "2015/02",
+  "marketingYear" : "2014/2015",
+  "marketingYearMonth" : "Feb",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "422",
+  "unit" : "Tonne",
+  "ym" : "2015/01",
+  "marketingYear" : "2014/2015",
+  "marketingYearMonth" : "Jan",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "435",
+  "unit" : "Tonne",
+  "ym" : "2014/12",
+  "marketingYear" : "2014/2015",
+  "marketingYearMonth" : "Dec",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "449",
+  "unit" : "Tonne",
+  "ym" : "2014/11",
+  "marketingYear" : "2014/2015",
+  "marketingYearMonth" : "Nov",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "455",
+  "unit" : "Tonne",
+  "ym" : "2014/10",
+  "marketingYear" : "2014/2015",
+  "marketingYearMonth" : "Oct",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "509",
+  "unit" : "Tonne",
+  "ym" : "2014/09",
+  "marketingYear" : "2013/2014",
+  "marketingYearMonth" : "Sep",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "532",
+  "unit" : "Tonne",
+  "ym" : "2014/08",
+  "marketingYear" : "2013/2014",
+  "marketingYearMonth" : "Aug",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "536",
+  "unit" : "Tonne",
+  "ym" : "2014/07",
+  "marketingYear" : "2013/2014",
+  "marketingYearMonth" : "Jul",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "562",
+  "unit" : "Tonne",
+  "ym" : "2014/06",
+  "marketingYear" : "2013/2014",
+  "marketingYearMonth" : "Jun",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "574",
+  "unit" : "Tonne",
+  "ym" : "2014/05",
+  "marketingYear" : "2013/2014",
+  "marketingYearMonth" : "May",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "573",
+  "unit" : "Tonne",
+  "ym" : "2014/04",
+  "marketingYear" : "2013/2014",
+  "marketingYearMonth" : "Apr",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "604",
+  "unit" : "Tonne",
+  "ym" : "2014/03",
+  "marketingYear" : "2013/2014",
+  "marketingYearMonth" : "Mar",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "603",
+  "unit" : "Tonne",
+  "ym" : "2014/02",
+  "marketingYear" : "2013/2014",
+  "marketingYearMonth" : "Feb",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "627",
+  "unit" : "Tonne",
+  "ym" : "2014/01",
+  "marketingYear" : "2013/2014",
+  "marketingYearMonth" : "Jan",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "624",
+  "unit" : "Tonne",
+  "ym" : "2013/12",
+  "marketingYear" : "2013/2014",
+  "marketingYearMonth" : "Dec",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "647",
+  "unit" : "Tonne",
+  "ym" : "2013/11",
+  "marketingYear" : "2013/2014",
+  "marketingYearMonth" : "Nov",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "657",
+  "unit" : "Tonne",
+  "ym" : "2013/10",
+  "marketingYear" : "2013/2014",
+  "marketingYearMonth" : "Oct",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "689",
+  "unit" : "Tonne",
+  "ym" : "2013/09",
+  "marketingYear" : "2012/2013",
+  "marketingYearMonth" : "Sep",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "709",
+  "unit" : "Tonne",
+  "ym" : "2013/08",
+  "marketingYear" : "2012/2013",
+  "marketingYearMonth" : "Aug",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "713",
+  "unit" : "Tonne",
+  "ym" : "2013/07",
+  "marketingYear" : "2012/2013",
+  "marketingYearMonth" : "Jul",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "722",
+  "unit" : "Tonne",
+  "ym" : "2013/06",
+  "marketingYear" : "2012/2013",
+  "marketingYearMonth" : "Jun",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "725",
+  "unit" : "Tonne",
+  "ym" : "2013/05",
+  "marketingYear" : "2012/2013",
+  "marketingYearMonth" : "May",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "729.74",
+  "unit" : "Tonne",
+  "ym" : "2013/04",
+  "marketingYear" : "2012/2013",
+  "marketingYearMonth" : "Apr",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "725.89",
+  "unit" : "Tonne",
+  "ym" : "2013/03",
+  "marketingYear" : "2012/2013",
+  "marketingYearMonth" : "Mar",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "723.82",
+  "unit" : "Tonne",
+  "ym" : "2013/02",
+  "marketingYear" : "2012/2013",
+  "marketingYearMonth" : "Feb",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "738.45",
+  "unit" : "Tonne",
+  "ym" : "2013/01",
+  "marketingYear" : "2012/2013",
+  "marketingYearMonth" : "Jan",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "724.37",
+  "unit" : "Tonne",
+  "ym" : "2012/12",
+  "marketingYear" : "2012/2013",
+  "marketingYearMonth" : "Dec",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "727.94",
+  "unit" : "Tonne",
+  "ym" : "2012/11",
+  "marketingYear" : "2012/2013",
+  "marketingYearMonth" : "Nov",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "720.48",
+  "unit" : "Tonne",
+  "ym" : "2012/10",
+  "marketingYear" : "2012/2013",
+  "marketingYearMonth" : "Oct",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "708.15",
+  "unit" : "Tonne",
+  "ym" : "2012/09",
+  "marketingYear" : "2011/2012",
+  "marketingYearMonth" : "Sep",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "713.25",
+  "unit" : "Tonne",
+  "ym" : "2012/08",
+  "marketingYear" : "2011/2012",
+  "marketingYearMonth" : "Aug",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "709.35",
+  "unit" : "Tonne",
+  "ym" : "2012/07",
+  "marketingYear" : "2011/2012",
+  "marketingYearMonth" : "Jul",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "705.82",
+  "unit" : "Tonne",
+  "ym" : "2012/06",
+  "marketingYear" : "2011/2012",
+  "marketingYearMonth" : "Jun",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "710.98",
+  "unit" : "Tonne",
+  "ym" : "2012/05",
+  "marketingYear" : "2011/2012",
+  "marketingYearMonth" : "May",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "715.32",
+  "unit" : "Tonne",
+  "ym" : "2012/04",
+  "marketingYear" : "2011/2012",
+  "marketingYearMonth" : "Apr",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "709.86",
+  "unit" : "Tonne",
+  "ym" : "2012/03",
+  "marketingYear" : "2011/2012",
+  "marketingYearMonth" : "Mar",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "698.64",
+  "unit" : "Tonne",
+  "ym" : "2012/02",
+  "marketingYear" : "2011/2012",
+  "marketingYearMonth" : "Feb",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "682.53",
+  "unit" : "Tonne",
+  "ym" : "2012/01",
+  "marketingYear" : "2011/2012",
+  "marketingYearMonth" : "Jan",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "653.96",
+  "unit" : "Tonne",
+  "ym" : "2011/12",
+  "marketingYear" : "2011/2012",
+  "marketingYearMonth" : "Dec",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "644.89",
+  "unit" : "Tonne",
+  "ym" : "2011/11",
+  "marketingYear" : "2011/2012",
+  "marketingYearMonth" : "Nov",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "633.49",
+  "unit" : "Tonne",
+  "ym" : "2011/10",
+  "marketingYear" : "2011/2012",
+  "marketingYearMonth" : "Oct",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "572.35",
+  "unit" : "Tonne",
+  "ym" : "2011/09",
+  "marketingYear" : "2010/2011",
+  "marketingYearMonth" : "Sep",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "564.28",
+  "unit" : "Tonne",
+  "ym" : "2011/08",
+  "marketingYear" : "2010/2011",
+  "marketingYearMonth" : "Aug",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "547.85",
+  "unit" : "Tonne",
+  "ym" : "2011/07",
+  "marketingYear" : "2010/2011",
+  "marketingYearMonth" : "Jul",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "537.64",
+  "unit" : "Tonne",
+  "ym" : "2011/06",
+  "marketingYear" : "2010/2011",
+  "marketingYearMonth" : "Jun",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "536.28",
+  "unit" : "Tonne",
+  "ym" : "2011/05",
+  "marketingYear" : "2010/2011",
+  "marketingYearMonth" : "May",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "529.35",
+  "unit" : "Tonne",
+  "ym" : "2011/04",
+  "marketingYear" : "2010/2011",
+  "marketingYearMonth" : "Apr",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "517.09",
+  "unit" : "Tonne",
+  "ym" : "2011/03",
+  "marketingYear" : "2010/2011",
+  "marketingYearMonth" : "Mar",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "505.22",
+  "unit" : "Tonne",
+  "ym" : "2011/02",
+  "marketingYear" : "2010/2011",
+  "marketingYearMonth" : "Feb",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "497.91",
+  "unit" : "Tonne",
+  "ym" : "2011/01",
+  "marketingYear" : "2010/2011",
+  "marketingYearMonth" : "Jan",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "485.57",
+  "unit" : "Tonne",
+  "ym" : "2010/12",
+  "marketingYear" : "2010/2011",
+  "marketingYearMonth" : "Dec",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "486.38",
+  "unit" : "Tonne",
+  "ym" : "2010/11",
+  "marketingYear" : "2010/2011",
+  "marketingYearMonth" : "Nov",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "485.46",
+  "unit" : "Tonne",
+  "ym" : "2010/10",
+  "marketingYear" : "2010/2011",
+  "marketingYearMonth" : "Oct",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "485.49",
+  "unit" : "Tonne",
+  "ym" : "2010/09",
+  "marketingYear" : "2009/2010",
+  "marketingYearMonth" : "Sep",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "479.14",
+  "unit" : "Tonne",
+  "ym" : "2010/08",
+  "marketingYear" : "2009/2010",
+  "marketingYearMonth" : "Aug",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "477.97",
+  "unit" : "Tonne",
+  "ym" : "2010/07",
+  "marketingYear" : "2009/2010",
+  "marketingYearMonth" : "Jul",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "475.94",
+  "unit" : "Tonne",
+  "ym" : "2010/06",
+  "marketingYear" : "2009/2010",
+  "marketingYearMonth" : "Jun",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "478.6",
+  "unit" : "Tonne",
+  "ym" : "2010/05",
+  "marketingYear" : "2009/2010",
+  "marketingYearMonth" : "May",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "477.12",
+  "unit" : "Tonne",
+  "ym" : "2010/04",
+  "marketingYear" : "2009/2010",
+  "marketingYearMonth" : "Apr",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "476.56",
+  "unit" : "Tonne",
+  "ym" : "2010/03",
+  "marketingYear" : "2009/2010",
+  "marketingYearMonth" : "Mar",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "474.21",
+  "unit" : "Tonne",
+  "ym" : "2010/02",
+  "marketingYear" : "2009/2010",
+  "marketingYearMonth" : "Feb",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "478.94",
+  "unit" : "Tonne",
+  "ym" : "2010/01",
+  "marketingYear" : "2009/2010",
+  "marketingYearMonth" : "Jan",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "494.7",
+  "unit" : "Tonne",
+  "ym" : "2009/12",
+  "marketingYear" : "2009/2010",
+  "marketingYearMonth" : "Dec",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "492.84",
+  "unit" : "Tonne",
+  "ym" : "2009/11",
+  "marketingYear" : "2009/2010",
+  "marketingYearMonth" : "Nov",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "499.33",
+  "unit" : "Tonne",
+  "ym" : "2009/10",
+  "marketingYear" : "2009/2010",
+  "marketingYearMonth" : "Oct",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "554.89",
+  "unit" : "Tonne",
+  "ym" : "2009/09",
+  "marketingYear" : "2008/2009",
+  "marketingYearMonth" : "Sep",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "561.32",
+  "unit" : "Tonne",
+  "ym" : "2009/08",
+  "marketingYear" : "2008/2009",
+  "marketingYearMonth" : "Aug",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "561.72",
+  "unit" : "Tonne",
+  "ym" : "2009/07",
+  "marketingYear" : "2008/2009",
+  "marketingYearMonth" : "Jul",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "562.5",
+  "unit" : "Tonne",
+  "ym" : "2009/06",
+  "marketingYear" : "2008/2009",
+  "marketingYearMonth" : "Jun",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "566.35",
+  "unit" : "Tonne",
+  "ym" : "2009/05",
+  "marketingYear" : "2008/2009",
+  "marketingYearMonth" : "May",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "563.94",
+  "unit" : "Tonne",
+  "ym" : "2009/04",
+  "marketingYear" : "2008/2009",
+  "marketingYearMonth" : "Apr",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "566.88",
+  "unit" : "Tonne",
+  "ym" : "2009/03",
+  "marketingYear" : "2008/2009",
+  "marketingYearMonth" : "Mar",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "551.04",
+  "unit" : "Tonne",
+  "ym" : "2009/02",
+  "marketingYear" : "2008/2009",
+  "marketingYearMonth" : "Feb",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "564.26",
+  "unit" : "Tonne",
+  "ym" : "2009/01",
+  "marketingYear" : "2008/2009",
+  "marketingYearMonth" : "Jan",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "573.61",
+  "unit" : "Tonne",
+  "ym" : "2008/12",
+  "marketingYear" : "2008/2009",
+  "marketingYearMonth" : "Dec",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "574.43",
+  "unit" : "Tonne",
+  "ym" : "2008/11",
+  "marketingYear" : "2008/2009",
+  "marketingYearMonth" : "Nov",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "577.59",
+  "unit" : "Tonne",
+  "ym" : "2008/10",
+  "marketingYear" : "2008/2009",
+  "marketingYearMonth" : "Oct",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "595.12",
+  "unit" : "Tonne",
+  "ym" : "2008/09",
+  "marketingYear" : "2007/2008",
+  "marketingYearMonth" : "Sep",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "601.45",
+  "unit" : "Tonne",
+  "ym" : "2008/08",
+  "marketingYear" : "2007/2008",
+  "marketingYearMonth" : "Aug",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "598.34",
+  "unit" : "Tonne",
+  "ym" : "2008/07",
+  "marketingYear" : "2007/2008",
+  "marketingYearMonth" : "Jul",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "607.08",
+  "unit" : "Tonne",
+  "ym" : "2008/06",
+  "marketingYear" : "2007/2008",
+  "marketingYearMonth" : "Jun",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "605.57",
+  "unit" : "Tonne",
+  "ym" : "2008/05",
+  "marketingYear" : "2007/2008",
+  "marketingYearMonth" : "May",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "602.5",
+  "unit" : "Tonne",
+  "ym" : "2008/04",
+  "marketingYear" : "2007/2008",
+  "marketingYearMonth" : "Apr",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "604",
+  "unit" : "Tonne",
+  "ym" : "2008/03",
+  "marketingYear" : "2007/2008",
+  "marketingYearMonth" : "Mar",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "596",
+  "unit" : "Tonne",
+  "ym" : "2008/02",
+  "marketingYear" : "2007/2008",
+  "marketingYearMonth" : "Feb",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "612",
+  "unit" : "Tonne",
+  "ym" : "2008/01",
+  "marketingYear" : "2007/2008",
+  "marketingYearMonth" : "Jan",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "618",
+  "unit" : "Tonne",
+  "ym" : "2007/12",
+  "marketingYear" : "2007/2008",
+  "marketingYearMonth" : "Dec",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "616",
+  "unit" : "Tonne",
+  "ym" : "2007/11",
+  "marketingYear" : "2007/2008",
+  "marketingYearMonth" : "Nov",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "617",
+  "unit" : "Tonne",
+  "ym" : "2007/10",
+  "marketingYear" : "2007/2008",
+  "marketingYearMonth" : "Oct",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "619",
+  "unit" : "Tonne",
+  "ym" : "2007/09",
+  "marketingYear" : "2006/2007",
+  "marketingYearMonth" : "Sep",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "620",
+  "unit" : "Tonne",
+  "ym" : "2007/08",
+  "marketingYear" : "2006/2007",
+  "marketingYearMonth" : "Aug",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "621",
+  "unit" : "Tonne",
+  "ym" : "2007/07",
+  "marketingYear" : "2006/2007",
+  "marketingYearMonth" : "Jul",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "622",
+  "unit" : "Tonne",
+  "ym" : "2007/06",
+  "marketingYear" : "2006/2007",
+  "marketingYearMonth" : "Jun",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "625",
+  "unit" : "Tonne",
+  "ym" : "2007/05",
+  "marketingYear" : "2006/2007",
+  "marketingYearMonth" : "May",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "627",
+  "unit" : "Tonne",
+  "ym" : "2007/04",
+  "marketingYear" : "2006/2007",
+  "marketingYearMonth" : "Apr",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "628",
+  "unit" : "Tonne",
+  "ym" : "2007/03",
+  "marketingYear" : "2006/2007",
+  "marketingYearMonth" : "Mar",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "629",
+  "unit" : "Tonne",
+  "ym" : "2007/02",
+  "marketingYear" : "2006/2007",
+  "marketingYearMonth" : "Feb",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "629",
+  "unit" : "Tonne",
+  "ym" : "2007/01",
+  "marketingYear" : "2006/2007",
+  "marketingYearMonth" : "Jan",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "632",
+  "unit" : "Tonne",
+  "ym" : "2006/12",
+  "marketingYear" : "2006/2007",
+  "marketingYearMonth" : "Dec",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "633",
+  "unit" : "Tonne",
+  "ym" : "2006/11",
+  "marketingYear" : "2006/2007",
+  "marketingYearMonth" : "Nov",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "632",
+  "unit" : "Tonne",
+  "ym" : "2006/10",
+  "marketingYear" : "2006/2007",
+  "marketingYearMonth" : "Oct",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "636",
+  "unit" : "Tonne",
+  "ym" : "2006/09",
+  "marketingYear" : "2005/2006",
+  "marketingYearMonth" : "Sep",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "634",
+  "unit" : "Tonne",
+  "ym" : "2006/08",
+  "marketingYear" : "2005/2006",
+  "marketingYearMonth" : "Aug",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+}, {
+  "sugarRegion" : "EU Average",
+  "price" : "630",
+  "unit" : "Tonne",
+  "ym" : "2006/07",
+  "marketingYear" : "2005/2006",
+  "marketingYearMonth" : "Jul",
+  "weight" : 0.0,
+  "contractType" : "Monthly data"
+} ]

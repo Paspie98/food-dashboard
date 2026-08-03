@@ -1,6 +1,6 @@
 ﻿{
     "BUILD_STATUS":  "PASS",
-    "generated_utc":  "2026-07-27T10:19:08Z",
+    "generated_utc":  "2026-08-03T10:17:03Z",
     "registry_version":  "v9",
     "baselines":  {
                       "captured_floor":  59,
@@ -37,9 +37,16 @@
                   "data-freshness":  "WARN"
               },
     "freshness":  {
-                      "fresh":  58,
+                      "fresh":  51,
                       "stale_warn":  [
-                                         "FR-001 (age 117d, budget 3m)"
+                                         "FE-006 (age 94d, budget 3m)",
+                                         "FE-009 (age 94d, budget 3m)",
+                                         "FR-001 (age 124d, budget 3m)",
+                                         "PK-002 (age 94d, budget 3m)",
+                                         "PK-004 (age 94d, budget 3m)",
+                                         "PK-007 (age 94d, budget 3m)",
+                                         "PK-009 (age 94d, budget 3m)",
+                                         "SG-003 (age 94d, budget 3m)"
                                      ],
                       "escalated":  [
 
@@ -48,8 +55,8 @@
     "artifact_hashes_sha256":  {
                                    "commodity_exposure.html":  "D1C0DF58D2ACC2241CE7583292C6939DB26C8DE85E6FC218EDADC61196BD3808",
                                    "commodity_glossary.js":  "C61F45C7F4D4037AE2C8CB7D3D6C4AFF4B377F9308CD2AB2EA8ED2C250A79686",
-                                   "data.js":  "C25022FD7D8E4C46ADE8129242C7A179C408DCB3514D7BF9F09D90656567BC61",
+                                   "data.js":  "1AD6D8E43CE2B227410CA6943526EA31EB1FD66984F02AF272DA2774C238C8BD",
                                    "display_contract.js":  "2306A6AE1B02EB6289F6121C2EC6ED360813CFFFDFA589DD06ED79F3D903E569",
-                                   "synthesis.js":  "58DE38A965CDB85FC70F09B312EF29E25F8A5C5075D6DD4373037CC52963B1F8"
+                                   "synthesis.js":  "FCEFFE0180979659BA31B5E79D04BEF1F7FBD1A25DF61A1505EDA51A4C9EB1E2"
                                }
 }
