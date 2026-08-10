@@ -1,6 +1,6 @@
 window.BUILD_MANIFEST = {
     "BUILD_STATUS":  "PASS",
-    "generated_utc":  "2026-08-03T10:17:03Z",
+    "generated_utc":  "2026-08-10T08:17:09Z",
     "registry_version":  "v9",
     "baselines":  {
                       "captured_floor":  59,
@@ -37,16 +37,10 @@ window.BUILD_MANIFEST = {
                   "data-freshness":  "WARN"
               },
     "freshness":  {
-                      "fresh":  51,
+                      "fresh":  57,
                       "stale_warn":  [
-                                         "FE-006 (age 94d, budget 3m)",
-                                         "FE-009 (age 94d, budget 3m)",
-                                         "FR-001 (age 124d, budget 3m)",
-                                         "PK-002 (age 94d, budget 3m)",
-                                         "PK-004 (age 94d, budget 3m)",
-                                         "PK-007 (age 94d, budget 3m)",
-                                         "PK-009 (age 94d, budget 3m)",
-                                         "SG-003 (age 94d, budget 3m)"
+                                         "FR-001 (age 101d, budget 3m)",
+                                         "SG-003 (age 101d, budget 3m)"
                                      ],
                       "escalated":  [
 
@@ -55,8 +49,8 @@ window.BUILD_MANIFEST = {
     "artifact_hashes_sha256":  {
                                    "commodity_exposure.html":  "D1C0DF58D2ACC2241CE7583292C6939DB26C8DE85E6FC218EDADC61196BD3808",
                                    "commodity_glossary.js":  "C61F45C7F4D4037AE2C8CB7D3D6C4AFF4B377F9308CD2AB2EA8ED2C250A79686",
-                                   "data.js":  "1AD6D8E43CE2B227410CA6943526EA31EB1FD66984F02AF272DA2774C238C8BD",
+                                   "data.js":  "246E2A0594AE6C8157EDB11636F2CC0525A73B6D27EABB01F94CACE2AF37BF63",
                                    "display_contract.js":  "2306A6AE1B02EB6289F6121C2EC6ED360813CFFFDFA589DD06ED79F3D903E569",
-                                   "synthesis.js":  "FCEFFE0180979659BA31B5E79D04BEF1F7FBD1A25DF61A1505EDA51A4C9EB1E2"
+                                   "synthesis.js":  "1951086FF742D8028347A54E3B039210AE6672DB89BF504450C53BD784134453"
                                }
 };
