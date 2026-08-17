@@ -1,6 +1,6 @@
 window.BUILD_MANIFEST = {
     "BUILD_STATUS":  "PASS",
-    "generated_utc":  "2026-08-10T08:17:09Z",
+    "generated_utc":  "2026-08-17T07:35:04Z",
     "registry_version":  "v9",
     "baselines":  {
                       "captured_floor":  59,
@@ -37,10 +37,12 @@ window.BUILD_MANIFEST = {
                   "data-freshness":  "WARN"
               },
     "freshness":  {
-                      "fresh":  57,
+                      "fresh":  55,
                       "stale_warn":  [
-                                         "FR-001 (age 101d, budget 3m)",
-                                         "SG-003 (age 101d, budget 3m)"
+                                         "FR-001 (age 108d, budget 3m)",
+                                         "MZ-002 (age 22d, budget 3w)",
+                                         "SG-003 (age 108d, budget 3m)",
+                                         "WH-003 (age 22d, budget 3w)"
                                      ],
                       "escalated":  [
 
@@ -49,8 +51,8 @@ window.BUILD_MANIFEST = {
     "artifact_hashes_sha256":  {
                                    "commodity_exposure.html":  "D1C0DF58D2ACC2241CE7583292C6939DB26C8DE85E6FC218EDADC61196BD3808",
                                    "commodity_glossary.js":  "C61F45C7F4D4037AE2C8CB7D3D6C4AFF4B377F9308CD2AB2EA8ED2C250A79686",
-                                   "data.js":  "246E2A0594AE6C8157EDB11636F2CC0525A73B6D27EABB01F94CACE2AF37BF63",
+                                   "data.js":  "152B8798895884E66671103D9B4F9C49CA048CD7BFAAB97D394337D6D25EA161",
                                    "display_contract.js":  "2306A6AE1B02EB6289F6121C2EC6ED360813CFFFDFA589DD06ED79F3D903E569",
-                                   "synthesis.js":  "1951086FF742D8028347A54E3B039210AE6672DB89BF504450C53BD784134453"
+                                   "synthesis.js":  "63FB0E13BB598735AD5290B5EE8C44FC35BA8CB0C1DC2C6C8AB309FBFA4F9095"
                                }
 };
