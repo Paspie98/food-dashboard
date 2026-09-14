@@ -1,6 +1,6 @@
 ﻿{
-    "generated":  "2026-09-07T12:56:16Z",
-    "started":  "2026-09-07T12:50:55Z",
+    "generated":  "2026-09-14T13:13:30Z",
+    "started":  "2026-09-14T13:07:23Z",
     "overall":  "PASS",
     "baseline":  {
                      "captured":  59,
@@ -10,7 +10,7 @@
                    "captured":  59,
                    "charted":  59,
                    "latest_only":  0,
-                   "history_obs":  31306,
+                   "history_obs":  31324,
                    "not_captured":  3,
                    "history_series":  59
                },
@@ -21,18 +21,18 @@
                 },
     "freshness":  {
                       "run_environment":  "github_actions",
-                      "runner_marker":  "runner=GitHub Actions; os=Windows; run_id=34124076412; sha=bf8879850c6d072d09c520bb9199b5b91d0ed14e",
-                      "refresh_started_at_utc":  "2026-09-07T12:50:55Z",
-                      "capture_started_at_utc":  "2026-09-07T12:50:56Z",
-                      "capture_completed_at_utc":  "2026-09-07T12:54:13Z",
-                      "build_started_at_utc":  "2026-09-07T12:55:01Z",
-                      "build_completed_at_utc":  "2026-09-07T12:55:12Z",
+                      "runner_marker":  "runner=GitHub Actions; os=Windows; run_id=34847236305; sha=c2626154812152c724593e2943021a2116ae2459",
+                      "refresh_started_at_utc":  "2026-09-14T13:07:23Z",
+                      "capture_started_at_utc":  "2026-09-14T13:07:25Z",
+                      "capture_completed_at_utc":  "2026-09-14T13:11:23Z",
+                      "build_started_at_utc":  "2026-09-14T13:12:10Z",
+                      "build_completed_at_utc":  "2026-09-14T13:12:26Z",
                       "source_families_attempted":  7,
                       "source_families_succeeded":  7,
                       "source_families_failed":  0,
                       "fetches_attempted":  59,
                       "raw_files_written":  35,
-                      "observations_fetched":  31281,
+                      "observations_fetched":  31299,
                       "rows_fresh_from_source":  58,
                       "rows_kept_prior":  1,
                       "kept_prior_row_ids":  [
