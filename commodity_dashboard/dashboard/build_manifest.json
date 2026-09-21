@@ -1,6 +1,6 @@
 ﻿{
     "BUILD_STATUS":  "PASS",
-    "generated_utc":  "2026-09-14T13:13:30Z",
+    "generated_utc":  "2026-09-21T13:11:48Z",
     "registry_version":  "v9",
     "baselines":  {
                       "captured_floor":  59,
@@ -39,21 +39,21 @@
     "freshness":  {
                       "fresh":  53,
                       "stale_warn":  [
-                                         "FE-007 (age 198d, budget 2q)",
-                                         "FR-001 (age 106d, budget 3m)",
-                                         "FR-005 (age 198d, budget 2q)",
-                                         "SG-003 (age 106d, budget 3m)"
+                                         "FE-007 (age 205d, budget 2q)",
+                                         "FR-001 (age 113d, budget 3m)",
+                                         "FR-005 (age 205d, budget 2q)",
+                                         "SG-003 (age 113d, budget 3m)"
                                      ],
                       "escalated":  [
-                                        "MZ-002 (age 51d, budget 3w)",
-                                        "WH-003 (age 51d, budget 3w)"
+                                        "MZ-002 (age 58d, budget 3w)",
+                                        "WH-003 (age 58d, budget 3w)"
                                     ]
                   },
     "artifact_hashes_sha256":  {
                                    "commodity_exposure.html":  "D1C0DF58D2ACC2241CE7583292C6939DB26C8DE85E6FC218EDADC61196BD3808",
                                    "commodity_glossary.js":  "C61F45C7F4D4037AE2C8CB7D3D6C4AFF4B377F9308CD2AB2EA8ED2C250A79686",
-                                   "data.js":  "F54A434465B27A14A23197E5A912887EC589A2361714A76E0ABD4A5BF4B3C0E0",
+                                   "data.js":  "4AB0CB1725A42B656DAF2F1FCB565BB9D55CABCBD65FA1796E9F245690C95F01",
                                    "display_contract.js":  "2306A6AE1B02EB6289F6121C2EC6ED360813CFFFDFA589DD06ED79F3D903E569",
-                                   "synthesis.js":  "AF606C3273B2845E1EA637AD6D1EC4729D8114DCDA5A7403F8250B99D5EB88D4"
+                                   "synthesis.js":  "06A7C7376EB51FFCD854956FE1D7643E23BC3071EBC8E592A06C287F3DB75A3A"
                                }
 }
